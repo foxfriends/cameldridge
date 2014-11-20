@@ -104,17 +104,6 @@
             section div.content div.split-vertical.right {
                 text-align: right;
             }
-            article {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 500px;
-                margin: 100px;
-                padding: 50px;
-                background-color: RGBA(0, 0, 0, 0.5);
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
 
             /* Content */
             h1, h2, h3 {
@@ -175,13 +164,26 @@
                 width: 532px;
                 transition: width 0.3s;
             }
+            
+            article {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 500px;
+                margin: 100px;
+                padding: 50px;
+                background-color: RGBA(0, 0, 0, 0.5);
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 0.3s,
+                            z-index 0.3s;
+            }
 
             /* Special Links */
             footer a {
                 display: inline-block;
                 width: 32px;
                 height: 32px;
-                vertical-align: middle;
                 background-size: cover;
             }
 
@@ -422,7 +424,8 @@
                 for (var i = 0; i < articles.length; i++) {
                     var data = articles[i].getAttribute("data-game");
                     if (data !== "") {
-                        articles[i].style.opacity = (data === game) * 1;// ? "block" : "none");
+                        articles[i].style.opacity = (data === game ? "1" : "0");
+                        articles[i].style.zIndex = (data === game ? "30" : "-1");
                         list[i].className = "game-list" + (data === game ? " selected" : "");
                     }
                 }

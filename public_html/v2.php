@@ -86,9 +86,10 @@
                 height: 200px;
             }
             section div.tri svg {
-                display:block;
-                width:100%;
-                height:200px;
+                display: block;
+                width: 100%;
+                height: 200px;
+                overflow-y: hidden;
             }
             section div.content {
                 padding: 100px;
@@ -151,7 +152,7 @@
                 border-right: solid white;
                 border-right-width: 11px;
                 transition: border-right-width 0.3s,
-                            left 0.3s;
+                    left 0.3s;
             }
             li:hover:before {
                 left: -20px;
@@ -174,7 +175,7 @@
                 width: 532px;
                 transition: width 0.3s;
             }
-            
+
             /* Special Links */
             footer a {
                 display: inline-block;
@@ -233,8 +234,11 @@
             <section id="page-desc">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="feathers" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#feathers);" class="triangle" /></svg>
+                    <defs>
+                    <pattern id="patt-desc" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern>
+                    <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
+                    </defs>
+                    <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
                     <h4>
@@ -283,8 +287,8 @@
             <section id="page-game">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="swirl" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#swirl);" class="triangle" /></svg>
+                    <defs><pattern id="patt-game" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
                     <div class="split-vertical left" id="game-display">
@@ -361,8 +365,8 @@
             <section id="page-site">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="logox" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#logox);" class="triangle" /></svg>
+                    <defs><pattern id="patt-site" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
                     <h4>
@@ -373,8 +377,8 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="waves" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#waves);" class="triangle" /></svg>
+                    <defs><pattern id="patt-bot" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
                     <h4>
@@ -397,8 +401,11 @@
             var triangles = function() {
                 var pagewidth = pageWidth();
                 var triangles = document.getElementsByClassName("triangle");
+                document.getElementById("patt-border").setAttribute("width", pagewidth);
+                document.getElementById("patt-border").childNodes[0].setAttribute("width", pagewidth);
                 for (var i = 0; i < triangles.length; i++) {
-                    triangles[i].setAttribute("points", "0,200,0,201," + pagewidth + ",201," + pagewidth + ",200," + (pagewidth / 2) + ",0");
+                    triangles[i].setAttribute("points", "0,200,0,205," + pagewidth + ",205," + pagewidth + ",200," + (pagewidth / 2) + ",5");
+                    triangles[i].parentNode.style.width = pagewidth + "px";
                 }
             };
             var positions = function() {
@@ -412,9 +419,9 @@
             var show_game = function(game) {
                 var articles = document.getElementsByTagName("article");
                 var list = document.getElementsByClassName("game-list");
-                for(var i = 0; i < articles.length; i++) {
+                for (var i = 0; i < articles.length; i++) {
                     var data = articles[i].getAttribute("data-game");
-                    if(data !== "") {
+                    if (data !== "") {
                         articles[i].style.opacity = (data === game) * 1;// ? "block" : "none");
                         list[i].className = "game-list" + (data === game ? " selected" : "");
                     }
@@ -422,20 +429,20 @@
             };
             var init = function() {
                 var list = document.getElementsByClassName("game-list");
-                for(var i = 0; i < list.length; i++) {
+                for (var i = 0; i < list.length; i++) {
                     list[i].onclick = function() {
-                        if(!/selected/.test(this.className)) {
+                        if (!/selected/.test(this.className)) {
                             show_game(this.getElementsByClassName("spaced")[0].innerHTML);
-                        } else{
+                        } else {
                             show_game("");
                         }
                     };
                 }
             };
-            
-            
-            
-            
+
+
+
+
             init();
             triangles();
             positions();

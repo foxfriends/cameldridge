@@ -63,7 +63,7 @@
                 vertical-align: middle;
             }
             div#page-container {
-                overflow-y: hidden;
+                overflow: hidden;
             }
             /* Nav bar */
             nav div {
@@ -164,7 +164,7 @@
                 width: 532px;
                 transition: width 0.3s;
             }
-            
+
             article {
                 position: absolute;
                 left: 0;
@@ -176,7 +176,7 @@
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 0.3s,
-                            z-index 0.3s;
+                    z-index 0.3s;
             }
 
             /* Special Links */
@@ -186,7 +186,9 @@
                 height: 32px;
                 background-size: cover;
             }
-
+            footer a[href$=".html"] {
+                background-image: URL("/image/html5.png");
+            }
             footer a[href$=".exe"] {
                 background-image: URL("/image/windows7.gif");
             }
@@ -315,7 +317,7 @@
                                 two days.
                             </p>
                             <footer>
-                                <a href="Games/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
+                                <a href="Games/The Catapult/index.html"></a><a href="Games/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="cat">
@@ -339,6 +341,49 @@
                             </p>
                             <footer>
                                 <a href="Games/cat.exe"></a><a href="https://github.com/OinkIguana/cat" target="_blank"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Animal Farm">
+                            <header>
+                                <h3>Animal Farm (2014)</h3>
+                            </header>
+                            <p>
+                                The time has come for the animals to take over 
+                                the Manor Farm. Chase out Mr. Jones, harvest the
+                                crops, build the windmill, and bring Animal Farm
+                                to glory!
+                            </p>
+                            <p>
+                                This was made as a grade 11 English project. The
+                                story and much of the dialog is taken directly from
+                                <i>Animal Farm</i> by George Orwell. It's an RTS,
+                                inspired by <i>StarCraft</i> and <i>Age of Empires</i>.
+                                I made a few of the graphics, but most were taken
+                                from the Internet. The dialog sprites and menu music
+                                are taken from the 1955 animated film.
+                            </p>
+                            <footer>
+                                <a href="Games/Animal Farm.exe"></a><a href="https://github.com/OinkIguana/Animal-Farm" target="_blank"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Space Invaders">
+                            <header>
+                                <h3>Animal Farm (2014)</h3>
+                            </header>
+                            <p>
+                                Shoot down the invaders from space in this remake
+                                of the Atari classic.
+                            </p>
+                            <p>
+                                When learning Java in class, I got bored of the
+                                regular assignments, so I made this instead. It
+                                ended up being my summative project for the year.
+                                The entire game was coded from scratch, though
+                                the resources were stolen from someone else's 
+                                remake.
+                            </p>
+                            <footer>
+                                <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/java.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
                             </footer>
                         </article>
                     </div>
@@ -414,7 +459,7 @@
                 var sections = document.getElementsByTagName("section");
                 var y = window.pageYOffset;
                 for (var i = 0; i < sections.length; i++) {
-                    sections[i].style.top = (y / (2 + 2 * i)) + "px";
+                    sections[i].style.top = (y / (2 + (2 * i))) + "px";
                     sections[i].style.paddingBottom = (200 + 100 * i) + "px";
                 }
             };

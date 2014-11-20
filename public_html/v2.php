@@ -111,6 +111,8 @@
                 margin: 100px;
                 padding: 50px;
                 background-color: RGBA(0, 0, 0, 0.5);
+                opacity: 0;
+                transition: opacity 0.3s;
             }
 
             /* Content */
@@ -138,15 +140,26 @@
             ul {
                 list-style: none;
             }
-            li:before {
+            li:before{
                 content: "";
                 overflow: visible;
                 position: absolute;
-                left: -45.032px;
                 top: 0;
+                left: -10px;
                 border-top: 26px solid transparent;
                 border-bottom: 26px solid transparent;
-                border-right: 45.032px solid white;
+                border-right: solid white;
+                border-right-width: 11px;
+                transition: border-right-width 0.3s,
+                            left 0.3s;
+            }
+            li:hover:before {
+                left: -20px;
+                border-right-width: 21px;
+            }
+            li.selected:before {
+                left: -45px;
+                border-right-width: 46px;
             }
             li {
                 position: relative;
@@ -154,6 +167,7 @@
                 height: 52px;
                 overflow: visible;
                 background-color: #FFF;
+                cursor: pointer;
                 transition: width 0.3s;
             }
             li.selected {
@@ -274,7 +288,7 @@
                 </div>
                 <div class="content">
                     <div class="split-vertical left" id="game-display">
-                        <article data-game="The Catapult" style="display:none;">
+                        <article data-game="The Catapult" data-back="" data-tri="">
                             <header>
                                 <h3>The Catapult (2014)</h3>
                             </header>
@@ -298,7 +312,7 @@
                                 <a href="Games/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
                             </footer>
                         </article>
-                        <article data-game="cat" style="display:none;">
+                        <article data-game="cat">
                             <header>
                                 <h3>cat (2014)</h3>
                             </header>
@@ -401,7 +415,7 @@
                 for(var i = 0; i < articles.length; i++) {
                     var data = articles[i].getAttribute("data-game");
                     if(data !== "") {
-                        articles[i].style.display = (data === game ? "block" : "none");
+                        articles[i].style.opacity = (data === game) * 1;// ? "block" : "none");
                         list[i].className = "game-list" + (data === game ? " selected" : "");
                     }
                 }

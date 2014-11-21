@@ -66,11 +66,19 @@
                 overflow: hidden;
             }
             /* Nav bar */
-            nav div {
-                display: none;
+            nav div.nav-link {
+                box-sizing: border-box;
                 position: fixed;
-                height: 32px;
+                z-index: -1;
+                width: 100%;
+                height: 24px;
+                opacity: 0;
+                background: white;
                 cursor: pointer;
+                border-bottom: 1px solid #777;
+                transition: opacity 0.3s,
+                    z-index 0.3s;
+
             }
 
             /* Page sections */
@@ -198,20 +206,20 @@
             }
 
             /* Specifics */
-            section#page-top {
+            section#page-top, div#nav-top {
                 background-color: #FFF;
                 background-image: URL("/image/cats.png");
                 background-size: cover;
             }
-            section#page-desc {
+            section#page-desc, div#nav-desc {
                 background-color: #FDD;
                 background-image: URL("/image/upfeathers.png");
             }
-            section#page-game {
+            section#page-game, div#nav-game{
                 background-color: #DFD;
                 background-image: URL("/image/swirl_pattern.png");
             }
-            section#page-site {
+            section#page-site, div#nav-site {
                 background-color: #DDF;
                 background-image: URL("/image/logo_x_pattern.png");
             }
@@ -224,10 +232,10 @@
     <body>
         <div id="page-container">
             <nav>
-                <div id="nav-top">Cameron Eldridge</div>
-                <div id="nav-desc">About me</div>
-                <div id="nav-game">Games</div>
-                <div id="nav-site">Sites</div>
+                <div class="nav-link" id="nav-top"><span class="spacer"></span><span class="spaced">Cameron Eldridge</span></div>
+                <div class="nav-link" id="nav-desc"><span class="spacer"></span><span class="spaced">About me</span></div>
+                <div class="nav-link" id="nav-game"><span class="spacer"></span><span class="spaced">Games</span></div>
+                <div class="nav-link" id="nav-site"><span class="spacer"></span><span class="spaced">Sites</span></div>
             </nav>
             <section id="page-top">
                 <div class="content">
@@ -663,10 +671,20 @@
             };
             var positions = function() {
                 var sections = document.getElementsByTagName("section");
+                var navlinks = document.getElementsByClassName("nav-link");
                 var y = window.pageYOffset;
                 for (var i = 0; i < sections.length; i++) {
                     sections[i].style.top = (y / (2 + i)) + "px";
                     sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                    if (i !== 4) {
+                        if (sections[i].offsetTop + sections[i].offsetHeight - (200 + 100 * i) <= y) {
+                            navlinks[i].style.opacity = "1";
+                            navlinks[i].style.zIndex = "100";
+                        } else {
+                            navlinks[i].style.opacity = "0";
+                            navlinks[i].style.zIndex = "-1";
+                        }
+                    }
                 }
             };
             var show_game = function(game) {
@@ -692,10 +710,23 @@
                         }
                     };
                 }
+                var navlinks = document.getElementsByClassName("nav-link");
+                for (var i = 0; i < navlinks.length; i++) {
+                    navlinks[i].onclick = function() {
+                        var scrollInterval = window.setInterval(function(el) {
+                            var y = window.pageYOffset;
+                            if (Math.abs(y - el.offsetTop) > 1) {
+                                y -= (y - el.offsetTop) / 4;
+                            } else {
+                                y = el.offsetTop;
+                                window.clearInterval(scrollInterval);
+                            }
+                            scroll(0, y);
+                        }, 1000 / 30, document.getElementById("page-" + this.id.substr(4)));
+                    };
+                    navlinks[i].style.top = (24 * i) + "px";
+                }
             };
-
-
-
 
             init();
             triangles();

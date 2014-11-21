@@ -81,6 +81,7 @@
             }
             section div.tri {
                 position: absolute;
+                left: -10px;
                 top: -200px;
                 width: 100%;
                 height: 200px;
@@ -239,7 +240,7 @@
                 <div class="tri">
                     <svg>
                     <defs>
-                    <pattern id="patt-desc" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern>
+                    <pattern id="patt-desc" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern>
                     <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
                     </defs>
                     <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
@@ -291,7 +292,7 @@
             <section id="page-game">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="patt-game" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
+                    <defs><pattern id="patt-game" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
@@ -368,7 +369,7 @@
                         </article>
                         <article data-game="Space Invaders">
                             <header>
-                                <h3>Animal Farm (2014)</h3>
+                                <h3>Space Invaders (2014)</h3>
                             </header>
                             <p>
                                 Shoot down the invaders from space in this remake
@@ -384,6 +385,211 @@
                             </p>
                             <footer>
                                 <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/java.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
+                            </footer>
+                        </article>
+                        <article data-game="White">
+                            <header>
+                                <h3>White (2014)</h3>
+                            </header>
+                            <p>
+                                You live in a world where everything is white. You
+                                are white, the walls are white - everything. But
+                                one day you see a spark, and it's not. With your
+                                new discovery, travel around and see what else
+                                the world has to hold. Bring back all the colours!
+                            </p>
+                            <p>
+                                <i>White</i> is a smooth, relaxing, somewhat puzzling platformer.
+                                I thought of the idea for the game a long time
+                                ago, and had worked out an early prototype. I lost
+                                that file though, and I left it alone for a while.
+                                I started it up again later, just by coincidence
+                                at the same time as the <a href="http://gmc.yoyogames.com/index.php?showtopic=606848&page=3#entry4492169">GMC Jam #13</a>.
+                                I submitted an early version to that and it placed
+                                19th overall.
+                            </p>
+                            <p>
+                                After the GMC Jam was over, I went on to complete
+                                the game. Eventually I published it, first on
+                                <a href="http://gamejolt.com/games/platformer/white/35169/">GameJolt</a>,
+                                <a href="http://www.indiedb.com/games/white1">indieDB</a> and 
+                                <a href="http://oinkiguana.itch.io/white">itch.io</a> as a downloadable 
+                                game, and later as an HTML5 game on 
+                                <a href="http://www.kongregate.com/games/OinkIguana/white">Kongregate</a> and 
+                                <a href="http://www.newgrounds.com/portal/view/647031">Newgrounds</a>.
+                                Unfortunately the HTML5 version does not run as
+                                smoothly as the standalone executable, and so it
+                                has lower ratings where it is published, but it was
+                                more an experiment to try and publish it properly.
+                                In the end it was 8 months of on and off work,
+                                in which I created every part of the game - code,
+                                graphics, music and sound. <i>White</i> is my
+                                personal favourite of the games I've made.
+                            </p>
+                            <footer>
+                                <a href="Games/White/index.html"></a><a href="Games/White.exe"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Forks">
+                            <header>
+                                <h3>Forks (2013)</h3>
+                            </header>
+                            <p>
+                                Dave has won Employee of the Month, and a trip to
+                                Brockville! Something is up with the train you're
+                                taking though. See if you can figure out what's going
+                                on.
+                            </p>
+                            <p>
+                                <i>Forks</i> is a sidescrolling action game, mostly
+                                story based. It was my entry to the <a href="http://gmc.yoyogames.com/index.php?showtopic=598547&p=4418833">GMC Jam #12</a>
+                                where it placed 16th overall. It was made by a
+                                group of friends, including myself. I did the code,
+                                Pearl Qiu did the graphics, Avery Vine did the 
+                                music, and Ben Hansson voiced the monsters.
+                            </p>
+                            <footer>
+                                <a href="Games/Forks.exe"></a><a href="https://github.com/OinkIguana/Forks"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Abby and Elliot">
+                            <header>
+                                <h3>Abby and Elliot (2013)</h3>
+                            </header>
+                            <p>
+                                Abby and Elliot's school is going on a field trip
+                                to the forest. Abby gets bored though, and drags
+                                Elliot off into the woods with her. Separated from
+                                the group the must now find their way back safely.
+                            </p>
+                            <p>
+                                <i>Abby and Elliot</i> is a sidescrolling game, 
+                                mostly based on story. It was my entry to the <a href="http://gmc.yoyogames.com/index.php?showtopic=588681&p=4343215">GMC Jam #11</a>
+                                where it placed 21st overall, and the first real
+                                game that I released to the Internet. I made this
+                                game with Pearl Qiu, who did the graphics. The 
+                                music was composed by Jack Boldick.
+                            </p>
+                            <footer>
+                                <a href="Games/Abby_and_Elliot.exe"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Lord of the Flies">
+                            <header>
+                                <h3>Lord of the Flies (2013)</h3>
+                            </header>
+                            <p>
+                                This game is based off of William Golding's 
+                                <i>Lord of the Flies</i> and created for a grade
+                                10 English assignment. It's a collection of 
+                                minigames that are meant to prove the theme of
+                                evil being a part of every person, whether they
+                                know it or not. The game is a bit buggy due to 
+                                some updates to GameMaker. I took the graphics
+                                and sound from the Internet, and the music is from 
+                                Donkey Kong Country.
+                            </p>
+                            <footer>
+                                <a href="Games/LordOfTheFlies.exe"></a>
+                            </footer>
+                        </article>
+                        <article data-game="WWII">
+                            <header>
+                                <h3>WWII (2012)</h3>
+                            </header>
+                            <p>
+                                It's World War II. As part of Canada's forces, you
+                                must fight for the Allies and defeat the Axis.
+                            </p>
+                            <p>
+                                I made this game for grade 10 History class. It
+                                is a very simple platform shooter, with each level
+                                based off of one of Canada's major conflicts. It
+                                was coded in GameMaker, with graphics and sound
+                                from the Internet.
+                            </p>
+                            <footer>
+                                <a href="Games/WWII.exe"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Cam-I-Am">
+                            <header>
+                                <h3>Cam-I-Am (2012)</h3>
+                            </header>
+                            <p>
+                                Learn a bit about the things I like in this 
+                                autobiographical game.
+                            </p>
+                            <p>
+                                <i>Cam-I-Am</i> is a collection of minigames about
+                                me and the things I like to do. I made it for my
+                                grade 9 English summative as part of the Book of
+                                Life project. 
+                            </p>
+                            <footer>
+                                <a href="Games/Cam-I-Am.exe"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Running Squared">
+                            <header>
+                                <h3>Running Squared (2011)</h3>
+                            </header>
+                            <p>
+                                Collect the coins and lives, avoid the enemies.
+                                Run around as fast as you can but don't get squared!
+                            </p>
+                            <p>
+                                I made <i>Running Squared</i> to learn HTML5 games.
+                                It is a very simple run around arcade game, with
+                                not a lot to it. It only took a few days to make,
+                                but in the end I put it on <a href="http://www.kongregate.com/games/TheGaym/running-squared">Kongregate</a>
+                                just for fun.
+                            </p>
+                            <footer>
+                                <a href="Games/Running Squared/index.html"></a><a href="https://github.com/OinkIguana/RunningSquared"></a>
+                            </footer>
+                        </article>
+                        <article data-game="Taco Quest">
+                            <header>
+                                <h3>Taco Quest (2005)</h3>
+                            </header>
+                            <p>
+                                Tom's hometown is in danger. He must go on a grand
+                                adventure full of swords and bows and magic to 
+                                get the Magic Taco so he can save his home!
+                            </p>
+                            <p>
+                                <i>Taco Quest</i> was my first big project.
+                                I made it mostly with the drag and drop features 
+                                of GameMaker when I was very young, so it's not
+                                particularly impressive compared to my current
+                                games. There are a few bugs here and there, and 
+                                the game isn't all that fun. I used the default
+                                example graphics that came with GameMaker and some
+                                music and sound I found online.
+                            </p>
+                            <footer>
+                                <a href="Games/Adventure.zip" style="background-image:URL(/image/windows7.gif);"></a>
+                            </footer>
+                        </article>
+                        <article data-game="The Ghost Game: Complete Edition">
+                            <header>
+                                <h3>The Ghost Game: Complete Edition (2005)</h3>
+                            </header>
+                            <p>
+                                You're a ghost. Get the money.
+                            </p>
+                            <p>
+                                <i>The Ghost Game</i> was the first game I ever
+                                made. I started it at Virtual Ventures summer camp,
+                                and finished it after. I then went on to make a 
+                                <i>The Ghost Game 2</i>, which I combined with
+                                the first to make the <i>Complete Edition</i>. It's
+                                a very basic platformer which I made using GameMaker
+                                and it's example graphics. 
+                            </p>
+                            <footer>
+                                <a href="Games/TheGhostGameCompleteEdition.exe"></a>
                             </footer>
                         </article>
                     </div>
@@ -412,7 +618,7 @@
             <section id="page-site">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="patt-site" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
+                    <defs><pattern id="patt-site" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
@@ -424,7 +630,7 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg>
-                    <defs><pattern id="patt-bot" patternTransform="translate(0,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
+                    <defs><pattern id="patt-bot" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
                 </div>
                 <div class="content">
@@ -459,7 +665,7 @@
                 var sections = document.getElementsByTagName("section");
                 var y = window.pageYOffset;
                 for (var i = 0; i < sections.length; i++) {
-                    sections[i].style.top = (y / (2 + (2 * i))) + "px";
+                    sections[i].style.top = (y / (2 + i)) + "px";
                     sections[i].style.paddingBottom = (200 + 100 * i) + "px";
                 }
             };

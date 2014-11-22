@@ -53,6 +53,7 @@
                 font-family: sans-serif;
                 font-weight: lighter;
             }
+            /* Makes vertical alignment easier */
             span.spacer {
                 display: inline-block;
                 height: 100%;
@@ -62,6 +63,7 @@
                 display: inline-block;
                 vertical-align: middle;
             }
+            /* Prevent scrollbars created by the parallaxes */
             div#page-container {
                 overflow: hidden;
             }
@@ -173,7 +175,6 @@
                 width: 532px;
                 transition: width 0.3s;
             }
-
             article {
                 position: absolute;
                 left: 0;
@@ -185,7 +186,8 @@
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 0.3s,
-                    z-index 0.3s;
+                    z-index 0.3s,
+                    top 0.1s;
             }
 
             /* Special Links */
@@ -243,15 +245,17 @@
                     <h2>Student - Programmer - Maker of websites and games</h2>
                     <h3>HTML5 | CSS | JavaScript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
                 </div>
-            </section>
+            </section><!-- End header section -->
             <section id="page-desc">
                 <div class="tri">
-                    <svg>
+                    <svg> <!-- Triangle -->
                     <defs>
                     <pattern id="patt-desc" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern>
+                    <!-- The pattern for all the borders is set here only -->
                     <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
                     </defs>
-                    <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
+                    <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    </svg>
                 </div>
                 <div class="content">
                     <h4>
@@ -296,16 +300,17 @@
                         <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
                     </p>
                 </div>
-            </section>
+            </section><!-- End about section -->
             <section id="page-game">
                 <div class="tri">
-                    <svg>
+                    <svg><!-- Triangle -->
                     <defs><pattern id="patt-game" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
+                    <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    </svg>
                 </div>
                 <div class="content">
                     <div class="split-vertical left" id="game-display">
-                        <article data-game="The Catapult" data-back="" data-tri="">
+                        <article data-game="The Catapult">
                             <header>
                                 <h3>The Catapult (2014)</h3>
                             </header>
@@ -622,34 +627,124 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section><!-- End games section -->
             <section id="page-site">
                 <div class="tri">
-                    <svg>
+                    <svg><!-- Triangle -->
                     <defs><pattern id="patt-site" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
+                    <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    </svg>
                 </div>
                 <div class="content">
-                    <h4>
-                        Websites
-                    </h4>
+                    <div class="split-vertical left" id="site-display">
+                        <article data-site="flyingpenguin.cyberbri.com">
+                            <header>
+                                <h3>FlyingPenguin</h3>
+                                <h3><a href="http://flyingpenguin.cyberbri.com">flyingpenguin.cyberbri.com</a></h3>
+                            </header>
+                            <p>
+                                In grade 7 one of my friends had a WordPress site
+                                which my classmates and I would go on, kind of like
+                                our own personal forum/group chat. Eventually he
+                                stopped paying for it, so I decided to make a similar
+                                version of it, but from scratch.
+                            </p>
+                            <p>
+                                I copied many of his features at first, such as
+                                achievements, the chat box, a forum, and profiles.
+                                I then went on to add more things such as quizzes
+                                and games
+                            </p>
+                            <p>
+                                Later, when HTML5 came out, I decided to redo the
+                                whole thing using the new features. That remake
+                                is what is there now today. It's not as well used 
+                                anymore, but I still keep an eye on it.
+                            </p>
+                        </article>
+                        <article data-site="knightwatch.cyberbri.com">
+                            <header>
+                                <h3>NHS Knightwatch</h3>
+                                <h3><a href="http://knightwatch.cyberbri.com">knightwatch.cyberbri.com</a></h3>
+                            </header>
+                            <p>
+                                Although it is no longer used officially, this was
+                                the website for the Nepean High School student
+                                run newspaper <i>Knightwatch</i>. They have since
+                                fallen back to using a Google site, but I keep the
+                                original hosted on my own server.
+                            </p>
+                            <p>
+                                All the issues and articles are imported from a
+                                set of folders and text files organized and formatted
+                                a specific way. This was to make uploading an article
+                                require no knowledge of programming.
+                            </p>
+                        </article>
+                        <article data-site="oinkiguana.tumblr.com">
+                            <header>
+                                <h3>\x43\x61\x74</h3>
+                                <h3><a href="http://oinkiguana.tumblr.com">oinkiguana.tumblr.com</a></h3>
+                            </header>
+                            <p>
+                                I made the theme to my own Tumblr account. Making
+                                a theme was actually the reason I decided to get
+                                an account. I wanted to make it stand out from the
+                                rest, so I drew it custom graphics. I then decided
+                                to make it respond to the current time, the weather,
+                                and the seasons. It also has a few things that are
+                                a placed little differently each time.
+                            </p>
+                        </article>
+                        <article data-site="cameldridge.com">
+                            <header>
+                                <h3>Cameron Eldridg</h3>
+                                <h3><a href="http://cameldridge.com">cameldridge.com</a></h3>
+                            </header>
+                            <p>
+                                Yes, that is this site. I made this page to showcase
+                                my projects. Feel free to look at the source code.
+                                Everything is in this one file for your viewing
+                                convenience (except the images
+                                and the games of course). I've commented it too
+                                if you're interested in what's going on.
+                            </p>
+                            <footer>
+                                <a href="https://github.com/OinkIguana/cameldridge"></a>
+                            </footer>
+                        </article>
+                    </div>
+                    <div class="split-vertical right">
+                        <h4>
+                            Websites
+                        </h4>
+                        <ul>
+                            <li class="site-list"><span class="spacer"></span><span class="spaced">flyingpenguin.cyberbri.com</span></li>
+                            <li class="site-list"><span class="spacer"></span><span class="spaced">knightwatch.cyberbri.com</span></li>
+                            <li class="site-list"><span class="spacer"></span><span class="spaced">oinkiguana.tumblr.com</span></li>
+                            <li class="site-list"><span class="spacer"></span><span class="spaced">cameldridge.com</span></li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+            </section><!-- End sites section -->
             <section id="page-bot">
                 <div class="tri">
-                    <svg>
+                    <svg><!-- Triangle -->
                     <defs><pattern id="patt-bot" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" /></svg>
+                    <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    </svg>
                 </div>
                 <div class="content">
                     <h4>
                         Contact
                     </h4>
                 </div>
-            </section>
-        </div>
+            </section><!-- End bottom section -->
+        </div><!-- End page container -->
         <script>
             var pageWidth = function() {
+                //Get the width of the page for calculating other values from
+                //Includes support for various browsers and their weird ways
                 if (typeof (window.innerWidth) === 'number') {
                     return window.innerWidth;
                 } else if (document.documentElement && (document.documentElement.clientWidth)) {
@@ -660,24 +755,38 @@
                 return 0;
             };
             var triangles = function() {
+                //Resize the triangles when the page is resized to make sure they
+                //always cover the whole thing
                 var pagewidth = pageWidth();
                 var triangles = document.getElementsByClassName("triangle");
+                //Make sure the border is scaled correctly to fill in the stroke
                 document.getElementById("patt-border").setAttribute("width", pagewidth);
                 document.getElementById("patt-border").childNodes[0].setAttribute("width", pagewidth);
                 for (var i = 0; i < triangles.length; i++) {
+                    //Change the points of the SVG polygon
                     triangles[i].setAttribute("points", "0,200,0,205," + pagewidth + ",205," + pagewidth + ",200," + (pagewidth / 2) + ",5");
+                    //Update the width of the whole image
                     triangles[i].parentNode.style.width = pagewidth + "px";
                 }
             };
             var positions = function() {
+                //Reposition all the moving elements to the correct spots for
+                //each scroll position
+
+                //First the slight parallax on each section
                 var sections = document.getElementsByTagName("section");
                 var navlinks = document.getElementsByClassName("nav-link");
                 var y = window.pageYOffset;
                 for (var i = 0; i < sections.length; i++) {
                     sections[i].style.top = (y / (2 + i)) + "px";
+                    //Make the lower ones longer to accomodate for the others moving over them.
                     sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                    //Also make the navigation bar appear for each section that
+                    //has gone off the top of the screen.
                     if (i !== 4) {
-                        if (sections[i].offsetTop + sections[i].offsetHeight - (200 + 100 * i) <= y) {
+                        //z-index and opacity change to hide them gradually but
+                        //also prevent clicking on them when they're invisible
+                        if (sections[i].offsetTop + 300 <= y) {
                             navlinks[i].style.opacity = "1";
                             navlinks[i].style.zIndex = "100";
                         } else {
@@ -686,53 +795,109 @@
                         }
                     }
                 }
+
+                //Next get the articles on the games and sites to stay onscreen
+                //as you scroll to the lower ones
+                var articles = document.getElementsByTagName("article");
+                for (var i = 0; i < articles.length; i++) {
+                    //Between the top of the section (0) and the bottom of the section (the longer bits)
+                    var yy = Math.max(0, Math.min(articles[i].parentNode.parentNode.offsetHeight - articles[i].offsetHeight - 200, y - articles[i].offsetParent.offsetTop));
+                    articles[i].style.top = yy + "px";
+                }
             };
             var show_game = function(game) {
-                var articles = document.getElementsByTagName("article");
+                //Change the game that is being shown when its tab is clicked.
+                var articles = document.getElementById("game-display").getElementsByTagName("article");
                 var list = document.getElementsByClassName("game-list");
                 for (var i = 0; i < articles.length; i++) {
                     var data = articles[i].getAttribute("data-game");
                     if (data !== "") {
+                        //The one that is clicked is visible and on top, the others
+                        //remain hidden
                         articles[i].style.opacity = (data === game ? "1" : "0");
                         articles[i].style.zIndex = (data === game ? "30" : "-1");
+                        //Extend the tab by changing the class
                         list[i].className = "game-list" + (data === game ? " selected" : "");
                     }
                 }
             };
+            var show_site = function(site) {
+                //Same as show_game but for the sites
+                var articles = document.getElementById("site-display").getElementsByTagName("article");
+                var list = document.getElementsByClassName("site-list");
+                for (var i = 0; i < articles.length; i++) {
+                    var data = articles[i].getAttribute("data-site");
+                    if (data !== "") {
+                        articles[i].style.opacity = (data === site ? "1" : "0");
+                        articles[i].style.zIndex = (data === site ? "30" : "-1");
+                        list[i].className = "site-list" + (data === site ? " selected" : "");
+                    }
+                }
+            };
             var init = function() {
+                //Set up onclick events for various things
+
+                //First the games tabs
                 var list = document.getElementsByClassName("game-list");
                 for (var i = 0; i < list.length; i++) {
                     list[i].onclick = function() {
                         if (!/selected/.test(this.className)) {
+                            //Extract the visible text
                             show_game(this.getElementsByClassName("spaced")[0].innerHTML);
                         } else {
+                            //If the tab is already open make it close if reclicked
                             show_game("");
                         }
                     };
                 }
+                //Next the sites, same as games
+                list = document.getElementsByClassName("site-list");
+                for (var i = 0; i < list.length; i++) {
+                    list[i].onclick = function() {
+                        if (!/selected/.test(this.className)) {
+                            show_site(this.getElementsByClassName("spaced")[0].innerHTML);
+                        } else {
+                            show_site("");
+                        }
+                    };
+                }
+                //Then the navigation bars
                 var navlinks = document.getElementsByClassName("nav-link");
                 for (var i = 0; i < navlinks.length; i++) {
                     navlinks[i].onclick = function() {
-                        var scrollInterval = window.setInterval(function(el) {
+                        //Clear first to ensure there aren't two calls cancelling
+                        //each other out
+                        window.clearInterval(scrollInterval);
+                        //Have them scroll smoothly, rather than jumping
+                        scrollInterval = window.setInterval(function(el) {
                             var y = window.pageYOffset;
-                            if (Math.abs(y - el.offsetTop) > 1) {
+                            if (Math.abs(y - el.offsetTop) > 4) {
+                                //Keep moving closer by less until it's really close
                                 y -= (y - el.offsetTop) / 4;
                             } else {
+                                //Then stop once its close enough noone will notice a jump
                                 y = el.offsetTop;
                                 window.clearInterval(scrollInterval);
                             }
                             scroll(0, y);
                         }, 1000 / 30, document.getElementById("page-" + this.id.substr(4)));
                     };
+                    //And position them correctly too while they're being dealt with
                     navlinks[i].style.top = (24 * i) + "px";
                 }
             };
 
+            //Run the things
             init();
             triangles();
             positions();
             window.addEventListener("resize", triangles);
             window.addEventListener("scroll", positions);
+            var scrollInterval;
+            window.addEventListener("wheel", function() {
+                //Allow the automatic scrolling to be overriden by manual
+                window.clearInterval(scrollInterval);
+            });
         </script>
     </body>
 </html>

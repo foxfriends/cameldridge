@@ -168,6 +168,8 @@
                 height: 52px;
                 overflow: visible;
                 background-color: #FFF;
+                background-position: right;
+                background-repeat: no-repeat;
                 cursor: pointer;
                 transition: width 0.3s;
             }
@@ -258,47 +260,51 @@
                     </svg>
                 </div>
                 <div class="content">
-                    <h4>
-                        About
-                    </h4>
-                    <p>
-                        I am an aspiring programmer, looking to one day earn a living
-                        making websites or games. I hope to be able to make the things
-                        that people have always wanted, but don't know how to do on 
-                        their own. I believe anything imaginable can be made; that all
-                        you need is to write the right code.
-                    </p>
-                    <p>
-                        8 years ago, I began making websites at the Virtual Ventures summer camp
-                        at Carleton University, where I first became interested in 
-                        programming. I then went on to learn a lot more on my own 
-                        time while making websites for school or my friends.
-                    </p>
-                    <p>
-                        In my free time I also often make games, mainly for Windows 
-                        with GameMaker, but I have done a few HTML5 games with JavaScript.
-                        In making games I learned about object oriented programming.
-                        I try to participate in as many game making contests as I can,
-                        including the GMC Jam and Ludum Dare compo. I have placed as
-                        high as 16th in the GMC Jam.
-                    </p>
-                    <p>
-                        I've taken a few courses in high school which taught C++, along with concepts such as 
-                        recursion and basic dynamic programming. I have entered a number
-                        of contests using C++, and done reasonably well. Java was touched on 
-                        as well, though it was mainly left for the students who were 
-                        ahead to learn it while the rest of the class caught up, so
-                        that was mainly self taught.
-                    </p>
-                    <p>
-                        The source code to my more recent projects can be found on Github
-                        as <a href="https://github.com/OinkIguana" target="_blank">OinkIguana</a>.
-                    </p>
-                    <p>
-                        If you have a potential job, or would like to know more, or 
-                        have questions, feel free to email me at
-                        <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
-                    </p>
+                    <div class="split-vertical left">
+                    </div>
+                    <div class="split-vertical right">
+                        <h4>
+                            About
+                        </h4>
+                        <p>
+                            I am an aspiring programmer, looking to one day earn a living
+                            making websites or games. I hope to be able to make the things
+                            that people have always wanted, but don't know how to do on 
+                            their own. I believe anything imaginable can be made; that all
+                            you need is to write the right code.
+                        </p>
+                        <p>
+                            8 years ago, I began making websites at the Virtual Ventures summer camp
+                            at Carleton University, where I first became interested in 
+                            programming. I then went on to learn a lot more on my own 
+                            time while making websites for school or my friends.
+                        </p>
+                        <p>
+                            In my free time I also often make games, mainly for Windows 
+                            with GameMaker, but I have done a few HTML5 games with JavaScript.
+                            In making games I learned about object oriented programming.
+                            I try to participate in as many game making contests as I can,
+                            including the GMC Jam and Ludum Dare compo. I have placed as
+                            high as 16th in the GMC Jam.
+                        </p>
+                        <p>
+                            I've taken a few courses in high school which taught C++, along with concepts such as 
+                            recursion and basic dynamic programming. I have entered a number
+                            of contests using C++, and done reasonably well. Java was touched on 
+                            as well, though it was mainly left for the students who were 
+                            ahead to learn it while the rest of the class caught up, so
+                            that was mainly self taught.
+                        </p>
+                        <p>
+                            The source code to my more recent projects can be found on Github
+                            as <a href="https://github.com/OinkIguana" target="_blank">OinkIguana</a>.
+                        </p>
+                        <p>
+                            If you have a potential job, or would like to know more, or 
+                            have questions, feel free to email me at
+                            <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
+                        </p>
+                    </div>
                 </div>
             </section><!-- End about section -->
             <section id="page-game">
@@ -611,19 +617,45 @@
                             Games
                         </h4>
                         <ul>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">The Catapult</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">cat</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Animal Farm</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Space Invaders</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">White</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Forks</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Abby and Elliot</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Lord of the Flies</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">WWII</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Cam-I-Am</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Running Squared</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">Taco Quest</span></li>
-                            <li class="game-list"><span class="spacer"></span><span class="spaced">The Ghost Game: Complete Edition</span></li>
+                            <li class="game-list" style="background-image:URL(/image/tab/TheCatapult.png);">
+                                <span class="spacer"></span><span class="spaced">The Catapult</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/cat.png);">
+                                <span class="spacer"></span><span class="spaced">cat</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/AnimalFarm.png);">
+                                <span class="spacer"></span><span class="spaced">Animal Farm</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/SpaceInvaders.png);">
+                                <span class="spacer"></span><span class="spaced">Space Invaders</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/White.png);">
+                                <span class="spacer"></span><span class="spaced">White</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/Forks.png);">
+                                <span class="spacer"></span><span class="spaced">Forks</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/AbbyAndElliot.png);">
+                                <span class="spacer"></span><span class="spaced">Abby and Elliot</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/LordOfTheFlies.png);">
+                                <span class="spacer"></span><span class="spaced">Lord of the Flies</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/WWII.png);">
+                                <span class="spacer"></span><span class="spaced">WWII</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/CamIAm.png);">
+                                <span class="spacer"></span><span class="spaced">Cam-I-Am</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/RunningSquared.png);">
+                                <span class="spacer"></span><span class="spaced">Running Squared</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/TacoQuest.png);">
+                                <span class="spacer"></span><span class="spaced">Taco Quest</span>
+                            </li>
+                            <li class="game-list" style="background-image:URL(/image/tab/TheGhostGameCompleteEdition.png);">
+                                <span class="spacer"></span><span class="spaced">The Ghost Game: Complete Edition</span>
+                            </li>
                         </ul>
                     </div>
                 </div>

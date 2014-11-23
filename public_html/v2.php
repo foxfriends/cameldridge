@@ -45,13 +45,13 @@
 
         </script -->
         <style type="text/css">
+            @import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
             /* Setup */
             * {
+                font-family: 'Open Sans',sans-serif;
                 padding: 0;
                 margin: 0;
                 overflow: visible;
-                font-family: sans-serif;
-                font-weight: lighter;
             }
             /* Makes vertical alignment easier */
             span.spacer {
@@ -62,6 +62,12 @@
             span.spaced {
                 display: inline-block;
                 vertical-align: middle;
+            }
+            .light {
+                color: #FFF;
+            }
+            .dark {
+                color: #000;
             }
             /* Prevent scrollbars created by the parallaxes */
             div#page-container {
@@ -87,7 +93,9 @@
             section {
                 position: relative;
                 padding-bottom: 200px;
+                background-color: #FFF;
                 overflow: visible;
+                -ms-transition: transform 0.1s;
             }
             section div.tri {
                 position: absolute;
@@ -117,6 +125,9 @@
             }
 
             /* Content */
+            h1, h2, h3, h4 {
+                font-family: "Merienda One",cursive;
+            }
             h1, h2, h3 {
                 text-align: center;
             }
@@ -184,14 +195,20 @@
                 width: 500px;
                 margin: 100px;
                 padding: 50px;
-                background-color: RGBA(0, 0, 0, 0.5);
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 0.3s,
                     z-index 0.3s,
                     top 0.1s;
             }
-
+            /* Regular links */
+            a {
+                color: #AAF;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
             /* Special Links */
             footer a {
                 display: inline-block;
@@ -200,36 +217,30 @@
                 background-size: cover;
             }
             footer a[href$=".html"] {
-                background-image: URL("/image/html5.png");
+                background-image: URL("/image/icon/HTML5-icon_32x32.png");
             }
             footer a[href$=".exe"] {
-                background-image: URL("/image/windows7.gif");
+                background-image: URL("/image/icon/windows7-icon_32x32.png");
             }
             footer a[href*="github"] {
-                background-image: URL("/image/github.png");
+                background-image: URL("/image/icon/github-icon_32x32.png");
             }
 
             /* Specifics */
             section#page-top, div#nav-top {
-                background-color: #FFF;
-                background-image: URL("/image/cats.png");
-                background-size: cover;
+                background-image: URL("/image/pattern/top.png");
             }
             section#page-desc, div#nav-desc {
-                background-color: #FDD;
-                background-image: URL("/image/upfeathers.png");
+                background-image: URL("/image/pattern/desc.png");
             }
             section#page-game, div#nav-game{
-                background-color: #DFD;
-                background-image: URL("/image/swirl_pattern.png");
+                background-image: URL("/image/pattern/game.png");
             }
             section#page-site, div#nav-site {
-                background-color: #DDF;
-                background-image: URL("/image/logo_x_pattern.png");
+                background-image: URL("/image/pattern/site.png");
             }
             section#page-bot {
-                background-color: #DDD;
-                background-image: URL("/image/subtle_white_mini_waves.png");
+                background-image: URL("/image/pattern/bot.png");
             }
         </style>
     </head>
@@ -237,24 +248,26 @@
         <div id="page-container">
             <nav>
                 <div class="nav-link" id="nav-top"><span class="spacer"></span><span class="spaced">Cameron Eldridge</span></div>
-                <div class="nav-link" id="nav-desc"><span class="spacer"></span><span class="spaced">About me</span></div>
-                <div class="nav-link" id="nav-game"><span class="spacer"></span><span class="spaced">Games</span></div>
-                <div class="nav-link" id="nav-site"><span class="spacer"></span><span class="spaced">Sites</span></div>
+                <div class="nav-link light" id="nav-desc"><span class="spacer"></span><span class="spaced">About me</span></div>
+                <div class="nav-link light" id="nav-game"><span class="spacer"></span><span class="spaced">Games</span></div>
+                <div class="nav-link light" id="nav-site"><span class="spacer"></span><span class="spaced">Sites</span></div>
             </nav>
             <section id="page-top">
                 <div class="content">
-                    <h1>Cameron Eldridge</h1>
-                    <h2>Student - Programmer - Maker of websites and games</h2>
-                    <h3>HTML5 | CSS | JavaScript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
+                    <hgroup>
+                        <h1>Cameron Eldridge</h1>
+                        <h2>Student - Programmer - Maker of websites and games</h2>
+                        <h3>HTML5 | CSS | JavaScript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
+                    </hgroup>
                 </div>
             </section><!-- End header section -->
             <section id="page-desc">
                 <div class="tri">
                     <svg> <!-- Triangle -->
                     <defs>
-                    <pattern id="patt-desc" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="208" height="208"><image xlink:href="/image/upfeathers.png" x="0" y="0" width="208" height="208" /></pattern>
+                    <pattern id="patt-desc" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
                     <!-- The pattern for all the borders is set here only -->
-                    <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
+                    <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/pattern/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
                     </defs>
                     <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
@@ -262,7 +275,7 @@
                 <div class="content">
                     <div class="split-vertical left">
                     </div>
-                    <div class="split-vertical right">
+                    <div class="split-vertical right light">
                         <h4>
                             About
                         </h4>
@@ -310,12 +323,12 @@
             <section id="page-game">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-game" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/swirl_pattern.png" x="0" y="0" width="300" height="300" /></pattern></defs>
+                    <defs><pattern id="patt-game" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
                 <div class="content">
-                    <div class="split-vertical left" id="game-display">
+                    <div class="split-vertical left light" id="game-display">
                         <article data-game="The Catapult">
                             <header>
                                 <h3>The Catapult (2014)</h3>
@@ -403,7 +416,7 @@
                                 remake.
                             </p>
                             <footer>
-                                <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/java.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
+                                <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="White">
@@ -588,12 +601,12 @@
                                 music and sound I found online.
                             </p>
                             <footer>
-                                <a href="Games/Adventure.zip" style="background-image:URL(/image/windows7.gif);"></a>
+                                <a href="Games/Adventure.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a>
                             </footer>
                         </article>
-                        <article data-game="The Ghost Game: Complete Edition">
+                        <article data-game="The Ghost Game">
                             <header>
-                                <h3>The Ghost Game: Complete Edition (2005)</h3>
+                                <h3>The Ghost Game (2005)</h3>
                             </header>
                             <p>
                                 You're a ghost. Get the money.
@@ -603,9 +616,10 @@
                                 made. I started it at Virtual Ventures summer camp,
                                 and finished it after. I then went on to make a 
                                 <i>The Ghost Game 2</i>, which I combined with
-                                the first to make the <i>Complete Edition</i>. It's
+                                the first to make the <i>Complete Edition</i> that
+                                is available for download below. It's
                                 a very basic platformer which I made using GameMaker
-                                and it's example graphics. 
+                                and its example graphics. 
                             </p>
                             <footer>
                                 <a href="Games/TheGhostGameCompleteEdition.exe"></a>
@@ -613,7 +627,7 @@
                         </article>
                     </div>
                     <div class="split-vertical right">
-                        <h4>
+                        <h4 class="light">
                             Games
                         </h4>
                         <ul>
@@ -654,7 +668,7 @@
                                 <span class="spacer"></span><span class="spaced">Taco Quest</span>
                             </li>
                             <li class="game-list" style="background-image:URL(/image/tab/TheGhostGameCompleteEdition.png);">
-                                <span class="spacer"></span><span class="spaced">The Ghost Game: Complete Edition</span>
+                                <span class="spacer"></span><span class="spaced">The Ghost Game</span>
                             </li>
                         </ul>
                     </div>
@@ -663,12 +677,12 @@
             <section id="page-site">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-site" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="90" height="90"><image xlink:href="/image/logo_x_pattern.png" x="0" y="0" width="90" height="90" /></pattern></defs>
+                    <defs><pattern id="patt-site" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
                 <div class="content">
-                    <div class="split-vertical left" id="site-display">
+                    <div class="split-vertical left light" id="site-display">
                         <article data-site="flyingpenguin.cyberbri.com">
                             <header>
                                 <h3>FlyingPenguin</h3>
@@ -730,7 +744,7 @@
                         </article>
                         <article data-site="cameldridge.com">
                             <header>
-                                <h3>Cameron Eldridg</h3>
+                                <h3>Cameron Eldridge</h3>
                                 <h3><a href="http://cameldridge.com">cameldridge.com</a></h3>
                             </header>
                             <p>
@@ -747,7 +761,7 @@
                         </article>
                     </div>
                     <div class="split-vertical right">
-                        <h4>
+                        <h4 class="light">
                             Websites
                         </h4>
                         <ul>
@@ -762,14 +776,16 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-bot" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="65" height="65"><image xlink:href="/image/subtle_white_mini_waves.png" x="0" y="0" width="65" height="65" /></pattern></defs>
+                    <defs><pattern id="patt-bot" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
-                <div class="content">
-                    <h4>
-                        Contact
-                    </h4>
+                <div class="content light" style="padding-bottom:200px;text-align:center;">
+                    <h3>
+                        Thank you
+                    </h3>
+                    If you have any other questions, or would just like
+                    to get in touch, send me an email at <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
                 </div>
             </section><!-- End bottom section -->
         </div><!-- End page container -->
@@ -809,8 +825,11 @@
                 var sections = document.getElementsByTagName("section");
                 var navlinks = document.getElementsByClassName("nav-link");
                 var y = window.pageYOffset;
+                var offset = new Array();
                 for (var i = 0; i < sections.length; i++) {
-                    sections[i].style.top = (y / (2 + i)) + "px";
+                    offset[i] = Math.round(y / (2 + i));
+                    sections[i].style.transform = "translateY(" + offset[i] + "px)";
+                    sections[i].style.webkitTransform = "translateY(" + offset[i] + "px)";
                     //Make the lower ones longer to accomodate for the others moving over them.
                     sections[i].style.paddingBottom = (200 + 100 * i) + "px";
                     //Also make the navigation bar appear for each section that
@@ -818,7 +837,7 @@
                     if (i !== 4) {
                         //z-index and opacity change to hide them gradually but
                         //also prevent clicking on them when they're invisible
-                        if (sections[i].offsetTop + 300 <= y) {
+                        if (sections[i].offsetTop + offset[i] + 300 <= y) {
                             navlinks[i].style.opacity = "1";
                             navlinks[i].style.zIndex = "100";
                         } else {
@@ -833,8 +852,8 @@
                 var articles = document.getElementsByTagName("article");
                 for (var i = 0; i < articles.length; i++) {
                     //Between the top of the section (0) and the bottom of the section (the longer bits)
-                    var yy = Math.max(0, Math.min(articles[i].parentNode.parentNode.offsetHeight - articles[i].offsetHeight - 200, y - articles[i].offsetParent.offsetTop));
-                    articles[i].style.top = yy + "px";
+                    var yy = Math.max(0, Math.min(articles[i].parentNode.parentNode.offsetHeight - articles[i].offsetHeight - 200, y - (articles[i].offsetParent.offsetTop + offset[i])));
+                    articles[i].style.transform = "translateY(" + yy + "px)";
                 }
             };
             var show_game = function(game) {
@@ -922,14 +941,27 @@
             //Run the things
             init();
             triangles();
-            positions();
             window.addEventListener("resize", triangles);
-            window.addEventListener("scroll", positions);
+            var positions_runner;
+            if (!(/MSIE 9/i.test(navigator.userAgent) ||
+                    /MSIE 10/i.test(navigator.userAgent) ||
+                    /rv:11.0/i.test(navigator.userAgent))) { //IE. Am I right?
+                positions();
+                positions_runner = window.setInterval(function() {
+                    if (window.requestAnimationFrame === undefined) {
+                        //Safari. Just as bad as IE for some reason
+                        //window.requestAnimationFrame = positions;
+                        //Maybe I'll add it in later but not for now.
+                    } else {
+                        window.requestAnimationFrame(positions);
+                    }
+                }, 10);
+            }
             var scrollInterval;
             window.addEventListener("wheel", function() {
-                //Allow the automatic scrolling to be overriden by manual
+                //Allow the automatic scrolling to be overriden by a manual scroll
                 window.clearInterval(scrollInterval);
             });
-        </script>
+        </script>  
     </body>
 </html>

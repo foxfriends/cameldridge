@@ -75,17 +75,21 @@
             }
             /* Nav bar */
             nav div.nav-link {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 position: fixed;
-                z-index: -1;
+                left: 100%;
+                z-index: 100;
                 width: 100%;
                 height: 24px;
-                opacity: 0;
+                padding-left: 20px;
+                border-bottom: 1px solid #777;
+                border-left: 1px solid #777;
                 background: white;
                 cursor: pointer;
-                border-bottom: 1px solid #777;
-                transition: opacity 0.3s,
-                    z-index 0.3s;
+                -webkit-transition: left 0.8s;
+                transition: left 0.8s;
 
             }
 
@@ -95,7 +99,6 @@
                 padding-bottom: 200px;
                 background-color: #FFF;
                 overflow: visible;
-                -ms-transition: transform 0.1s;
             }
             section div.tri {
                 position: absolute;
@@ -162,6 +165,8 @@
                 border-bottom: 26px solid transparent;
                 border-right: solid white;
                 border-right-width: 11px;
+                -webkit-transition: border-right-width 0.3s,
+                    left 0.3s;
                 transition: border-right-width 0.3s,
                     left 0.3s;
             }
@@ -182,10 +187,12 @@
                 background-position: right;
                 background-repeat: no-repeat;
                 cursor: pointer;
+                -webkit-transition: width 0.3s;
                 transition: width 0.3s;
             }
             li.selected {
                 width: 532px;
+                -webkit-transition: width 0.3s;
                 transition: width 0.3s;
             }
             article {
@@ -194,12 +201,13 @@
                 top: 0;
                 width: 500px;
                 margin: 100px;
-                padding: 50px;
                 opacity: 0;
+                filter: alpha(opacity=0);
                 z-index: -1;
+                -webkit-transition: opacity 0.3s, 
+                    z-index 0.3s;
                 transition: opacity 0.3s,
-                    z-index 0.3s,
-                    top 0.1s;
+                    z-index 0.3s;
             }
             /* Regular links */
             a {
@@ -214,6 +222,7 @@
                 display: inline-block;
                 width: 32px;
                 height: 32px;
+                -webkit-background-size: cover;
                 background-size: cover;
             }
             footer a[href$=".html"] {
@@ -329,6 +338,49 @@
                 </div>
                 <div class="content">
                     <div class="split-vertical left light" id="game-display">
+                        <article data-game="White">
+                            <header>
+                                <h3>White (2014)</h3>
+                            </header>
+                            <p>
+                                You live in a world where everything is white. You
+                                are white, the walls are white - everything. But
+                                one day you see a spark, and it's not. With your
+                                new discovery, travel around and see what else
+                                the world has to hold. Bring back all the colours!
+                            </p>
+                            <p>
+                                <i>White</i> is a smooth, relaxing, somewhat puzzling platformer.
+                                I thought of the idea for the game a long time
+                                ago, and had worked out an early prototype. I lost
+                                that file though, and I left it alone for a while.
+                                I started it up again later, just by coincidence
+                                at the same time as the <a href="http://gmc.yoyogames.com/index.php?showtopic=606848&page=3#entry4492169">GMC Jam #13</a>.
+                                I submitted an early version to that and it placed
+                                19th overall.
+                            </p>
+                            <p>
+                                After the GMC Jam was over, I went on to complete
+                                the game. Eventually I published it, first on
+                                <a href="http://gamejolt.com/games/platformer/white/35169/">GameJolt</a>,
+                                <a href="http://www.indiedb.com/games/white1">indieDB</a> and 
+                                <a href="http://oinkiguana.itch.io/white">itch.io</a> as a downloadable 
+                                game, and later as an HTML5 game on 
+                                <a href="http://www.kongregate.com/games/OinkIguana/white">Kongregate</a> and 
+                                <a href="http://www.newgrounds.com/portal/view/647031">Newgrounds</a>.
+                                Unfortunately the HTML5 version does not run as
+                                smoothly as the standalone executable, and so it
+                                has lower ratings where it is published, but it was
+                                more an experiment to try and publish it properly.
+                                In the end it was 8 months of on and off work,
+                                in which I created every part of the game - code,
+                                graphics, music and sound. <i>White</i> is my
+                                personal favourite of the games I've made.
+                            </p>
+                            <footer>
+                                <a href="Games/White/index.html"></a><a href="Games/White.exe"></a>
+                            </footer>
+                        </article>
                         <article data-game="The Catapult">
                             <header>
                                 <h3>The Catapult (2014)</h3>
@@ -417,49 +469,6 @@
                             </p>
                             <footer>
                                 <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
-                            </footer>
-                        </article>
-                        <article data-game="White">
-                            <header>
-                                <h3>White (2014)</h3>
-                            </header>
-                            <p>
-                                You live in a world where everything is white. You
-                                are white, the walls are white - everything. But
-                                one day you see a spark, and it's not. With your
-                                new discovery, travel around and see what else
-                                the world has to hold. Bring back all the colours!
-                            </p>
-                            <p>
-                                <i>White</i> is a smooth, relaxing, somewhat puzzling platformer.
-                                I thought of the idea for the game a long time
-                                ago, and had worked out an early prototype. I lost
-                                that file though, and I left it alone for a while.
-                                I started it up again later, just by coincidence
-                                at the same time as the <a href="http://gmc.yoyogames.com/index.php?showtopic=606848&page=3#entry4492169">GMC Jam #13</a>.
-                                I submitted an early version to that and it placed
-                                19th overall.
-                            </p>
-                            <p>
-                                After the GMC Jam was over, I went on to complete
-                                the game. Eventually I published it, first on
-                                <a href="http://gamejolt.com/games/platformer/white/35169/">GameJolt</a>,
-                                <a href="http://www.indiedb.com/games/white1">indieDB</a> and 
-                                <a href="http://oinkiguana.itch.io/white">itch.io</a> as a downloadable 
-                                game, and later as an HTML5 game on 
-                                <a href="http://www.kongregate.com/games/OinkIguana/white">Kongregate</a> and 
-                                <a href="http://www.newgrounds.com/portal/view/647031">Newgrounds</a>.
-                                Unfortunately the HTML5 version does not run as
-                                smoothly as the standalone executable, and so it
-                                has lower ratings where it is published, but it was
-                                more an experiment to try and publish it properly.
-                                In the end it was 8 months of on and off work,
-                                in which I created every part of the game - code,
-                                graphics, music and sound. <i>White</i> is my
-                                personal favourite of the games I've made.
-                            </p>
-                            <footer>
-                                <a href="Games/White/index.html"></a><a href="Games/White.exe"></a>
                             </footer>
                         </article>
                         <article data-game="Forks">
@@ -631,6 +640,9 @@
                             Games
                         </h4>
                         <ul>
+                            <li class="game-list" style="background-image:URL(/image/tab/White.png);">
+                                <span class="spacer"></span><span class="spaced">White</span>
+                            </li>
                             <li class="game-list" style="background-image:URL(/image/tab/TheCatapult.png);">
                                 <span class="spacer"></span><span class="spaced">The Catapult</span>
                             </li>
@@ -642,9 +654,6 @@
                             </li>
                             <li class="game-list" style="background-image:URL(/image/tab/SpaceInvaders.png);">
                                 <span class="spacer"></span><span class="spaced">Space Invaders</span>
-                            </li>
-                            <li class="game-list" style="background-image:URL(/image/tab/White.png);">
-                                <span class="spacer"></span><span class="spaced">White</span>
                             </li>
                             <li class="game-list" style="background-image:URL(/image/tab/Forks.png);">
                                 <span class="spacer"></span><span class="spaced">Forks</span>
@@ -790,6 +799,11 @@
             </section><!-- End bottom section -->
         </div><!-- End page container -->
         <script>
+            var badBrowser = (/MSIE 9/i.test(navigator.userAgent) || //IE. Am I right?
+                    /MSIE 10/i.test(navigator.userAgent) ||
+                    /rv:11.0/i.test(navigator.userAgent) ||
+                    //Though Safari is just as bad this time
+                            (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0));
             var pageWidth = function() {
                 //Get the width of the page for calculating other values from
                 //Includes support for various browsers and their weird ways
@@ -817,45 +831,62 @@
                     triangles[i].parentNode.style.width = pagewidth + "px";
                 }
             };
-            var positions = function() {
-                //Reposition all the moving elements to the correct spots for
-                //each scroll position
-
-                //First the slight parallax on each section
+            var parallaxPositions = function() {
+                if (!badBrowser) {
+                    //Align the parallaxes on the sections
+                    var sections = document.getElementsByTagName("section");
+                    var y = window.pageYOffset;
+                    var offset = new Array();
+                    for (var i = 0; i < sections.length; i++) {
+                        offset[i] = Math.round(y / (2 + i));
+                        sections[i].style.transform = "translateY(" + offset[i] + "px)";
+                        sections[i].style.webkitTransform = sections[i].style.transform;
+                        //Make the lower ones longer to accomodate for the others moving over them.
+                        sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                    }
+                }
+            };
+            var navbarPositions = function() {
+                //Make the navigation bar appear for each section that
+                //has gone off the top of the screen.
                 var sections = document.getElementsByTagName("section");
                 var navlinks = document.getElementsByClassName("nav-link");
                 var y = window.pageYOffset;
-                var offset = new Array();
-                for (var i = 0; i < sections.length; i++) {
-                    offset[i] = Math.round(y / (2 + i));
-                    sections[i].style.transform = "translateY(" + offset[i] + "px)";
-                    sections[i].style.webkitTransform = "translateY(" + offset[i] + "px)";
-                    //Make the lower ones longer to accomodate for the others moving over them.
-                    sections[i].style.paddingBottom = (200 + 100 * i) + "px";
-                    //Also make the navigation bar appear for each section that
-                    //has gone off the top of the screen.
-                    if (i !== 4) {
-                        //z-index and opacity change to hide them gradually but
-                        //also prevent clicking on them when they're invisible
-                        if (sections[i].offsetTop + offset[i] + 300 <= y) {
-                            navlinks[i].style.opacity = "1";
-                            navlinks[i].style.zIndex = "100";
-                        } else {
-                            navlinks[i].style.opacity = "0";
-                            navlinks[i].style.zIndex = "-1";
-                        }
+                for (var i = 0; i < navlinks.length; i++) {
+                    //z-index and opacity change to hide them gradually but
+                    //also prevent clicking on them when they're invisible
+                    if (sections[i].offsetTop + Math.round(y / (2 + i)) + 100 <= y) {
+                        navlinks[i].style.left = (i * 200) + "px";
+                    } else {
+                        navlinks[i].style.left = "100%";
                     }
                 }
-
+            };
+            var articlePositions = function() {
                 //Next get the articles on the games and sites to stay onscreen
                 //as you scroll to the lower ones
+                var sections = document.getElementsByTagName("section");
                 var articles = document.getElementsByTagName("article");
+                var y = window.pageYOffset;
                 for (var i = 0; i < articles.length; i++) {
                     //Between the top of the section (0) and the bottom of the section (the longer bits)
-                    var yy = Math.max(0, Math.min(articles[i].parentNode.parentNode.offsetHeight - articles[i].offsetHeight - 200, y - (articles[i].offsetParent.offsetTop + offset[i])));
+                    var site = (articles[i].getAttribute("data-game") === null);
+                    var offset = 0;
+                    if (!badBrowser) {
+                        offset = Math.round(y / (4 + site));
+                    }
+                    var yy = Math.max(0, Math.min(sections[2 + site].offsetHeight - articles[i].offsetHeight - 500 - (site * 100), y - (sections[2 + site].offsetTop + offset)));
                     articles[i].style.transform = "translateY(" + yy + "px)";
+                    articles[i].style.webkitTransform = articles[i].style.transform;
                 }
             };
+            var positions = function() {
+                //Do all the positions
+                parallaxPositions();
+                navbarPositions();
+                articlePositions();
+            };
+
             var show_game = function(game) {
                 //Change the game that is being shown when its tab is clicked.
                 var articles = document.getElementById("game-display").getElementsByTagName("article");
@@ -866,6 +897,7 @@
                         //The one that is clicked is visible and on top, the others
                         //remain hidden
                         articles[i].style.opacity = (data === game ? "1" : "0");
+                        articles[i].style.filter = "alpha(opacity=" + (data === game ? "100" : "0") + ")";
                         articles[i].style.zIndex = (data === game ? "30" : "-1");
                         //Extend the tab by changing the class
                         list[i].className = "game-list" + (data === game ? " selected" : "");
@@ -880,6 +912,7 @@
                     var data = articles[i].getAttribute("data-site");
                     if (data !== "") {
                         articles[i].style.opacity = (data === site ? "1" : "0");
+                        articles[i].style.filter = "alpha(opacity=" + (data === site ? "100" : "0") + ")";
                         articles[i].style.zIndex = (data === site ? "30" : "-1");
                         list[i].className = "site-list" + (data === site ? " selected" : "");
                     }
@@ -922,19 +955,21 @@
                         //Have them scroll smoothly, rather than jumping
                         scrollInterval = window.setInterval(function(el) {
                             var y = window.pageYOffset;
-                            if (Math.abs(y - el.offsetTop) > 4) {
+                            var offset = 0;
+                            if (!badBrowser) {
+                                offset = Math.round(y / (4 + site));
+                            }
+                            if (Math.abs(y - el.offsetTop - offset) > 4) {
                                 //Keep moving closer by less until it's really close
-                                y -= (y - el.offsetTop) / 4;
+                                y -= (y - el.offsetTop - offset) / 4;
                             } else {
                                 //Then stop once its close enough noone will notice a jump
-                                y = el.offsetTop;
+                                y -= (y - el.offsetTop - offset) / 4;
                                 window.clearInterval(scrollInterval);
                             }
                             scroll(0, y);
                         }, 1000 / 30, document.getElementById("page-" + this.id.substr(4)));
                     };
-                    //And position them correctly too while they're being dealt with
-                    navlinks[i].style.top = (24 * i) + "px";
                 }
             };
 
@@ -943,20 +978,15 @@
             triangles();
             window.addEventListener("resize", triangles);
             var positions_runner;
-            if (!(/MSIE 9/i.test(navigator.userAgent) ||
-                    /MSIE 10/i.test(navigator.userAgent) ||
-                    /rv:11.0/i.test(navigator.userAgent))) { //IE. Am I right?
-                positions();
-                positions_runner = window.setInterval(function() {
-                    if (window.requestAnimationFrame === undefined) {
-                        //Safari. Just as bad as IE for some reason
-                        //window.requestAnimationFrame = positions;
-                        //Maybe I'll add it in later but not for now.
-                    } else {
-                        window.requestAnimationFrame(positions);
-                    }
-                }, 10);
-            }
+            positions();
+            positions_runner = window.setInterval(function() {
+                if (window.requestAnimationFrame === undefined) {
+                    //Just do it if the function doesn't exist
+                    positions();
+                } else {
+                    window.requestAnimationFrame(positions);
+                }
+            }, 10);
             var scrollInterval;
             window.addEventListener("wheel", function() {
                 //Allow the automatic scrolling to be overriden by a manual scroll

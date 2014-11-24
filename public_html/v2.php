@@ -957,7 +957,7 @@
                             var y = window.pageYOffset;
                             var offset = 0;
                             if (!badBrowser) {
-                                offset = Math.round(y / (4 + site));
+                                offset = Math.round(y / (2 + i));
                             }
                             if (Math.abs(y - el.offsetTop - offset) > 4) {
                                 //Keep moving closer by less until it's really close

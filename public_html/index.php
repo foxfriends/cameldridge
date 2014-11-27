@@ -88,7 +88,6 @@
                 cursor: pointer;
                 -webkit-transition: left 0.8s;
                 transition: left 0.8s;
-
             }
 
             /* Page sections */
@@ -96,6 +95,7 @@
                 position: relative;
                 padding-bottom: 200px;
                 background-color: #FFF;
+                background-position: 0 -200px;
                 overflow: visible;
             }
             section div.tri {
@@ -130,6 +130,13 @@
                 margin: 0 auto;
             }
             /* Content */
+            hgroup {
+                display: inline-block;
+                margin: 0 auto;
+                background-color: RGBA(255, 255, 255, 0.5);
+                border-radius: 100% 100% 50px 50px;
+                padding: 30px 100px;
+            }
             h1, h2, h3, h4 {
                 font-family: "Merienda One",cursive;
             }
@@ -261,6 +268,7 @@
             /* Specifics */
             section#page-top, div#nav-top {
                 background-image: URL("/image/pattern/top.png");
+                xbackground-size: cover;
             }
             section#page-desc, div#nav-desc {
                 background-image: URL("/image/pattern/desc.png");
@@ -274,7 +282,19 @@
             section#page-bot {
                 background-image: URL("/image/pattern/bot.png");
             }
-            img.header-image {
+            div#desc-image {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 100px;
+                width: 500px;
+                height: 700px;
+                background-image: URL("/image/desc.jpg");
+                background-size: cover;
+                background-position: bottom center;
+                border-radius: 250px;
+            }
+            img#header-image {
                 margin: 10px;
             }
         </style>
@@ -283,7 +303,7 @@
         <div id="page-container">
             <nav>
                 <div class="nav-link" id="nav-top"><span class="spacer"></span><span class="spaced">Cameron Eldridge</span></div>
-                <div class="nav-link light" id="nav-desc"><span class="spacer"></span><span class="spaced">About me</span></div>
+                <div class="nav-link light" id="nav-desc"><span class="spacer"></span><span class="spaced">About</span></div>
                 <div class="nav-link light" id="nav-game"><span class="spacer"></span><span class="spaced">Games</span></div>
                 <div class="nav-link light" id="nav-site"><span class="spacer"></span><span class="spaced">Sites</span></div>
             </nav>
@@ -295,7 +315,9 @@
                             <h2>Student - Programmer - Maker of websites and games</h2>
                             <h3>HTML5 | CSS | JavaScript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
                         </hgroup>
-                        <img src="image/icon/cameldridge-icon_128x128.png" alt="" class="header-image circle" />
+                        <span style="display:block">
+                            <img src="image/icon/cameldridge-icon_128x128.png" alt="" id="header-image" class="circle"/>
+                        </span>
                     </div>
                 </div>
             </section><!-- End header section -->
@@ -303,7 +325,7 @@
                 <div class="tri">
                     <svg> <!-- Triangle -->
                     <defs>
-                    <pattern id="patt-desc" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
+                    <pattern id="patt-desc" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
                     <!-- The pattern for all the borders is set here only -->
                     <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/pattern/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
                     </defs>
@@ -312,6 +334,7 @@
                 </div>
                 <div class="content">
                     <div class="split-vertical left">
+                        <div id="desc-image"></div>
                     </div>
                     <div class="split-vertical right light">
                         <h4>
@@ -351,8 +374,8 @@
                             <a href="https://github.com/OinkIguana" target="_blank">Github</a>.
                         </p>
                         <p>
-                            If you have a potential job, or would like to know more, or 
-                            have questions, feel free to email me at
+                            If you have questions, a potential job, or would simply 
+                            like to know more, feel free to email me at
                             <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
                         </p>
                     </div>
@@ -361,7 +384,7 @@
             <section id="page-game">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-game" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
+                    <defs><pattern id="patt-game" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
@@ -385,8 +408,8 @@
                                 that file though, and I left it alone for a while.
                                 I started it up again later, just by coincidence
                                 at the same time as the <a href="http://gmc.yoyogames.com/index.php?showtopic=606848&page=3#entry4492169">GMC Jam #13</a>.
-                                I submitted an early version to that and it placed
-                                19th overall.
+                                I submitted an <a href="/game/White-Pirate_Edition.exe">early version</a>
+                                to that and it placed 19th overall.
                             </p>
                             <p>
                                 After the GMC Jam was over, I went on to complete
@@ -407,7 +430,7 @@
                                 personal favourite of the games I've made.
                             </p>
                             <footer>
-                                <a href="Games/White/index.html"></a><a href="Games/White.exe"></a>
+                                <a href="/game/White/index.html"></a><a href="/game/White.exe"></a>
                             </footer>
                         </article>
                         <article data-game="The Catapult">
@@ -431,7 +454,7 @@
                                 two days.
                             </p>
                             <footer>
-                                <a href="Games/The Catapult/index.html"></a><a href="Games/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
+                                <a href="/game/The Catapult/index.html"></a><a href="/game/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="cat">
@@ -454,7 +477,7 @@
                                 along with the sound and music.
                             </p>
                             <footer>
-                                <a href="Games/cat.exe"></a><a href="https://github.com/OinkIguana/cat" target="_blank"></a>
+                                <a href="/game/cat.exe"></a><a href="https://github.com/OinkIguana/cat" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="Animal Farm">
@@ -477,7 +500,7 @@
                                 are taken from the 1955 animated film.
                             </p>
                             <footer>
-                                <a href="Games/Animal Farm.exe"></a><a href="https://github.com/OinkIguana/Animal-Farm" target="_blank"></a>
+                                <a href="/game/Animal Farm.exe"></a><a href="https://github.com/OinkIguana/Animal-Farm" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="Space Invaders">
@@ -497,7 +520,7 @@
                                 remake.
                             </p>
                             <footer>
-                                <a href="Games/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
+                                <a href="/game/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
                             </footer>
                         </article>
                         <article data-game="Forks">
@@ -519,7 +542,7 @@
                                 music, and Ben Hansson voiced the monsters.
                             </p>
                             <footer>
-                                <a href="Games/Forks.exe"></a><a href="https://github.com/OinkIguana/Forks"></a>
+                                <a href="/game/Forks.exe"></a><a href="https://github.com/OinkIguana/Forks"></a>
                             </footer>
                         </article>
                         <article data-game="Abby and Elliot">
@@ -541,7 +564,7 @@
                                 music was composed by Jack Boldick.
                             </p>
                             <footer>
-                                <a href="Games/Abby_and_Elliot.exe"></a>
+                                <a href="/game/Abby_and_Elliot.exe"></a>
                             </footer>
                         </article>
                         <article data-game="Lord of the Flies">
@@ -560,7 +583,7 @@
                                 Donkey Kong Country.
                             </p>
                             <footer>
-                                <a href="Games/LordOfTheFlies.exe"></a>
+                                <a href="/game/LordOfTheFlies.exe"></a>
                             </footer>
                         </article>
                         <article data-game="WWII">
@@ -579,7 +602,7 @@
                                 from the Internet.
                             </p>
                             <footer>
-                                <a href="Games/WWII.exe"></a>
+                                <a href="/game/WWII.exe"></a>
                             </footer>
                         </article>
                         <article data-game="Cam-I-Am">
@@ -597,7 +620,7 @@
                                 Life project. 
                             </p>
                             <footer>
-                                <a href="Games/Cam-I-Am.exe"></a>
+                                <a href="/game/Cam-I-Am.exe"></a>
                             </footer>
                         </article>
                         <article data-game="Running Squared">
@@ -616,7 +639,7 @@
                                 just for fun.
                             </p>
                             <footer>
-                                <a href="Games/Running Squared/index.html"></a><a href="https://github.com/OinkIguana/RunningSquared"></a>
+                                <a href="/game/Running Squared/index.html"></a><a href="https://github.com/OinkIguana/RunningSquared"></a>
                             </footer>
                         </article>
                         <article data-game="Taco Quest">
@@ -639,7 +662,7 @@
                                 music and sound I found online.
                             </p>
                             <footer>
-                                <a href="Games/Adventure.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a>
+                                <a href="/game/Adventure.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a>
                             </footer>
                         </article>
                         <article data-game="The Ghost Game">
@@ -660,7 +683,7 @@
                                 and its example graphics. 
                             </p>
                             <footer>
-                                <a href="Games/TheGhostGameCompleteEdition.exe"></a>
+                                <a href="/game/TheGhostGameCompleteEdition.exe"></a>
                             </footer>
                         </article>
                     </div>
@@ -715,7 +738,7 @@
             <section id="page-site">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-site" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
+                    <defs><pattern id="patt-site" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
@@ -814,7 +837,7 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-bot" patternTransform="translate(10,200)" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
+                    <defs><pattern id="patt-bot" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>

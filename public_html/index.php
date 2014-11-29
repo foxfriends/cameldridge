@@ -161,11 +161,13 @@
                 margin: 10px 0 10px auto;
                 width: 500px;
             }
+            /* The bottom section ones */
             p.center, footer.center {
                 text-align: center;
                 margin: 10px;
                 width: 100%;
             }
+            /* Game and article lists */
             ul {
                 list-style: none;
             }
@@ -209,6 +211,7 @@
                 -webkit-transition: width 0.3s;
                 transition: width 0.3s;
             }
+            /* Game and website articles */
             article {
                 position: absolute;
                 left: 0;
@@ -222,6 +225,42 @@
                     z-index 0.3s;
                 transition: opacity 0.3s,
                     z-index 0.3s;
+            }
+            article div.screenshots {
+                position: absolute;
+                top: 80px;
+                right: -128px;
+                width: 96px;
+            }
+            article div.screenshots img {
+                width: 128px;
+                cursor: pointer;
+                padding: 1px;
+                border: 1px solid;
+                border-color: transparent;
+            }
+            article div.screenshots img:hover {
+                border-color: #AAA;
+            }
+            /* Popup windows */
+            div.popup-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1000;
+                background-color: transparent;
+                background-color: RGBA(0, 0, 0, 0.4);
+                text-align: center;
+                cursor: pointer;
+            }
+            div.popup-container {
+                display: inline-block;
+                z-index: 1001;
+                padding: 50px;
+                background-color: #EEE;
+                cursor: default;
             }
             /* Regular links */
             a {
@@ -432,6 +471,12 @@
                             <footer>
                                 <a href="/game/White/index.html"></a><a href="/game/White.exe"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/White/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/White/ss1.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/White/ss2.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/White/ss3.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="The Catapult">
                             <header>
@@ -456,6 +501,10 @@
                             <footer>
                                 <a href="/game/The Catapult/index.html"></a><a href="/game/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/The-Catapult/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/The-Catapult/ss1.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="cat">
                             <header>
@@ -544,6 +593,9 @@
                             <footer>
                                 <a href="/game/Forks.exe"></a><a href="https://github.com/OinkIguana/Forks"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/Forks/ss0.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="Abby and Elliot">
                             <header>
@@ -566,6 +618,10 @@
                             <footer>
                                 <a href="/game/Abby_and_Elliot.exe"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/AbbyAndElliot/ss0.jpg" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/AbbyAndElliot/ss1.jpg" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="Lord of the Flies">
                             <header>
@@ -982,6 +1038,47 @@
                     }
                 }
             };
+            var overContainer = false;
+            var popup_close = function() {
+                document.body.removeChild(document.getElementsByClassName("popup-background")[0]);
+            };
+            var popup_image = function(img) {
+                //Put given image into a popup
+                
+                //Create each part of the popup with the proper values
+                var background = document.createElement("div");
+                //Background
+                background.className = "popup-background";
+                background.onclick = function() {
+                    if(!overContainer) {
+                        popup_close();
+                    }
+                };
+                //Vertical alignment stuff
+                var spacer = document.createElement("span");
+                spacer.className = "spacer";
+                var spaced = document.createElement("span");
+                spaced.className = "spaced";
+                //Inner container
+                var container = document.createElement("div");
+                container.className = "popup-container";
+                container.onmouseover = function() {
+                    overContainer = true;
+                };
+                container.onmouseout = function() {
+                    overContainer = false;
+                };
+                //Image
+                var image = document.createElement("img");
+                image.className = "popup-image";
+                image.src = img;
+                //Attach them all correctly
+                document.body.appendChild(background);
+                background.appendChild(spacer);
+                background.appendChild(spaced);
+                spaced.appendChild(container);
+                container.appendChild(image);
+            };
             var init = function() {
                 //Set up onclick events for various things
 
@@ -1009,6 +1106,14 @@
                         }
                     };
                 }
+                //Screenshots
+                var screenshots = document.getElementsByClassName("screenshot");
+                for (var i = 0; i < screenshots.length; i++) {
+                    screenshots[i].onclick = function() {
+                        popup_image(this.src);
+                    };
+                }
+
                 //Then the navigation bars
                 var navlinks = document.getElementsByClassName("nav-link");
                 for (var i = 0; i < navlinks.length; i++) {

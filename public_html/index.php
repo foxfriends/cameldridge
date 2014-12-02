@@ -928,7 +928,7 @@
                     </svg>
                 </div>
                 <div class="content light" style="padding-bottom:200px;text-align:center;">
-                    <h3 style="border-bottom: 1px solid white;width:400px;margin:0 auto 16px auto;padding-bottom:16px;">
+                    <h3>
                         Thank you
                     </h3>
                     <p class="center">

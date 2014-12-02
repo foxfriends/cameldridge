@@ -21,7 +21,7 @@
         <meta name="msapplication-TileColor" content="#917a73">
         <meta name="msapplication-config" content="/image/favicon/browserconfig.xml">
 
-        <!-- script>
+        <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
                 i[r] = i[r] || function() {
@@ -38,7 +38,7 @@
             ga('require', 'displayfeatures');
             ga('send', 'pageview');
 
-        </script -->
+        </script>
         <style type="text/css">
             @import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
             /* Setup */
@@ -100,7 +100,6 @@
             }
             section div.tri {
                 position: absolute;
-                left: -10px;
                 top: -200px;
                 width: 100%;
                 height: 200px;
@@ -258,9 +257,15 @@
             div.popup-container {
                 display: inline-block;
                 z-index: 1001;
-                padding: 50px;
+                padding: 16px;
+                max-width: 1000px;
+                max-height: 600px;
                 background-color: #EEE;
                 cursor: default;
+            }
+            img.popup-image {
+                max-width: 1000px;
+                max-height: 600px;
             }
             /* Regular links */
             a {
@@ -364,7 +369,7 @@
                 <div class="tri">
                     <svg> <!-- Triangle -->
                     <defs>
-                    <pattern id="patt-desc" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
+                    <pattern id="patt-desc" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
                     <!-- The pattern for all the borders is set here only -->
                     <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/pattern/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
                     </defs>
@@ -423,7 +428,7 @@
             <section id="page-game">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-game" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
+                    <defs><pattern id="patt-game" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
@@ -551,6 +556,9 @@
                             <footer>
                                 <a href="/game/Animal Farm.exe"></a><a href="https://github.com/OinkIguana/Animal-Farm" target="_blank"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/AnimalFarm/ss0.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="Space Invaders">
                             <header>
@@ -571,6 +579,9 @@
                             <footer>
                                 <a href="/game/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/SpaceInvaders/ss0.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="Forks">
                             <header>
@@ -673,7 +684,10 @@
                                 <i>Cam-I-Am</i> is a collection of minigames about
                                 me and the things I like to do. I made it for my
                                 grade 9 English summative as part of the Book of
-                                Life project. 
+                                Life project, where each student created something,
+                                about themselves and how they live, such as a story,
+                                song, poem or other form of media, to send to a 
+                                First Nations school.
                             </p>
                             <footer>
                                 <a href="/game/Cam-I-Am.exe"></a>
@@ -697,6 +711,9 @@
                             <footer>
                                 <a href="/game/Running Squared/index.html"></a><a href="https://github.com/OinkIguana/RunningSquared"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/RunningSquared/ss0.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="Taco Quest">
                             <header>
@@ -720,6 +737,10 @@
                             <footer>
                                 <a href="/game/Adventure.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/TacoQuest/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/TacoQuest/ss1.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                         <article data-game="The Ghost Game">
                             <header>
@@ -741,6 +762,10 @@
                             <footer>
                                 <a href="/game/TheGhostGameCompleteEdition.exe"></a>
                             </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/TheGhostGame/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/TheGhostGame/ss1.png" alt="Screenshot" class="screenshot" />
+                            </div>
                         </article>
                     </div>
                     <div class="split-vertical right">
@@ -794,7 +819,7 @@
             <section id="page-site">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-site" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
+                    <defs><pattern id="patt-site" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
@@ -868,9 +893,8 @@
                                 Yes, that is this site. I made this page to showcase
                                 my projects. Feel free to look at the source code.
                                 Everything is in this one file for your viewing
-                                convenience (except the images
-                                and the games of course). I've commented it too
-                                if you're interested in what's going on.
+                                convenience. I've commented the JavaScript too, if 
+                                you're interested in what's going on.
                             </p>
                             <footer>
                                 <a href="https://github.com/OinkIguana/cameldridge"></a>
@@ -882,9 +906,15 @@
                             Websites
                         </h4>
                         <ul>
-                            <li class="site-list"><span class="spacer"></span><span class="spaced">flyingpenguin.cyberbri.com</span></li>
-                            <li class="site-list"><span class="spacer"></span><span class="spaced">knightwatch.cyberbri.com</span></li>
-                            <li class="site-list"><span class="spacer"></span><span class="spaced">oinkiguana.tumblr.com</span></li>
+                            <li class="site-list" style="background-image:URL(/image/tab/FlyingPenguin.png);">
+                                <span class="spacer"></span><span class="spaced">flyingpenguin.cyberbri.com</span>
+                            </li>
+                            <li class="site-list" style="background-image:URL(/image/tab/Knightwatch.png);">
+                                <span class="spacer"></span><span class="spaced">knightwatch.cyberbri.com</span>
+                            </li>
+                            <li class="site-list" style="background-image:URL(/image/tab/x43x61x74.png);">
+                                <span class="spacer"></span><span class="spaced">oinkiguana.tumblr.com</span>
+                            </li>
                             <li class="site-list"><span class="spacer"></span><span class="spaced">cameldridge.com</span></li>
                         </ul>
                     </div>
@@ -893,12 +923,12 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-bot" patternTransform="translate(10,0)" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
+                    <defs><pattern id="patt-bot" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
                     <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
                     </svg>
                 </div>
                 <div class="content light" style="padding-bottom:200px;text-align:center;">
-                    <h3>
+                    <h3 style="border-bottom: 1px solid white;width:400px;margin:0 auto 16px auto;padding-bottom:16px;">
                         Thank you
                     </h3>
                     <p class="center">
@@ -927,12 +957,12 @@
             var pageWidth = function() {
                 //Get the width of the page for calculating other values from
                 //Includes support for various browsers and their weird ways
-                if (typeof (window.innerWidth) === 'number') {
-                    return window.innerWidth;
+                if (document.body && (document.body.clientWidth)) {
+                    return document.body.clientWidth;
                 } else if (document.documentElement && (document.documentElement.clientWidth)) {
                     return document.documentElement.clientWidth;
-                } else if (document.body && (document.body.clientWidth)) {
-                    return document.body.clientWidth;
+                } else if (typeof (window.innerWidth) === 'number') {
+                    return window.innerWidth;
                 }
                 return 0;
             };
@@ -959,10 +989,12 @@
                     var offset = new Array();
                     for (var i = 0; i < sections.length; i++) {
                         offset[i] = Math.round(y / (2 + i));
-                        sections[i].style.transform = "translateY(" + offset[i] + "px)";
-                        sections[i].style.webkitTransform = sections[i].style.transform;
-                        //Make the lower ones longer to accomodate for the others moving over them.
-                        sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                        if (sections[i].style.transform !== "translateY(" + offset[i] + "px)") {
+                            sections[i].style.transform = "translateY(" + offset[i] + "px)";
+                            sections[i].style.webkitTransform = sections[i].style.transform;
+                            //Make the lower ones longer to accomodate for the others moving over them.
+                            sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                        }
                     }
                 }
             };
@@ -976,9 +1008,13 @@
                     //z-index and opacity change to hide them gradually but
                     //also prevent clicking on them when they're invisible
                     if (sections[i].offsetTop + Math.round(y / (2 + i)) + 100 <= y) {
-                        navlinks[i].style.left = (i * 200) + "px";
+                        if (navlinks[i].style.left !== (i * 200) + "px") {
+                            navlinks[i].style.left = (i * 200) + "px";
+                        }
                     } else {
-                        navlinks[i].style.left = "100%";
+                        if (navlinks[i].style.left !== "100%") {
+                            navlinks[i].style.left = "100%";
+                        }
                     }
                 }
             };
@@ -996,8 +1032,10 @@
                         offset = Math.round(y / (4 + site));
                     }
                     var yy = Math.max(0, Math.min(sections[2 + site].offsetHeight - articles[i].offsetHeight - 500 - (site * 100), y - (sections[2 + site].offsetTop + offset)));
-                    articles[i].style.transform = "translateY(" + yy + "px)";
-                    articles[i].style.webkitTransform = articles[i].style.transform;
+                    if (articles[i].style.transform !== "translateY(" + yy + "px)") {
+                        articles[i].style.transform = "translateY(" + yy + "px)";
+                        articles[i].style.webkitTransform = articles[i].style.transform;
+                    }
                 }
             };
             var positions = function() {
@@ -1038,19 +1076,20 @@
                     }
                 }
             };
-            var overContainer = false;
+            var overContainer = false; //Don't close it if just the image was clicked
             var popup_close = function() {
+                //Remove the popup element when it's clicked
                 document.body.removeChild(document.getElementsByClassName("popup-background")[0]);
             };
             var popup_image = function(img) {
                 //Put given image into a popup
-                
+
                 //Create each part of the popup with the proper values
                 var background = document.createElement("div");
                 //Background
                 background.className = "popup-background";
                 background.onclick = function() {
-                    if(!overContainer) {
+                    if (!overContainer) {
                         popup_close();
                     }
                 };
@@ -1110,6 +1149,7 @@
                 var screenshots = document.getElementsByClassName("screenshot");
                 for (var i = 0; i < screenshots.length; i++) {
                     screenshots[i].onclick = function() {
+                        //Pass the URL to the popup
                         popup_image(this.src);
                     };
                 }

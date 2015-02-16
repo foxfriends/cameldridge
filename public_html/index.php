@@ -86,8 +86,10 @@
                 border-left: 1px solid #777;
                 background: white;
                 cursor: pointer;
-                -webkit-transition: left 0.8s;
-                transition: left 0.8s;
+                -webkit-transition-property: left;
+                -webkit-transition-duration: 0.0s;
+                transition-property: left;
+                transition-duration: 0.0s;
             }
 
             /* Page sections */
@@ -1155,6 +1157,15 @@
                 //Then the navigation bars
                 var navlinks = document.getElementsByClassName("nav-link");
                 for (var i = 0; i < navlinks.length; i++) {
+                    navlinks[i].style.left = window.innerWidth - (4 - i) * 200 + "px";
+                    window.setTimeout(function() {
+                        //Don't do transitions for the initial position of the nav links
+                        var navlinks = document.getElementsByClassName("nav-link");
+                        for (var i = 0; i < navlinks.length; i++) {
+                            navlinks[i].style.transitionDuration = "0.8s";
+                            navlinks[i].style.WebkitTransitionDuration = "0.8s";
+                        }
+                    }, 1);
                     navlinks[i].onclick = function() {
                         //Clear first to ensure there aren't two calls cancelling
                         //each other out

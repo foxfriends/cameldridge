@@ -312,7 +312,6 @@
             /* Specifics */
             section#page-top, div#nav-top {
                 background-image: URL("/image/pattern/top.png");
-                xbackground-size: cover;
             }
             section#page-desc, div#nav-desc {
                 background-image: URL("/image/pattern/desc.png");
@@ -939,7 +938,6 @@
                     <footer class="center">
                         <a href="https://www.facebook.com/cameldridge"></a>
                         <a href="https://twitter.com/OinkIguana"></a>
-                        <a href="http://oinkiguana.tumblr.com/"></a>
                         <a href="https://github.com/OinkIguana"></a>
                         <a href="https://www.linkedin.com/profile/view?id=377209429"></a>
                         <a href="https://plus.google.com/u/0/+CameronEldridge1/posts"></a>
@@ -1012,8 +1010,8 @@
                             navlinks[i].style.left = (i * 200) + "px";
                         }
                     } else {
-                        if (navlinks[i].style.left !== "100%") {
-                            navlinks[i].style.left = "100%";
+                        if (navlinks[i].style.left !== window.innerWidth - (4 - i) * 200) {
+                            navlinks[i].style.left = window.innerWidth - (4 - i) * 200 + "px";
                         }
                     }
                 }

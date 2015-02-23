@@ -105,6 +105,7 @@
                 top: -200px;
                 width: 100%;
                 height: 200px;
+                pointer-events: none;
             }
             section div.tri svg {
                 display: block;
@@ -326,6 +327,7 @@
             }
             section#page-bot {
                 background-image: URL("/image/pattern/bot.png");
+                min-height: 700px;
             }
             div#desc-image {
                 position: absolute;
@@ -342,6 +344,145 @@
             img#header-image {
                 margin: 10px;
             }
+
+            /* Smaller screen layout */
+            @media screen and (max-width: 1450px) {
+                section div.content {
+                    /* Reduce padding to make text and tabs look more centered */
+                    padding: 100px 50px;
+                }
+                article {
+                    /* Reduce margin to make it look more centered */
+                    margin: 100px 50px;
+                }
+                article div.screenshots {
+                    /* Put screenshots below the article if the width is too small */
+                    position: absolute;
+                    top: 100%;
+                    left: 0px;
+                    width: 500px;
+                }
+            }
+            @media screen and (max-width: 1200px) {
+                /* Top headings are smaller so they don't break line */
+                h1 {
+                    font-size: 30pt;
+                    font-weight: bold;
+                }
+                h2 {
+                    font-size: 15pt;
+                }
+                h3 {
+                    font-size: 14pt;
+                }
+                /* Tags and right text is thinner */
+                div.split-vertical.right h4, div.split-vertical.right p, div.split-vertical.right header, div.split-vertical.right footer {
+                    width: 400px;
+                }
+                li {
+                    width: 400px;
+                }
+                li.selected {
+                    width: 432px;
+                }
+            }
+            @media screen and (max-width: 1100px) {
+                /* Top headings are smaller so they don't break line */
+                h1 {
+                    font-size: 30pt;
+                    font-weight: bold;
+                }
+                h2 {
+                    font-size: 15pt;
+                }
+                h3 {
+                    font-size: 14pt;
+                }
+                /* All text is thinner */
+                h4, p, header, footer {
+                    width: 400px;
+                    margin: 10px 0 10px 0;
+                }
+            }
+            @media screen and (max-height: 700px) {
+                article {
+                    /* Don't scroll if the biggest article doesn't fit on the screen */
+                    transform: translateY(0) !important;
+                }
+                /* Popup images must be smaller so there is decent border */
+                div.popup-container {
+                    max-height: 400px;
+                }
+                img.popup-image {
+                    max-height: 400px;
+                }
+            }
+            /* Mobile layout */
+            @media screen and (max-width: 1000px) {
+                nav {
+                    display: none;
+                }
+                section div.content {
+                    padding: 0;
+                    margin: 0;
+                }
+                section {
+                    transform: translateY(0px) !important;
+                }
+                section div.content div.split-vertical {
+                    display: block;
+                    width: 100%;
+                }
+                section div.content div.split-vertical.left {
+                    display: none;
+                }
+                h4, p, header, footer, li {
+                    width: 100% !important;
+                    display: block;
+                }
+                h4, p {
+                    box-sizing: border-box;
+                    padding: 0 10px;
+                }
+                div.popup-container {
+                    max-width: 500px;
+                }
+                img.popup-image {
+                    max-width: 500px;
+                }
+
+                li:before{
+                    display: none;
+                }
+                li:hover:before {
+                    display: none;
+                }
+                li.selected:before {
+                    display: none;
+                }
+                li {
+                    box-sizing: border-box;
+                    height: 52px;
+                    padding-left: 16px;
+                    -webkit-transition: none;
+                    transition: none;
+                }
+                li.selected {
+                    -webkit-transition: none;
+                    transition: none;
+                }
+            }
+            /* Super tiny screens */
+            @media screen and (max-width: 480px) {
+                li span.spaced{
+                    /* Background so text can be read over the image */
+                    background-color: white;
+                    border-radius: 5px;
+                    padding: 3px;
+                    box-shadow: 0 0 5px 5px white;
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -393,26 +534,28 @@
                             you need is to write the right code.
                         </p>
                         <p>
-                            8 years ago, I began making websites at the Virtual Ventures summer camp
-                            at Carleton University, where I first became interested in 
+                            8 years ago I began making websites at the Virtual Ventures summer camp
+                            at Carleton University where I first became interested in 
                             programming. I then went on to learn a lot more on my own 
-                            time while making websites for school or my friends.
+                            time while making websites for my friends to use, as well 
+                            as for some school projects.
                         </p>
                         <p>
                             In my free time I also often make games, mainly for Windows 
                             with GameMaker, but I have done a few HTML5 games with JavaScript.
-                            In making games I learned about object oriented programming.
+                            In making games I learned about object oriented programming,
+                            collision detection, and lots of other useful concepts.
                             I try to participate in as many game making contests as I can,
                             including the GMC Jam and Ludum Dare compo. I have placed as
                             high as 16th in the GMC Jam.
                         </p>
                         <p>
-                            I've taken a few courses in high school which taught C++, along with concepts such as 
-                            recursion and basic dynamic programming. I have entered a number
+                            I've taken a few courses in high school which taught concepts such as 
+                            recursion and basic dynamic programming in C++. I have entered a number
                             of contests using C++, and done reasonably well. Java was touched on 
-                            as well, though it was mainly left for the students who were 
-                            ahead to learn it while the rest of the class caught up, so
-                            that was mainly self taught.
+                            too, though it was mainly left for the students who were 
+                            ahead to learn it while the rest of the class caught up
+                            and was mainly self taught
                         </p>
                         <p>
                             The source code to my more recent projects can be found on 
@@ -574,7 +717,7 @@
                                 regular assignments, so I made this instead. It
                                 ended up being my summative project for the year.
                                 The entire game was coded from scratch, though
-                                the resources were stolen from someone else's 
+                                the resources were taken from someone else's 
                                 remake.
                             </p>
                             <footer>
@@ -993,7 +1136,7 @@
                             sections[i].style.transform = "translateY(" + offset[i] + "px)";
                             sections[i].style.webkitTransform = sections[i].style.transform;
                             //Make the lower ones longer to accomodate for the others moving over them.
-                            sections[i].style.paddingBottom = (200 + 100 * i) + "px";
+                            sections[i].style.paddingBottom = (200 + 50 * i) + "px";
                         }
                     }
                 }
@@ -1007,7 +1150,7 @@
                 for (var i = 0; i < navlinks.length; i++) {
                     //z-index and opacity change to hide them gradually but
                     //also prevent clicking on them when they're invisible
-                    if (sections[i].offsetTop + Math.round(y / (2 + i)) + 100 <= y) {
+                    if (sections[i].offsetTop + Math.round(y / (2 + i) - (200 + 100 * i)) <= y) {
                         if (navlinks[i].style.left !== (i * 200) + "px") {
                             navlinks[i].style.left = (i * 200) + "px";
                         }

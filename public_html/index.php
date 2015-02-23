@@ -422,6 +422,12 @@
                 nav {
                     display: none;
                 }
+                hgroup {
+                    margin: 10px;
+                    background-color: RGBA(255, 255, 255, 0.5);
+                    border-radius: 50px;
+                    padding: 30px;
+                }
                 section div.content {
                     padding: 0;
                     margin: 0;
@@ -439,6 +445,9 @@
                 h4, p, header, footer, li {
                     width: 100% !important;
                     display: block;
+                }
+                h4 {
+                    text-align: center;
                 }
                 h4, p {
                     box-sizing: border-box;

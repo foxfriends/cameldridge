@@ -1368,7 +1368,6 @@
                 
                 //If the click was on a link
                 if(e.target.toString().substr(0, 7) !== "[object") {
-                    alert(e.target);
                     //Send a request to the script on the server
                     var req = new XMLHttpRequest();
                     var params = "l=" + encodeURIComponent(e.target);

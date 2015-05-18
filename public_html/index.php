@@ -41,6 +41,7 @@
         </script>
         <style type="text/css">
             @import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
+            .screenshot, .game-list, .site-list, .triangle {}
             /* Setup */
             * {
                 font-family: 'Open Sans',sans-serif;
@@ -543,7 +544,7 @@
                             you need is to write the right code.
                         </p>
                         <p>
-                            8 years ago I began making websites at the Virtual Ventures summer camp
+                            When I was 9 years old, I began making websites at the Virtual Ventures summer camp
                             at Carleton University where I first became interested in 
                             programming. I then went on to learn a lot more on my own 
                             time while making websites for my friends to use, as well 
@@ -978,10 +979,10 @@
                 </div>
                 <div class="content">
                     <div class="split-vertical left light" id="site-display">
-                        <article data-site="flyingpenguin.cyberbri.com">
+                        <article data-site="flyingpenguin.cameldridge.com">
                             <header>
                                 <h3>FlyingPenguin</h3>
-                                <h3><a href="http://flyingpenguin.cyberbri.com">flyingpenguin.cyberbri.com</a></h3>
+                                <h3><a href="http://flyingpenguin.cameldridge.com">flyingpenguin.cameldridge.com</a></h3>
                             </header>
                             <p>
                                 In grade 7 one of my friends had a WordPress site
@@ -1003,10 +1004,10 @@
                                 anymore, but I still keep an eye on it.
                             </p>
                         </article>
-                        <article data-site="knightwatch.cyberbri.com">
+                        <article data-site="knightwatch.cameldridge.com">
                             <header>
                                 <h3>NHS Knightwatch</h3>
-                                <h3><a href="http://knightwatch.cyberbri.com">knightwatch.cyberbri.com</a></h3>
+                                <h3><a href="http://knightwatch.cameldridge.com">knightwatch.cameldridge.com</a></h3>
                             </header>
                             <p>
                                 Although it is no longer used officially, this was
@@ -1060,10 +1061,10 @@
                         </h4>
                         <ul>
                             <li class="site-list" style="background-image:URL(/image/tab/FlyingPenguin.png);">
-                                <span class="spacer"></span><span class="spaced">flyingpenguin.cyberbri.com</span>
+                                <span class="spacer"></span><span class="spaced">flyingpenguin.cameldridge.com</span>
                             </li>
                             <li class="site-list" style="background-image:URL(/image/tab/Knightwatch.png);">
-                                <span class="spacer"></span><span class="spaced">knightwatch.cyberbri.com</span>
+                                <span class="spacer"></span><span class="spaced">knightwatch.cameldridge.com</span>
                             </li>
                             <li class="site-list" style="background-image:URL(/image/tab/x43x61x74.png);">
                                 <span class="spacer"></span><span class="spaced">oinkiguana.tumblr.com</span>
@@ -1361,6 +1362,22 @@
             window.addEventListener("wheel", function() {
                 //Allow the automatic scrolling to be overriden by a manual scroll
                 window.clearInterval(scrollInterval);
+            });
+            window.addEventListener("click", function(e) {
+                //Count clicks on all the links (for my own curiosity)
+                
+                //If the click was on a link
+                if(e.target.toString().substr(0, 7) !== "[object") {
+                    alert(e.target);
+                    //Send a request to the script on the server
+                    var req = new XMLHttpRequest();
+                    var params = "l=" + encodeURIComponent(e.target);
+                    req.open("POST", "/link_click_count.php", true);
+                    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    req.setRequestHeader("Content-length", params.length);
+                    req.setRequestHeader("Connection", "close");
+                    req.send(params);
+                }
             });
         </script>  
     </body>

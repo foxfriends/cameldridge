@@ -588,6 +588,36 @@
                 </div>
                 <div class="content">
                     <div class="split-vertical left light" id="game-display">
+                        <article data-game="Cat Quest">
+                            <header>
+                                <h3>Cat Quest (2015)</h3>
+                            </header>
+                            <p>
+                                Avoid dogs, birds, spikes and more and get to the
+                                flower!
+                            </p>
+                            <p>
+                                This is a simple Mario style platformer I made for
+                                the ISU of Grade 12 Computer Science, made over a
+                                few weeks in class. I used C++ with SDL2 for the 
+                                graphics. I wrote all the code, though some was 
+                                based off <a href="http://lazyfoo.net/tutorials/SDL/">this</a>
+                                tutorial. The graphics are from various Internet
+                                sources, and the music from <a href="http://incompetech.com/">Incompetech</a>.
+                            </p>
+                            <p>
+                                It is not quite finished yet, but the current working
+                                version is available for download.
+                            </p>
+                            <footer>
+                                <a href="/game/CatQuest.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/Cat-Quest" target="_blank"></a>
+                            </footer>
+                            <div class="screenshots">
+                                <img src="/image/screenshot/CatQuest/ss0.jpg" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/CatQuest/ss1.jpg" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/CatQuest/ss2.jpg" alt="Screenshot" class="screenshot" />
+                            </div>
+                        </article>
                         <article data-game="White">
                             <header>
                                 <h3>White (2014)</h3>
@@ -927,6 +957,9 @@
                             Games
                         </h4>
                         <ul>
+                            <li class="game-list" style="background-image:URL(/image/tab/CatQuest.png);">
+                                <span class="spacer"></span><span class="spaced">Cat Quest</span>
+                            </li>
                             <li class="game-list" style="background-image:URL(/image/tab/White.png);">
                                 <span class="spacer"></span><span class="spaced">White</span>
                             </li>

@@ -4,7 +4,7 @@
         <title>Cameron Eldridge</title>
         <meta charset="UTF-8" />
         <meta name="description" content="Student programmer, self taught. Makes games, websites, and maybe more">
-        <meta name="keywords" content="programming,portfolio,profile,cameron,eldridge,game,games,website,websites">
+        <meta name="keywords" content="programming,portfolio,profile,cameron,eldridge,game,games,website,websites,oinkiguana">
         <meta name="author" content="Cameron Eldridge">
         <meta name="viewport" content="width=device-width" />
 
@@ -20,6 +20,9 @@
         <link rel="icon" type="image/png" href="/image/favicon/favicon-32x32.png" sizes="32x32">
         <meta name="msapplication-TileColor" content="#917a73">
         <meta name="msapplication-config" content="/image/favicon/browserconfig.xml">
+
+        <meta property="og:site_name" content="Cameron Eldridge"/>
+        <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png">
 
         <script>
             (function(i, s, o, g, r, a, m) {
@@ -224,7 +227,7 @@
                 opacity: 0;
                 filter: alpha(opacity=0);
                 z-index: -1;
-                -webkit-transition: opacity 0.3s, 
+                -webkit-transition: opacity 0.3s,
                     z-index 0.3s;
                 transition: opacity 0.3s,
                     z-index 0.3s;
@@ -539,19 +542,19 @@
                         <p>
                             I am an aspiring programmer, looking to one day earn a living
                             making websites or games. I hope to be able to make the things
-                            that people have always wanted, but don't know how to do on 
+                            that people have always wanted, but don't know how to do on
                             their own. I believe anything imaginable can be made; that all
                             you need is to write the right code.
                         </p>
                         <p>
                             When I was 9 years old, I began making websites at the Virtual Ventures summer camp
-                            at Carleton University where I first became interested in 
-                            programming. I then went on to learn a lot more on my own 
-                            time while making websites for my friends to use, as well 
+                            at Carleton University where I first became interested in
+                            programming. I then went on to learn a lot more on my own
+                            time while making websites for my friends to use, as well
                             as for some school projects.
                         </p>
                         <p>
-                            In my free time I also often make games, mainly for Windows 
+                            In my free time I also often make games, mainly for Windows
                             with GameMaker, but I have done a few HTML5 games with JavaScript.
                             In making games I learned about object oriented programming,
                             collision detection, and lots of other useful concepts.
@@ -560,19 +563,19 @@
                             high as 16th in the GMC Jam.
                         </p>
                         <p>
-                            I've taken a few courses in high school which taught concepts such as 
+                            I've taken a few courses in high school which taught concepts such as
                             recursion and basic dynamic programming in C++. I have entered a number
-                            of contests using C++, and done reasonably well. Java was touched on 
-                            too, though it was mainly left for the students who were 
+                            of contests using C++, and done reasonably well. Java was touched on
+                            too, though it was mainly left for the students who were
                             ahead to learn it while the rest of the class caught up
                             and was mainly self taught
                         </p>
                         <p>
-                            The source code to my more recent projects can be found on 
+                            The source code to my more recent projects can be found on
                             <a href="https://github.com/OinkIguana" target="_blank">Github</a>.
                         </p>
                         <p>
-                            If you have questions, a potential job, or would simply 
+                            If you have questions, a potential job, or would simply
                             like to know more, feel free to email me at
                             <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
                         </p>
@@ -599,15 +602,19 @@
                             <p>
                                 This is a simple Mario style platformer I made for
                                 the ISU of Grade 12 Computer Science, made over a
-                                few weeks in class. I used C++ with SDL2 for the 
-                                graphics. I wrote all the code, though some was 
+                                few weeks in class. I used C++ with SDL2 for the
+                                graphics. I wrote all the code, though some was
                                 based off <a href="http://lazyfoo.net/tutorials/SDL/">this</a>
                                 tutorial. The graphics are from various Internet
                                 sources, and the music from <a href="http://incompetech.com/">Incompetech</a>.
                             </p>
                             <p>
-                                It is not quite finished yet, but the current working
-                                version is available for download.
+                                It is not quite finished yet, but the version I
+                                had working for class is available for download.
+                                There are some things wrong in that one, but I'll
+                                keep the source up to date with current progress.
+                                I hope to get my own graphics and music and polish
+                                this up well enough to distribute some day.
                             </p>
                             <footer>
                                 <a href="/game/CatQuest.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/Cat-Quest" target="_blank"></a>
@@ -643,10 +650,10 @@
                                 After the GMC Jam was over, I went on to complete
                                 the game. Eventually I published it, first on
                                 <a href="http://gamejolt.com/games/platformer/white/35169/">GameJolt</a>,
-                                <a href="http://www.indiedb.com/games/white1">indieDB</a> and 
-                                <a href="http://oinkiguana.itch.io/white">itch.io</a> as a downloadable 
-                                game, and later as an HTML5 game on 
-                                <a href="http://www.kongregate.com/games/OinkIguana/white">Kongregate</a> and 
+                                <a href="http://www.indiedb.com/games/white1">indieDB</a> and
+                                <a href="http://oinkiguana.itch.io/white">itch.io</a> as a downloadable
+                                game, and later as an HTML5 game on
+                                <a href="http://www.kongregate.com/games/OinkIguana/white">Kongregate</a> and
                                 <a href="http://www.newgrounds.com/portal/view/647031">Newgrounds</a>.
                                 Unfortunately the HTML5 version does not run as
                                 smoothly as the standalone executable, and so it
@@ -673,16 +680,16 @@
                             </header>
                             <p>
                                 Having lived in a small village, poor and bored,
-                                you are unsatisfied with the living conditions, 
+                                you are unsatisfied with the living conditions,
                                 and wish to go across the Chasm and get yourself
                                 a better life in the Nobles' Land. Fix up the old
                                 catapult and see where it takes you!
                             </p>
                             <p>
                                 <i>The Catapult</i> is a short RPG, and was
-                                Created in 48 hours for Ludum Dare <a href="http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&uid=38828" target="_blank">Ludum Dare #30</a>.
+                                created in 48 hours for Ludum Dare <a href="http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&uid=38828" target="_blank">Ludum Dare #30</a>.
                                 It was made using GameMaker:Studio, and was based
-                                off an RPG engine that I had created earlier. The 
+                                off an RPG engine that I had created earlier. The
                                 graphics I drew myself, though music and sound were
                                 created using a random generator, all within the
                                 two days.
@@ -703,14 +710,14 @@
                                 You (and your house) have been teleported into a
                                 mysterious forest. Some guy tells you that the trees
                                 are dying, and that you have to fix them by solving
-                                the forest spirits. 
+                                the forest spirits.
                             </p>
                             <p>
-                                I made <i>cat</i> in a few days using an idea from 
+                                I made <i>cat</i> in a few days using an idea from
                                 <a href="http://orteil.dashnet.org/gamegen" target="_blank">Orteil's game idea generator</a>
                                 with "cat" as the seed and sanity turned off.
                                 It was made in GameMaker:Studio, using the same
-                                RPG engine as <i>The Catapult</i>. I drew some of 
+                                RPG engine as <i>The Catapult</i>. I drew some of
                                 the graphics, but most were taken from the Internet,
                                 along with the sound and music.
                             </p>
@@ -723,7 +730,7 @@
                                 <h3>Animal Farm (2014)</h3>
                             </header>
                             <p>
-                                The time has come for the animals to take over 
+                                The time has come for the animals to take over
                                 the Manor Farm. Chase out Mr. Jones, harvest the
                                 crops, build the windmill, and bring Animal Farm
                                 to glory!
@@ -757,7 +764,7 @@
                                 regular assignments, so I made this instead. It
                                 ended up being my summative project for the year.
                                 The entire game was coded from scratch, though
-                                the resources were taken from someone else's 
+                                the resources were taken from someone else's
                                 remake.
                             </p>
                             <footer>
@@ -782,7 +789,7 @@
                                 story based. It was my entry to the <a href="http://gmc.yoyogames.com/index.php?showtopic=598547&p=4418833">GMC Jam #12</a>
                                 where it placed 16th overall. It was made by a
                                 group of friends, including myself. I did the code,
-                                Pearl Qiu did the graphics, Avery Vine did the 
+                                Pearl Qiu did the graphics, Avery Vine did the
                                 music, and Ben Hansson voiced the monsters.
                             </p>
                             <footer>
@@ -803,11 +810,11 @@
                                 the group the must now find their way back safely.
                             </p>
                             <p>
-                                <i>Abby and Elliot</i> is a sidescrolling game, 
+                                <i>Abby and Elliot</i> is a sidescrolling game,
                                 mostly based on story. It was my entry to the <a href="http://gmc.yoyogames.com/index.php?showtopic=588681&p=4343215">GMC Jam #11</a>
                                 where it placed 21st overall, and the first real
                                 game that I released to the Internet. I made this
-                                game with Pearl Qiu, who did the graphics. The 
+                                game with Pearl Qiu, who did the graphics. The
                                 music was composed by Jack Boldick.
                             </p>
                             <footer>
@@ -823,14 +830,14 @@
                                 <h3>Lord of the Flies (2013)</h3>
                             </header>
                             <p>
-                                This game is based off of William Golding's 
+                                This game is based off of William Golding's
                                 <i>Lord of the Flies</i> and created for a grade
-                                10 English assignment. It's a collection of 
+                                10 English assignment. It's a collection of
                                 minigames that are meant to prove the theme of
                                 evil being a part of every person, whether they
-                                know it or not. The game is a bit buggy due to 
+                                know it or not. The game is a bit buggy due to
                                 some updates to GameMaker. I took the graphics
-                                and sound from the Internet, and the music is from 
+                                and sound from the Internet, and the music is from
                                 Donkey Kong Country.
                             </p>
                             <footer>
@@ -861,7 +868,7 @@
                                 <h3>Cam-I-Am (2012)</h3>
                             </header>
                             <p>
-                                Learn a bit about the things I like in this 
+                                Learn a bit about the things I like in this
                                 autobiographical game.
                             </p>
                             <p>
@@ -870,7 +877,7 @@
                                 grade 9 English summative as part of the Book of
                                 Life project, where each student created something,
                                 about themselves and how they live, such as a story,
-                                song, poem or other form of media, to send to a 
+                                song, poem or other form of media, to send to a
                                 First Nations school.
                             </p>
                             <footer>
@@ -905,15 +912,15 @@
                             </header>
                             <p>
                                 Tom's hometown is in danger. He must go on a grand
-                                adventure full of swords and bows and magic to 
+                                adventure full of swords and bows and magic to
                                 get the Magic Taco so he can save his home!
                             </p>
                             <p>
                                 <i>Taco Quest</i> was my first big project.
-                                I made it mostly with the drag and drop features 
+                                I made it mostly with the drag and drop features
                                 of GameMaker when I was very young, so it's not
                                 particularly impressive compared to my current
-                                games. There are a few bugs here and there, and 
+                                games. There are a few bugs here and there, and
                                 the game isn't all that fun. I used the default
                                 example graphics that came with GameMaker and some
                                 music and sound I found online.
@@ -936,12 +943,12 @@
                             <p>
                                 <i>The Ghost Game</i> was the first game I ever
                                 made. I started it at Virtual Ventures summer camp,
-                                and finished it after. I then went on to make a 
+                                and finished it after. I then went on to make a
                                 <i>The Ghost Game 2</i>, which I combined with
                                 the first to make the <i>Complete Edition</i> that
                                 is available for download below. It's
                                 a very basic platformer which I made using GameMaker
-                                and its example graphics. 
+                                and its example graphics.
                             </p>
                             <footer>
                                 <a href="/game/TheGhostGameCompleteEdition.exe"></a>
@@ -1033,7 +1040,7 @@
                             <p>
                                 Later, when HTML5 came out, I decided to redo the
                                 whole thing using the new features. That remake
-                                is what is there now today. It's not as well used 
+                                is what is there now today. It's not as well used
                                 anymore, but I still keep an eye on it.
                             </p>
                         </article>
@@ -1070,6 +1077,14 @@
                                 and the seasons. It also has a few things that are
                                 a placed little differently each time.
                             </p>
+                            <p>
+                                I also have made a few other Tumblr themes, which
+                                which are available <a href="https://www.tumblr.com/themes/by/oinkiguana">here</a>
+                                and on <a href="https://github.com/OinkIguana/Tumblr-Themes">Github</a>
+                            </p>
+                            <footer>
+                                <a href="https://github.com/OinkIguana/Tumblr-Themes"></a>
+                            </footer>
                         </article>
                         <article data-site="cameldridge.com">
                             <header>
@@ -1080,7 +1095,7 @@
                                 Yes, that is this site. I made this page to showcase
                                 my projects. Feel free to look at the source code.
                                 Everything is in this one file for your viewing
-                                convenience. I've commented the JavaScript too, if 
+                                convenience. I've commented the JavaScript too, if
                                 you're interested in what's going on.
                             </p>
                             <footer>
@@ -1398,7 +1413,7 @@
             });
             window.addEventListener("click", function(e) {
                 //Count clicks on all the links (for my own curiosity)
-                
+
                 //If the click was on a link
                 if(e.target.toString().substr(0, 7) !== "[object") {
                     //Send a request to the script on the server
@@ -1411,6 +1426,6 @@
                     req.send(params);
                 }
             });
-        </script>  
+        </script>
     </body>
 </html>

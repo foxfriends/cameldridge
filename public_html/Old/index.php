@@ -326,7 +326,7 @@
                 <p>
                     I am an aspiring programmer, looking to one day earn a living
                     making websites or games. I hope to be able to make the things
-                    that people have always wanted, but don't know how to do on 
+                    that people have always wanted, but don't know how to do on
                     their own. I believe anything imaginable can be made; that all
                     you need is to write the right code.
                 </p>
@@ -343,12 +343,12 @@
                 </ul>
                 <p>
                     8 years ago, I began making websites at the Virtual Ventures summer camp
-                    at Carleton University, where I first became interested in 
-                    programming. I then went on to learn a lot more on my own 
+                    at Carleton University, where I first became interested in
+                    programming. I then went on to learn a lot more on my own
                     time while making websites for school or my friends.
                 </p>
                 <p>
-                    In my free time I also often make games, mainly for Windows 
+                    In my free time I also often make games, mainly for Windows
                     with GameMaker, but I have done a few HTML5 games with JavaScript.
                     In making games I learned about object oriented programming.
                     I try to participate in as many game making contests as I can,
@@ -363,10 +363,10 @@
                     <li>Java;</li>
                 </ul>
                 <p>
-                    C++ was taught in high school, along with concepts such as 
+                    C++ was taught in high school, along with concepts such as
                     recursion and basic dynamic programming. I have entered a number
-                    of contests using C++, and done reasonably well. Java was touched on 
-                    as well, though it was mainly left for the students who were 
+                    of contests using C++, and done reasonably well. Java was touched on
+                    as well, though it was mainly left for the students who were
                     ahead to learn it while the rest of the class caught up, so
                     it is mainly self taught.
                 </p>
@@ -385,14 +385,14 @@
                     under <a href="https://github.com/OinkIguana" target="_blank">OinkIguana</a>.
                 </p>
                 <p>
-                    If you have a potential job, or would like to know more, or 
+                    If you have a potential job, or would like to know more, or
                     have questions, feel free to email me at
                     <a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a>.
                 </p>
             </section>
             <section id="section-content">
                 <div class="nav-background"></div>
-                <nav>                    
+                <nav>
                     <h2 class="selected" id="header-games" onclick="shift('games')">Games</h2><h2 id="header-websites" onclick="shift('websites')">Websites</h2>
                 </nav>
                 <div id="section-games" class="content">
@@ -404,7 +404,7 @@
                             <h3><a href="Games/The Catapult.exe">The Catapult</a></h3>
                             <p>
                                 A short RPG game, made in 48 hours for <a href="http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&uid=38828" target="_blank">Ludum Dare #30</a>. I used my
-                                RPG engine which I cretaed before the contest, but the rest of 
+                                RPG engine which I cretaed before the contest, but the rest of
                                 everything was made during the 2 days. Music and sound were generated
                                 randomly, but I drew the graphics myself.
                             </p>
@@ -421,7 +421,7 @@
                             <p>
                                 I made this game in GameMaker using an RPG engine I created for
                                 myself. The idea was obtained from <a href="http://orteil.dashnet.org/gamegen" target="_blank">Orteil's game idea generator</a>
-                                with sanity turned off using the seed "cat", hence the title. I took the graphics and 
+                                with sanity turned off using the seed "cat", hence the title. I took the graphics and
                                 music from the Internet.
                             </p>
                             <p>
@@ -438,7 +438,7 @@
                                 Based off of George Orwell's <i>Animal Farm</i>, and inspired by
                                 RTS games such as Starcraft or Age of Empires. This game was created
                                 for a grade 11 English project. The game was coded in GameMaker,
-                                with resources either taken from the Internet, drawn by me, or snipped 
+                                with resources either taken from the Internet, drawn by me, or snipped
                                 from the 1955 animated movie.
                             </p>
                             <p>
@@ -469,14 +469,14 @@
                         <div class="foreground">
                             <h3><a href="Games/White.exe">White</a></h3>
                             <p>
-                                White is my personal favourite. 
-                                It was originally created in 3 days for the 
+                                White is my personal favourite.
+                                It was originally created in 3 days for the
                                 <a href="http://gmc.yoyogames.com/index.php?showtopic=606848&page=3#entry4492169">GMC Jam #13</a>
-                                where it placed 19th, downloadable <a href="Games/White-Pirate_Edition.exe">here</a>. 
+                                where it placed 19th, downloadable <a href="Games/White-Pirate_Edition.exe">here</a>.
                                 I then went on to improve things and make a full game out of it,
                                 with all my own resources - Everything in
-                                it was created by me: code, graphics, and sound. 
-                                It's a smooth, calm platformer game in which you travel 
+                                it was created by me: code, graphics, and sound.
+                                It's a smooth, calm platformer game in which you travel
                                 around and restore colour to the world. It has been published
                                 to <a href="http://gamejolt.com/games/platformer/white/35169/" target="_blank">Game Jolt</a>,
                                 <a href="http://www.indiedb.com/games/white1" target="_blank">IndieDB</a>,
@@ -492,10 +492,10 @@
                         <div class="foreground">
                             <h3><a href="Games/Forks.exe">Forks</a></h3>
                             <p>
-                                My second contest entry, and second team project. It was made in 
+                                My second contest entry, and second team project. It was made in
                                 3 days for the <a href="http://gmc.yoyogames.com/index.php?showtopic=598547&p=4418833">GMC Jam #12</a>
-                                receiving 16th place. It is a sidescrolling adventure 
-                                game with a heavy story focus. The code is all written 
+                                receiving 16th place. It is a sidescrolling adventure
+                                game with a heavy story focus. The code is all written
                                 using GameMaker. The graphics, music, and voices are
                                 by my friends Pearl, Avery and Ben, respectively.
                             </p>
@@ -513,7 +513,7 @@
                                 My first game created with a team. Abby and Elliot was made in 3
                                 days for the <a href="http://gmc.yoyogames.com/index.php?showtopic=588681&p=4343215">GMC Jam #11</a>.
                                 It's a sidescrolling adventure game, with heavy focus on story.
-                                Coded with GameMaker, graphics were drawn by my friend Pearl, 
+                                Coded with GameMaker, graphics were drawn by my friend Pearl,
                                 and the music was written by Jack Boldick, some guy I found online.
                                 It placed 21st in the contest.
                             </p>
@@ -528,8 +528,8 @@
                                 Based off of William Golding's <i>Lord of the Flies</i>, this game
                                 was created for a grade 10 English assignment. It tries to prove
                                 the themes of the novel - that there is an inherent evil within
-                                us all. The game itself is a little buggy due to a update in 
-                                GameMaker. The graphics and sound were taken from the Internet. 
+                                us all. The game itself is a little buggy due to a update in
+                                GameMaker. The graphics and sound were taken from the Internet.
                             </p>
                             <p>
                                 <a href="https://github.com/OinkIguana/Lord-Of-The-Flies" target="_blank">Source</a>
@@ -557,7 +557,7 @@
                             <p>
                                 A sort of autobiographical game, created for my grade 9
                                 English class summative. Consists of a few minigames that are based
-                                off some of my interests. The music and graphics were mostly from 
+                                off some of my interests. The music and graphics were mostly from
                                 the Internet, though I drew a few of the foods and other simple things.
                             </p>
                         </div>
@@ -570,7 +570,7 @@
                             <p>
                                 A game I created in a few days using JavaScript, mainly to help
                                 introduce myself to the new features of HTML5. This is the first
-                                game I published online, though it only earned around 30 cents 
+                                game I published online, though it only earned around 30 cents
                                 from the ads on <a href="http://www.kongregate.com/games/TheGaym/running-squared" target="_blank">Kongregate</a>, so I haven't actually been able to
                                 claim the profits.
                             </p>
@@ -624,7 +624,7 @@
                             <p>
                                 The Nepean High School newspaper Knightwatch website.
                                 I wrote all of the code for it, with some style and article arrangement
-                                suggestions from friends, and the articles written by other students. Articles are 
+                                suggestions from friends, and the articles written by other students. Articles are
                                 stored in text files and loaded dynamically. It used to be hosted
                                 on their server and used as the official website. They now use a
                                 Google site.
@@ -639,7 +639,7 @@
                             <p>
                                 Currently a work in progress, this website is planned to be where
                                 I host and sell some of my games from in the near future. I'm experimenting
-                                with the parallax in the background and the article displaying system, 
+                                with the parallax in the background and the article displaying system,
                                 as well as a few other things.
                             </p>
                         </div>
@@ -650,9 +650,9 @@
                         <div class="foreground">
                             <h3><a href="http://oinkiguana.tumblr.com">My Tumblr (http://oinkiguana.tumblr.com)</a></h3>
                             <p>
-                                I didn't code all of Tumblr, obviously, but I created the theme 
-                                for my blog - the code and the drawings. The background changes 
-                                with the time of day, seasons, and (soon) weather, and everything's a 
+                                I didn't code all of Tumblr, obviously, but I created the theme
+                                for my blog - the code and the drawings. The background changes
+                                with the time of day, seasons, and (soon) weather, and everything's a
                                 little different every visit. Don't mind the content though, it's
                                 mostly cute animals or nice art.
                             </p>

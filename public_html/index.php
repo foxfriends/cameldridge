@@ -24,24 +24,6 @@
         <meta property="og:site_name" content="Cameron Eldridge"/>
         <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png">
 
-        <script>
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-54974204-1', 'auto');
-            ga('require', 'displayfeatures');
-            ga('send', 'pageview');
-
-        </script>
         <style type="text/css">
             @import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
             .screenshot, .game-list, .site-list, .triangle {}
@@ -512,7 +494,7 @@
                         <hgroup>
                             <h1>Cameron Eldridge</h1>
                             <h2>Student - Programmer - Maker of websites and games</h2>
-                            <h3>HTML5 | CSS | JavaScript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
+                            <h3>HTML5 | CSS | Javascript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
                         </hgroup>
                         <span style="display:block">
                             <img src="image/icon/cameldridge-icon_128x128.png" alt="" id="header-image" class="circle"/>
@@ -547,11 +529,11 @@
                             you need is to write the right code.
                         </p>
                         <p>
-                            When I was 9 years old, I began making websites at the Virtual Ventures summer camp
-                            at Carleton University where I first became interested in
-                            programming. I then went on to learn a lot more on my own
-                            time while making websites for my friends to use, as well
-                            as for some school projects.
+                            When I was 9 years old, I began making websites at the
+                            Virtual Ventures summer camp at Carleton University where
+                            I first became interested in programming. I then went on
+                            to learn a lot more on my own time while making websites
+                            for my friends to use, as well as for some school projects.
                         </p>
                         <p>
                             In my free time I also often make games, mainly for Windows
@@ -1411,21 +1393,24 @@
                 //Allow the automatic scrolling to be overriden by a manual scroll
                 window.clearInterval(scrollInterval);
             });
-            window.addEventListener("click", function(e) {
-                //Count clicks on all the links (for my own curiosity)
+        </script>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-                //If the click was on a link
-                if(e.target.toString().substr(0, 7) !== "[object") {
-                    //Send a request to the script on the server
-                    var req = new XMLHttpRequest();
-                    var params = "l=" + encodeURIComponent(e.target);
-                    req.open("POST", "/link_click_count.php", true);
-                    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    req.setRequestHeader("Content-length", params.length);
-                    req.setRequestHeader("Connection", "close");
-                    req.send(params);
-                }
-            });
+            ga('create', 'UA-54974204-1', 'auto');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+
         </script>
     </body>
 </html>

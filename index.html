@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>Cameron Eldridge</title>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8" >
         <meta name="description" content="Student programmer, self taught. Makes games, websites, and maybe more">
         <meta name="keywords" content="programming,portfolio,profile,cameron,eldridge,game,games,website,websites,oinkiguana">
         <meta name="author" content="Cameron Eldridge">
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width">
 
         <link rel="shortcut icon" href="/image/favicon/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon-57x57.png">
@@ -21,464 +21,10 @@
         <meta name="msapplication-TileColor" content="#917a73">
         <meta name="msapplication-config" content="/image/favicon/browserconfig.xml">
 
-        <meta property="og:site_name" content="Cameron Eldridge"/>
+        <meta property="og:site_name" content="Cameron Eldridge">
         <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png">
 
-        <style type="text/css">
-            @import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
-            .screenshot, .game-list, .site-list, .triangle {}
-            /* Setup */
-            * {
-                font-family: 'Open Sans',sans-serif;
-                padding: 0;
-                margin: 0;
-                overflow: visible;
-            }
-            .circle {
-                border-radius: 100%;
-            }
-            /* Makes vertical alignment easier */
-            span.spacer {
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
-            }
-            span.spaced {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .light {
-                color: #FFF;
-            }
-            .dark {
-                color: #000;
-            }
-            /* Prevent scrollbars created by the parallaxes */
-            div#page-container {
-                overflow: hidden;
-            }
-            /* Nav bar */
-            nav div.nav-link {
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                position: fixed;
-                left: 100%;
-                z-index: 100;
-                width: 100%;
-                height: 24px;
-                padding-left: 20px;
-                border-bottom: 1px solid #777;
-                border-left: 1px solid #777;
-                background: white;
-                cursor: pointer;
-                -webkit-transition-property: left;
-                -webkit-transition-duration: 0.0s;
-                transition-property: left;
-                transition-duration: 0.0s;
-            }
-
-            /* Page sections */
-            section {
-                position: relative;
-                padding-bottom: 200px;
-                background-color: #FFF;
-                background-position: 0 -200px;
-                overflow: visible;
-            }
-            section div.tri {
-                position: absolute;
-                top: -200px;
-                width: 100%;
-                height: 200px;
-                pointer-events: none;
-            }
-            section div.tri svg {
-                display: block;
-                width: 100%;
-                height: 200px;
-                overflow-y: hidden;
-            }
-            section div.content {
-                padding: 100px;
-                text-align: right;
-            }
-            section div.content div.split-vertical {
-                display: inline-block;
-            }
-            section div.content div.split-vertical.left {
-                text-align: left;
-            }
-            section div.content div.split-vertical.right {
-                text-align: right;
-            }
-            section div.content div.split-vertical.center {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-            }
-            /* Content */
-            hgroup {
-                display: inline-block;
-                margin: 0 auto;
-                background-color: RGBA(255, 255, 255, 0.5);
-                border-radius: 100% 100% 50px 50px;
-                padding: 30px 100px;
-            }
-            h1, h2, h3, h4 {
-                font-family: "Merienda One",cursive;
-            }
-            h1, h2, h3 {
-                text-align: center;
-            }
-            h1 {
-                font-size: 35pt;
-                font-weight: bold;
-            }
-            h2 {
-                font-size: 20pt;
-            }
-            h3 {
-                font-size: 18pt;
-            }
-            h4 {
-                font-size: 20pt;
-            }
-            h4, p, header, footer, li {
-                text-align: justify;
-                margin: 10px 0 10px auto;
-                width: 500px;
-            }
-            /* The bottom section ones */
-            p.center, footer.center {
-                text-align: center;
-                margin: 10px;
-                width: 100%;
-            }
-            /* Game and article lists */
-            ul {
-                list-style: none;
-            }
-            li:before{
-                box-sizing: border-box;
-                width: 55px;
-                height: 52px;
-                content: "";
-                overflow: visible;
-                position: absolute;
-                top: 0;
-                left: -55px;
-                border-top: 26px solid transparent;
-                border-bottom: 26px solid transparent;
-                border-right: solid white;
-                border-right-width: 10px;
-                border-left: solid transparent;
-                -webkit-transition: border-right-width 0.3s;
-                transition: border-right-width 0.3s;
-            }
-            li:hover:before {
-                border-right-width: 20px;
-            }
-            li.selected:before {
-                border-right-width: 45px;
-            }
-            li {
-                position: relative;
-                width: 500px;
-                height: 52px;
-                overflow: visible;
-                background-color: #FFF;
-                background-position: right;
-                background-repeat: no-repeat;
-                cursor: pointer;
-                -webkit-transition: width 0.3s;
-                transition: width 0.3s;
-            }
-            li.selected {
-                width: 532px;
-                -webkit-transition: width 0.3s;
-                transition: width 0.3s;
-            }
-            /* Game and website articles */
-            article {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 500px;
-                margin: 100px;
-                opacity: 0;
-                filter: alpha(opacity=0);
-                z-index: -1;
-                -webkit-transition: opacity 0.3s,
-                    z-index 0.3s;
-                transition: opacity 0.3s,
-                    z-index 0.3s;
-            }
-            article div.screenshots {
-                position: absolute;
-                top: 80px;
-                right: -128px;
-                width: 96px;
-            }
-            article div.screenshots img {
-                width: 128px;
-                cursor: pointer;
-                padding: 1px;
-                border: 1px solid;
-                border-color: transparent;
-            }
-            article div.screenshots img:hover {
-                border-color: #AAA;
-            }
-            /* Popup windows */
-            div.popup-background {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: 1000;
-                background-color: transparent;
-                background-color: RGBA(0, 0, 0, 0.4);
-                text-align: center;
-                cursor: pointer;
-            }
-            div.popup-container {
-                display: inline-block;
-                z-index: 1001;
-                padding: 16px;
-                max-width: 1000px;
-                max-height: 600px;
-                background-color: #EEE;
-                cursor: default;
-            }
-            img.popup-image {
-                max-width: 1000px;
-                max-height: 600px;
-            }
-            /* Regular links */
-            a {
-                color: #AAF;
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-            /* Special Links */
-            footer a {
-                display: inline-block;
-                width: 32px;
-                height: 32px;
-                -webkit-background-size: cover;
-                background-size: cover;
-                margin-right: 8px;
-            }
-            footer a[href$=".html"] {
-                background-image: URL("/image/icon/HTML5-icon_32x32.png");
-            }
-            footer a[href$=".exe"] {
-                background-image: URL("/image/icon/windows7-icon_32x32.png");
-            }
-            footer a[href*="github"] {
-                background-image: URL("/image/icon/github-icon_32x32.png");
-            }
-            footer a[href*="facebook"] {
-                background-image: URL("/image/icon/facebook-icon_32x32.png");
-            }
-            footer a[href*="twitter"] {
-                background-image: URL("/image/icon/twitter-icon_32x32.png");
-            }
-            footer a[href*="tumblr"] {
-                background-image: URL("/image/icon/tumblr-icon_32x32.png");
-            }
-            footer a[href*="linkedin"] {
-                background-image: URL("/image/icon/linkedin-icon_32x32.png");
-            }
-            footer a[href*="plus.google"] {
-                background-image: URL("/image/icon/google+icon_32x32.png");
-            }
-
-            /* Specifics */
-            section#page-top, div#nav-top {
-                background-image: URL("/image/pattern/top.png");
-            }
-            section#page-desc, div#nav-desc {
-                background-image: URL("/image/pattern/desc.png");
-            }
-            section#page-game, div#nav-game{
-                background-image: URL("/image/pattern/game.png");
-            }
-            section#page-site, div#nav-site {
-                background-image: URL("/image/pattern/site.png");
-            }
-            section#page-bot {
-                background-image: URL("/image/pattern/bot.png");
-                min-height: 700px;
-            }
-            div#desc-image {
-                position: absolute;
-                left: 0;
-                top: 0;
-                margin: 100px;
-                width: 500px;
-                height: 700px;
-                background-image: URL("/image/desc.jpg");
-                background-size: cover;
-                background-position: bottom center;
-                border-radius: 250px;
-            }
-            img#header-image {
-                margin: 10px;
-            }
-
-            /* Smaller screen layout */
-            @media screen and (max-width: 1450px) {
-                section div.content {
-                    /* Reduce padding to make text and tabs look more centered */
-                    padding: 100px 50px;
-                }
-                article {
-                    /* Reduce margin to make it look more centered */
-                    margin: 100px 50px;
-                }
-                article div.screenshots {
-                    /* Put screenshots below the article if the width is too small */
-                    position: absolute;
-                    top: 100%;
-                    left: 0px;
-                    width: 500px;
-                }
-            }
-            @media screen and (max-width: 1200px) {
-                /* Top headings are smaller so they don't break line */
-                h1 {
-                    font-size: 30pt;
-                    font-weight: bold;
-                }
-                h2 {
-                    font-size: 15pt;
-                }
-                h3 {
-                    font-size: 14pt;
-                }
-                /* Tags and right text is thinner */
-                div.split-vertical.right h4, div.split-vertical.right p, div.split-vertical.right header, div.split-vertical.right footer {
-                    width: 400px;
-                }
-                li {
-                    width: 400px;
-                }
-                li.selected {
-                    width: 432px;
-                }
-            }
-            @media screen and (max-width: 1100px) {
-                /* Top headings are smaller so they don't break line */
-                h1 {
-                    font-size: 30pt;
-                    font-weight: bold;
-                }
-                h2 {
-                    font-size: 15pt;
-                }
-                h3 {
-                    font-size: 14pt;
-                }
-                /* All text is thinner */
-                h4, p, header, footer {
-                    width: 400px;
-                    margin: 10px 0 10px 0;
-                }
-            }
-            @media screen and (max-height: 700px) {
-                article {
-                    /* Don't scroll if the biggest article doesn't fit on the screen */
-                    transform: translateY(0) !important;
-                }
-                /* Popup images must be smaller so there is decent border */
-                div.popup-container {
-                    max-height: 400px;
-                }
-                img.popup-image {
-                    max-height: 400px;
-                }
-            }
-            /* Mobile layout */
-            @media screen and (max-width: 1000px) {
-                nav {
-                    display: none;
-                }
-                hgroup {
-                    margin: 10px;
-                    background-color: RGBA(255, 255, 255, 0.5);
-                    border-radius: 50px;
-                    padding: 30px;
-                }
-                section div.content {
-                    padding: 0;
-                    margin: 0;
-                }
-                section {
-                    transform: translateY(0px) !important;
-                }
-                section div.content div.split-vertical {
-                    display: block;
-                    width: 100%;
-                }
-                section div.content div.split-vertical.left {
-                    display: none;
-                }
-                h4, p, header, footer, li {
-                    width: 100% !important;
-                    display: block;
-                }
-                h4 {
-                    text-align: center;
-                }
-                h4, p {
-                    box-sizing: border-box;
-                    padding: 0 10px;
-                }
-                div.popup-container {
-                    max-width: 500px;
-                }
-                img.popup-image {
-                    max-width: 500px;
-                }
-
-                li:before{
-                    display: none;
-                }
-                li:hover:before {
-                    display: none;
-                }
-                li.selected:before {
-                    display: none;
-                }
-                li {
-                    box-sizing: border-box;
-                    height: 52px;
-                    padding-left: 16px;
-                    -webkit-transition: none;
-                    transition: none;
-                }
-                li.selected {
-                    -webkit-transition: none;
-                    transition: none;
-                }
-            }
-            /* Super tiny screens */
-            @media screen and (max-width: 480px) {
-                li span.spaced{
-                    /* Background so text can be read over the image */
-                    background-color: white;
-                    border-radius: 5px;
-                    padding: 3px;
-                    box-shadow: 0 0 5px 5px white;
-                }
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
         <div id="page-container">
@@ -497,7 +43,7 @@
                             <h3>HTML5 | CSS | Javascript | PHP | MySQL | C++ | Ruby | GameMaker</h3>
                         </hgroup>
                         <span style="display:block">
-                            <img src="image/icon/cameldridge-icon_128x128.png" alt="" id="header-image" class="circle"/>
+                            <img src="image/icon/cameldridge-icon_128x128.png" alt="" id="header-image" class="circle">
                         </span>
                     </div>
                 </div>
@@ -506,11 +52,11 @@
                 <div class="tri">
                     <svg> <!-- Triangle -->
                     <defs>
-                    <pattern id="patt-desc" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" /></pattern>
+                    <pattern id="patt-desc" patternUnits="userSpaceOnUse" width="300" height="300"><image xlink:href="/image/pattern/desc.png" x="0" y="0" width="300" height="300" ></pattern>
                     <!-- The pattern for all the borders is set here only -->
-                    <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/pattern/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" /></pattern>
+                    <pattern id="patt-border" patternTransform="" patternUnits="userSpaceOnUse" width="1920" height="200" preserveAspectRatio="none"><image xlink:href="/image/pattern/border.png" x="0" y="0" width="1920" height="205" preserveAspectRatio="none" ></pattern>
                     </defs>
-                    <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    <polygon points="" style="fill:URL(#patt-desc);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" >
                     </svg>
                 </div>
                 <div class="content">
@@ -567,8 +113,8 @@
             <section id="page-game">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-game" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    <defs><pattern id="patt-game" patternUnits="userSpaceOnUse" width="1200" height="1200"><image xlink:href="/image/pattern/game.png" x="0" y="0" width="1200" height="1200" ></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-game);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" >
                     </svg>
                 </div>
                 <div class="content">
@@ -602,9 +148,9 @@
                                 <a href="/game/CatQuest.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/Cat-Quest" target="_blank"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/CatQuest/ss0.jpg" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/CatQuest/ss1.jpg" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/CatQuest/ss2.jpg" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/CatQuest/ss0.jpg" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/CatQuest/ss1.jpg" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/CatQuest/ss2.jpg" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="White">
@@ -650,10 +196,10 @@
                                 <a href="/game/White/index.html"></a><a href="/game/White.exe"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/White/ss0.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/White/ss1.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/White/ss2.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/White/ss3.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/White/ss0.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/White/ss1.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/White/ss2.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/White/ss3.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="The Catapult">
@@ -680,8 +226,8 @@
                                 <a href="/game/The Catapult/index.html"></a><a href="/game/The Catapult.exe"></a><a href="https://github.com/OinkIguana/The-Catapult" target="_blank"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/The-Catapult/ss0.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/The-Catapult/ss1.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/The-Catapult/ss0.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/The-Catapult/ss1.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="cat">
@@ -730,7 +276,7 @@
                                 <a href="/game/Animal Farm.exe"></a><a href="https://github.com/OinkIguana/Animal-Farm" target="_blank"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/AnimalFarm/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/AnimalFarm/ss0.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="Space Invaders">
@@ -753,7 +299,7 @@
                                 <a href="/game/SpaceInvaders.zip" style="background-image:URL(/image/icon/java-icon_32x32.png);"></a><a href="https://github.com/OinkIguana/SpaceInvaders" target="_blank"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/SpaceInvaders/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/SpaceInvaders/ss0.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="Forks">
@@ -778,7 +324,7 @@
                                 <a href="/game/Forks.exe"></a><a href="https://github.com/OinkIguana/Forks"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/Forks/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/Forks/ss0.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="Abby and Elliot">
@@ -803,8 +349,8 @@
                                 <a href="/game/Abby_and_Elliot.exe"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/AbbyAndElliot/ss0.jpg" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/AbbyAndElliot/ss1.jpg" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/AbbyAndElliot/ss0.jpg" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/AbbyAndElliot/ss1.jpg" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="Lord of the Flies">
@@ -885,7 +431,7 @@
                                 <a href="/game/Running Squared/index.html"></a><a href="https://github.com/OinkIguana/RunningSquared"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/RunningSquared/ss0.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/RunningSquared/ss0.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="Taco Quest">
@@ -911,8 +457,8 @@
                                 <a href="/game/Adventure.zip" style="background-image:URL(/image/icon/windows7-icon_32x32.png);"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/TacoQuest/ss0.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/TacoQuest/ss1.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/TacoQuest/ss0.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/TacoQuest/ss1.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                         <article data-game="The Ghost Game">
@@ -936,8 +482,8 @@
                                 <a href="/game/TheGhostGameCompleteEdition.exe"></a>
                             </footer>
                             <div class="screenshots">
-                                <img src="/image/screenshot/TheGhostGame/ss0.png" alt="Screenshot" class="screenshot" />
-                                <img src="/image/screenshot/TheGhostGame/ss1.png" alt="Screenshot" class="screenshot" />
+                                <img src="/image/screenshot/TheGhostGame/ss0.png" alt="Screenshot" class="screenshot" >
+                                <img src="/image/screenshot/TheGhostGame/ss1.png" alt="Screenshot" class="screenshot" >
                             </div>
                         </article>
                     </div>
@@ -995,8 +541,8 @@
             <section id="page-site">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-site" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    <defs><pattern id="patt-site" patternUnits="userSpaceOnUse" width="141" height="142"><image xlink:href="/image/pattern/site.png" x="0" y="0" width="141" height="142" ></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-site);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" >
                     </svg>
                 </div>
                 <div class="content">
@@ -1075,10 +621,7 @@
                             </header>
                             <p>
                                 Yes, that is this site. I made this page to showcase
-                                my projects. Feel free to look at the source code.
-                                Everything is in this one file for your viewing
-                                convenience. I've commented the JavaScript too, if
-                                you're interested in what's going on.
+                                my projects.
                             </p>
                             <footer>
                                 <a href="https://github.com/OinkIguana/cameldridge"></a>
@@ -1107,8 +650,8 @@
             <section id="page-bot">
                 <div class="tri">
                     <svg><!-- Triangle -->
-                    <defs><pattern id="patt-bot" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" /></pattern></defs>
-                    <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" />
+                    <defs><pattern id="patt-bot" patternUnits="userSpaceOnUse" width="70" height="70"><image xlink:href="/image/pattern/bot.png" x="0" y="0" width="70" height="70" ></pattern></defs>
+                    <polygon points="" style="fill:URL(#patt-bot);stroke:URL(#patt-border);stroke-width:5px;" class="triangle" >
                     </svg>
                 </div>
                 <div class="content light" style="padding-bottom:200px;text-align:center;">
@@ -1131,269 +674,7 @@
                 </div>
             </section><!-- End bottom section -->
         </div><!-- End page container -->
-        <script>
-            var badBrowser = (/MSIE 9/i.test(navigator.userAgent) || //IE. Am I right?
-                    /MSIE 10/i.test(navigator.userAgent) ||
-                    /rv:11.0/i.test(navigator.userAgent) ||
-                    //Though Safari is just as bad this time
-                            (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0));
-            var pageWidth = function() {
-                //Get the width of the page for calculating other values from
-                //Includes support for various browsers and their weird ways
-                if (document.body && (document.body.clientWidth)) {
-                    return document.body.clientWidth;
-                } else if (document.documentElement && (document.documentElement.clientWidth)) {
-                    return document.documentElement.clientWidth;
-                } else if (typeof (window.innerWidth) === 'number') {
-                    return window.innerWidth;
-                }
-                return 0;
-            };
-            var triangles = function() {
-                //Resize the triangles when the page is resized to make sure they
-                //always cover the whole thing
-                var pagewidth = pageWidth();
-                var triangles = document.getElementsByClassName("triangle");
-                //Make sure the border is scaled correctly to fill in the stroke
-                document.getElementById("patt-border").setAttribute("width", pagewidth);
-                document.getElementById("patt-border").childNodes[0].setAttribute("width", pagewidth);
-                for (var i = 0; i < triangles.length; i++) {
-                    //Change the points of the SVG polygon
-                    triangles[i].setAttribute("points", "0,200,0,205," + pagewidth + ",205," + pagewidth + ",200," + (pagewidth / 2) + ",5");
-                    //Update the width of the whole image
-                    triangles[i].parentNode.style.width = pagewidth + "px";
-                }
-            };
-            var parallaxPositions = function() {
-                if (!badBrowser) {
-                    //Align the parallaxes on the sections
-                    var sections = document.getElementsByTagName("section");
-                    var y = window.pageYOffset;
-                    var offset = new Array();
-                    for (var i = 0; i < sections.length; i++) {
-                        offset[i] = Math.round(y / (2 + i));
-                        if (sections[i].style.transform !== "translateY(" + offset[i] + "px)") {
-                            sections[i].style.transform = "translateY(" + offset[i] + "px)";
-                            sections[i].style.webkitTransform = sections[i].style.transform;
-                            //Make the lower ones longer to accomodate for the others moving over them.
-                            sections[i].style.paddingBottom = (200 + 50 * i) + "px";
-                        }
-                    }
-                }
-            };
-            var navbarPositions = function() {
-                //Make the navigation bar appear for each section that
-                //has gone off the top of the screen.
-                var sections = document.getElementsByTagName("section");
-                var navlinks = document.getElementsByClassName("nav-link");
-                var y = window.pageYOffset;
-                for (var i = 0; i < navlinks.length; i++) {
-                    //z-index and opacity change to hide them gradually but
-                    //also prevent clicking on them when they're invisible
-                    if (sections[i].offsetTop + Math.round(y / (2 + i) - (200 + 100 * i)) <= y) {
-                        if (navlinks[i].style.left !== (i * 200) + "px") {
-                            navlinks[i].style.left = (i * 200) + "px";
-                        }
-                    } else {
-                        if (navlinks[i].style.left !== window.innerWidth - (4 - i) * 200) {
-                            navlinks[i].style.left = window.innerWidth - (4 - i) * 200 + "px";
-                        }
-                    }
-                }
-            };
-            var articlePositions = function() {
-                //Next get the articles on the games and sites to stay onscreen
-                //as you scroll to the lower ones
-                var sections = document.getElementsByTagName("section");
-                var articles = document.getElementsByTagName("article");
-                var y = window.pageYOffset;
-                for (var i = 0; i < articles.length; i++) {
-                    //Between the top of the section (0) and the bottom of the section (the longer bits)
-                    var site = (articles[i].getAttribute("data-game") === null);
-                    var offset = 0;
-                    if (!badBrowser) {
-                        offset = Math.round(y / (4 + site));
-                    }
-                    var yy = Math.max(0, Math.min(sections[2 + site].offsetHeight - articles[i].offsetHeight - 500 - (site * 100), y - (sections[2 + site].offsetTop + offset)));
-                    if (articles[i].style.transform !== "translateY(" + yy + "px)") {
-                        articles[i].style.transform = "translateY(" + yy + "px)";
-                        articles[i].style.webkitTransform = articles[i].style.transform;
-                    }
-                }
-            };
-            var positions = function() {
-                //Do all the positions
-                parallaxPositions();
-                navbarPositions();
-                articlePositions();
-            };
-
-            var show_game = function(game) {
-                //Change the game that is being shown when its tab is clicked.
-                var articles = document.getElementById("game-display").getElementsByTagName("article");
-                var list = document.getElementsByClassName("game-list");
-                for (var i = 0; i < articles.length; i++) {
-                    var data = articles[i].getAttribute("data-game");
-                    if (data !== "") {
-                        //The one that is clicked is visible and on top, the others
-                        //remain hidden
-                        articles[i].style.opacity = (data === game ? "1" : "0");
-                        articles[i].style.filter = "alpha(opacity=" + (data === game ? "100" : "0") + ")";
-                        articles[i].style.zIndex = (data === game ? "30" : "-1");
-                        //Extend the tab by changing the class
-                        list[i].className = "game-list" + (data === game ? " selected" : "");
-                    }
-                }
-            };
-            var show_site = function(site) {
-                //Same as show_game but for the sites
-                var articles = document.getElementById("site-display").getElementsByTagName("article");
-                var list = document.getElementsByClassName("site-list");
-                for (var i = 0; i < articles.length; i++) {
-                    var data = articles[i].getAttribute("data-site");
-                    if (data !== "") {
-                        articles[i].style.opacity = (data === site ? "1" : "0");
-                        articles[i].style.filter = "alpha(opacity=" + (data === site ? "100" : "0") + ")";
-                        articles[i].style.zIndex = (data === site ? "30" : "-1");
-                        list[i].className = "site-list" + (data === site ? " selected" : "");
-                    }
-                }
-            };
-            var overContainer = false; //Don't close it if just the image was clicked
-            var popup_close = function() {
-                //Remove the popup element when it's clicked
-                document.body.removeChild(document.getElementsByClassName("popup-background")[0]);
-            };
-            var popup_image = function(img) {
-                //Put given image into a popup
-
-                //Create each part of the popup with the proper values
-                var background = document.createElement("div");
-                //Background
-                background.className = "popup-background";
-                background.onclick = function() {
-                    if (!overContainer) {
-                        popup_close();
-                    }
-                };
-                //Vertical alignment stuff
-                var spacer = document.createElement("span");
-                spacer.className = "spacer";
-                var spaced = document.createElement("span");
-                spaced.className = "spaced";
-                //Inner container
-                var container = document.createElement("div");
-                container.className = "popup-container";
-                container.onmouseover = function() {
-                    overContainer = true;
-                };
-                container.onmouseout = function() {
-                    overContainer = false;
-                };
-                //Image
-                var image = document.createElement("img");
-                image.className = "popup-image";
-                image.src = img;
-                //Attach them all correctly
-                document.body.appendChild(background);
-                background.appendChild(spacer);
-                background.appendChild(spaced);
-                spaced.appendChild(container);
-                container.appendChild(image);
-            };
-            var init = function() {
-                //Set up onclick events for various things
-
-                //First the games tabs
-                var list = document.getElementsByClassName("game-list");
-                for (var i = 0; i < list.length; i++) {
-                    list[i].onclick = function() {
-                        if (!/selected/.test(this.className)) {
-                            //Extract the visible text
-                            show_game(this.getElementsByClassName("spaced")[0].innerHTML);
-                        } else {
-                            //If the tab is already open make it close if reclicked
-                            show_game("");
-                        }
-                    };
-                }
-                //Next the sites, same as games
-                list = document.getElementsByClassName("site-list");
-                for (var i = 0; i < list.length; i++) {
-                    list[i].onclick = function() {
-                        if (!/selected/.test(this.className)) {
-                            show_site(this.getElementsByClassName("spaced")[0].innerHTML);
-                        } else {
-                            show_site("");
-                        }
-                    };
-                }
-                //Screenshots
-                var screenshots = document.getElementsByClassName("screenshot");
-                for (var i = 0; i < screenshots.length; i++) {
-                    screenshots[i].onclick = function() {
-                        //Pass the URL to the popup
-                        popup_image(this.src);
-                    };
-                }
-
-                //Then the navigation bars
-                var navlinks = document.getElementsByClassName("nav-link");
-                for (var i = 0; i < navlinks.length; i++) {
-                    navlinks[i].style.left = window.innerWidth - (4 - i) * 200 + "px";
-                    window.setTimeout(function() {
-                        //Don't do transitions for the initial position of the nav links
-                        var navlinks = document.getElementsByClassName("nav-link");
-                        for (var i = 0; i < navlinks.length; i++) {
-                            navlinks[i].style.transitionDuration = "0.8s";
-                            navlinks[i].style.WebkitTransitionDuration = "0.8s";
-                        }
-                    }, 1);
-                    navlinks[i].onclick = function() {
-                        //Clear first to ensure there aren't two calls cancelling
-                        //each other out
-                        window.clearInterval(scrollInterval);
-                        //Have them scroll smoothly, rather than jumping
-                        scrollInterval = window.setInterval(function(el) {
-                            var y = window.pageYOffset;
-                            var offset = 0;
-                            if (!badBrowser) {
-                                offset = Math.round(y / (2 + i));
-                            }
-                            if (Math.abs(y - el.offsetTop - offset) > 4) {
-                                //Keep moving closer by less until it's really close
-                                y -= (y - el.offsetTop - offset) / 4;
-                            } else {
-                                //Then stop once its close enough noone will notice a jump
-                                y -= (y - el.offsetTop - offset) / 4;
-                                window.clearInterval(scrollInterval);
-                            }
-                            scroll(0, y);
-                        }, 1000 / 30, document.getElementById("page-" + this.id.substr(4)));
-                    };
-                }
-            };
-
-            //Run the things
-            init();
-            triangles();
-            window.addEventListener("resize", triangles);
-            var positions_runner;
-            positions();
-            positions_runner = window.setInterval(function() {
-                if (window.requestAnimationFrame === undefined) {
-                    //Just do it if the function doesn't exist
-                    positions();
-                } else {
-                    window.requestAnimationFrame(positions);
-                }
-            }, 10);
-            var scrollInterval;
-            window.addEventListener("wheel", function() {
-                //Allow the automatic scrolling to be overriden by a manual scroll
-                window.clearInterval(scrollInterval);
-            });
-        </script>
+        <script src="main.js" async></script>
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -1406,11 +687,9 @@
                 a.src = g;
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
             ga('create', 'UA-54974204-1', 'auto');
             ga('require', 'displayfeatures');
             ga('send', 'pageview');
-
         </script>
     </body>
 </html>

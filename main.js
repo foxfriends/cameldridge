@@ -2,7 +2,7 @@
     'use strict';
 
     var badBrowser = (
-        //Disable some of the fancier stuff for bad browsers
+        //Disable some of the fancier stuff for older browsers
         /MSIE 9/i.test(navigator.userAgent) ||
         /MSIE 10/i.test(navigator.userAgent) ||
         /rv:11.0/i.test(navigator.userAgent) ||
@@ -12,34 +12,20 @@
 
     var pageWidth = function() {
         //Get the width of the page for calculating other values from
-        if (document.body && (document.body.clientWidth)) {
+        if (document.body && document.body.clientWidth) {
             return document.body.clientWidth;
-        } else if (document.documentElement && (document.documentElement.clientWidth)) {
+        } else if (document.documentElement && document.documentElement.clientWidth) {
             return document.documentElement.clientWidth;
-        } else if (typeof (window.innerWidth) === 'number') {
+        } else if (typeof window.innerWidth === 'number') {
             return window.innerWidth;
         }
         return 0;
     };
-    var triangles = function() {
-        //Resize the triangles when the page is resized to make sure they
-        //always cover the whole thing
-        var pagewidth = pageWidth();
-        var triangles = document.getElementsByClassName("triangle");
-        //Make sure the border is scaled correctly to fill in the stroke
-        document.getElementById("patt-border").setAttribute("width", pagewidth);
-        document.getElementById("patt-border").childNodes[0].setAttribute("width", pagewidth);
-        for (var i = 0; i < triangles.length; i++) {
-            //Change the points of the SVG polygon
-            triangles[i].setAttribute("points", "0,200,0,205," + pagewidth + ",205," + pagewidth + ",200," + (pagewidth / 2) + ",5");
-            //Update the width of the whole image
-            triangles[i].parentNode.style.width = pagewidth + "px";
-        }
-    };
+
     var parallaxPositions = function() {
+        var sections = document.getElementsByTagName("section");
         if (!badBrowser) {
             //Align the parallaxes on the sections
-            var sections = document.getElementsByTagName("section");
             var y = window.pageYOffset;
             var offset = [];
             for (var i = 0; i < sections.length; i++) {
@@ -51,8 +37,13 @@
                     sections[i].style.paddingBottom = (200 + 50 * i) + "px";
                 }
             }
+        } else {
+            for(var i = 0; i < sections.length; i++) {
+                sections[i].style.paddingBottom = 0;
+            }
         }
     };
+
     var navbarPositions = function() {
         //Make the navigation bar appear for each section that
         //has gone off the top of the screen.
@@ -73,6 +64,7 @@
             }
         }
     };
+    
     var articlePositions = function() {
         //Get the articles about the games and sites to stay onscreen
         //as you scroll to the lower ones
@@ -252,8 +244,6 @@
 
     //Run the things
     init();
-    triangles();
-    window.addEventListener("resize", triangles);
     var positions_runner;
     positions();
     positions_runner = window.setInterval(function() {

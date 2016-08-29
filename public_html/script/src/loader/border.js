@@ -33,10 +33,10 @@ function transform() {
   const y = window.innerHeight / 2;
   const {width: w, height: h} = paths[0].getBoundingClientRect();
 
-  setAttributeSVG(paths[0], 'transform', `translate(${x} ${y - h + 1})`);
-  setAttributeSVG(paths[1], 'transform', `translate(${x} ${y + h - 1}) scale(1 -1)`);
-  setAttributeSVG(paths[2], 'transform', `translate(${window.innerWidth - x} ${y - h + 1}) scale(-1, 1)`);
-  setAttributeSVG(paths[3], 'transform', `translate(${window.innerWidth - x} ${y + h - 1}) scale(-1, -1)`);
+  setAttributeSVG(paths[0], 'transform', `translate(${x} ${y - h})`);
+  setAttributeSVG(paths[1], 'transform', `translate(${x} ${y + h}) scale(1 -1)`);
+  setAttributeSVG(paths[2], 'transform', `translate(${window.innerWidth - x} ${y - h}) scale(-1, 1)`);
+  setAttributeSVG(paths[3], 'transform', `translate(${window.innerWidth - x} ${y + h}) scale(-1, -1)`);
 }
 
 window.addEventListener('resize', transform);

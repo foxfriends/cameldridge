@@ -8,5 +8,5 @@ The page consists of 5 sections which parallax over each other (for supported
 browsers anyway).
 
 The games/sites sections show a list of my projects, which can be clicked on for
-more detail. Screenshots are listed for some games, which can also be cliked on
+more detail. Screenshots are listed for some games, which can also be clicked on
 for a closer view.

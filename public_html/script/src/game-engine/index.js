@@ -8,8 +8,6 @@ import {Actor} from './actor';
 import Util from './util';
 
 let playCount = 0;
-const symbolic = function*() { } ();
-console.log(symbolic, Symbolic);
 
 const [
   CANVAS, CONTEXT, ON, END, PAUSE, UNPAUSE,

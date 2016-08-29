@@ -138,6 +138,6 @@ export default class Game {
   }
 
   get util() {
-    return new Util(this);
+    return Util(this);
   }
 }

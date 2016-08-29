@@ -9,102 +9,69 @@ const [
   TO_POSITION
 ] = Symbolic;
 
-export default class Util extends Function {
-  constructor(game) {
-    super('...args', `
-      return this.execute(...args);
-    `);
-    this[GAME] = game;
-    this[METHOD] = '';
-    this[TARGET] = null;
-    this[FLAGS] = new Set();
+export default function Util(game) {
+  let [method, target, flags, at] = ['', null, new Set(), null];
+  const util = function(...args) { return method(...args); };
+  Object.defineProperties(util, {
+    to: { get() { return util; } },
+    and: { get() { return util; } },
+    distance: { get() { return method = distance, util; } },
+    direction: { get() { return method = direction, util; } },
+    random: { get() { return method = random, util; } },
+    collision: { get() { return method = collision, util; } },
+    integer: { get() { return flags.add('integer'), util; } },
+    at: { value(where) { return at = where, flags.add('at'), util; } },
+    between: { value(what) { return target = what, util; } },
+    from: { value(what) { return target = what, util; } }
+  });
+
+  function toPosition(inst) {
+    switch(typeof inst) {
+      case 'function':
+        inst = game.actors.find((x) => x instanceof inst).position;
+        break;
+      case 'object':
+        if(inst.position) {
+          inst = inst.position;
+        }
+        break;
+    }
+    return inst;
   }
 
-  get to() {
-    return this;
-  }
-  get and() {
-    return this;
-  }
-
-  get distance() {
-    this[METHOD] = DISTANCE;
-    return this;
+  function distance(inst) {
+    target = toPosition(target);
+    inst = toPosition(inst);
+    return Math.sqrt(Math.pow(target[0] - inst[0], 2) + Math.pow(target[1] - inst[1], 2));
   }
 
-  get direction() {
-    this[METHOD] = DIRECTION;
-    return this;
+  function direction(inst) {
+    target = toPosition(target);
+    inst = toPosition(inst);
+    return Math.atan2(inst[1] - target[1], inst[0] - target[0]);
   }
 
-  get random() {
-    this[METHOD] = RANDOM;
-    return this;
-  }
-
-  get collision() {
-    this[METHOD] = COLLISION;
-    return this;
-  }
-
-  get integer() {
-    this[FLAGS].add('integer');
-    return this;
-  }
-
-  at(pos) {
-    this[FLAGS].add('at');
-    this[AT] = this[TO_POSITION](pos);
-    return this;
-  }
-
-  between(what) {
-    this[TARGET] = what;
-    return this;
-  }
-
-  from(what) {
-    this[TARGET] = what;
-    return this;
-  }
-
-  execute(...args) {
-    return this[this[METHOD]](...args);
-  }
-
-  [DISTANCE](inst) {
-    this[TARGET] = this[TO_POSITION](this[TARGET]);
-    inst = this[TO_POSITION](inst);
-    return Math.sqrt(Math.pow(this[TARGET][0] - inst[0], 2) + Math.pow(this[TARGET][1] - inst[1], 2));
-  }
-
-  [DIRECTION](inst) {
-    this[TARGET] = this[TO_POSITION](this[TARGET]);
-    inst = this[TO_POSITION](inst);
-    return Math.atan2(inst[1] - this[TARGET][1], inst[0] - this[TARGET][0]);
-  }
-
-  [RANDOM](max) {
-    const number = Math.random() * (max - this[TARGET]) + this[TARGET];
-    if(this[FLAGS].has('integer')) {
+  function random(max) {
+    const number = Math.random() * (max - target) + target;
+    if(flags.has('integer')) {
       return Math.floor(number);
     }
     return number;
   }
 
-  [COLLISION](what) {
+  function collision(what) {
     const targets = [[], []];
-    switch(typeof this[TARGET]) {
+    switch(typeof target) {
       case 'function':
-        targets[0] = this[GAME].actors.filter((a) => a instanceof this[TARGET]);
+        targets[0] = game.actors.filter((a) => a instanceof target);
         break;
       case 'object':
-        targets[0].push(this[TARGET]);
+        targets[0].push(target);
         break;
     }
     switch(typeof what) {
       case 'function':
-        targets[1] = this[GAME].actors.filter((a) => a instanceof what);
+        targets[1] = game.actors.filter((a) => a instanceof what);
         break;
       case 'object':
         targets[1].push(what);
@@ -114,8 +81,8 @@ export default class Util extends Function {
       for(let b of targets[1]) {
         let { position: pos_a, origin: ori_a, dimensions: dim_a } = a;
         let { position: pos_b, origin: ori_b, dimensions: dim_b } = b;
-        if(this[FLAGS].has('at') && this[AT]) {
-          pos_a = this[AT];
+        if(flags.has('at') && at) {
+          pos_a = at;
         }
         pos_a = [pos_a[0] - ori_a[0], pos_a[1] - ori_a[1]];
         pos_b = [pos_b[0] - ori_b[0], pos_b[1] - ori_b[1]];
@@ -129,17 +96,5 @@ export default class Util extends Function {
     return false;
   }
 
-  [TO_POSITION](inst) {
-    switch(typeof inst) {
-      case 'function':
-        inst = this[GAME].actors.find((x) => x instanceof inst).position;
-        break;
-      case 'object':
-        if(inst.position) {
-          inst = inst.position;
-        }
-        break;
-    }
-    return inst;
-  }
+  return util;
 }

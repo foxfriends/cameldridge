@@ -44,7 +44,6 @@ hgroup
 h1, h2
   font-family: 'Bungee Hairline', sans-serif
   text-align: center
-  margin-bottom: 5px
 +respond-to(phone)
   h1
     font-size: 30pt
@@ -63,6 +62,23 @@ h1, h2
 
 .canvas-container
   line-height: 0
+
+hr
+  position: relative
+  border: none
+  background-color: transparentize(black, 0.5)
+  width: 35vw
+  height: 1px
+  margin: 15px auto
+  &::after
+    content: '///'
+    position: absolute
+    left: calc(50% - 1ex)
+    top: -1ex
+    background-color: white
+    color: black
+    font-family: 'Bungee Hairline', sans-serif
+    font-size: 20pt
 
 svg
   position: absolute

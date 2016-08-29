@@ -1,10 +1,12 @@
 'use strict';
 import generate from 'generate';
 
-import sprites from './sprites';
+import sprites, {green, blue, purple} from './sprites';
 import backgrounds, {board} from './backgrounds';
 
 import tokaido from './game';
+import Player from './player';
+import Card from './card';
 
 generate(function*() {
   yield sprites;
@@ -12,9 +14,13 @@ generate(function*() {
   tokaido
     .on('start', () => {
       tokaido
-        .add.actor()
-        .add.background()
-        .add.foreground();
+        .add.actor(
+          new Player(green, [79, 290]),
+          new Player(blue, [79, 360]),
+          new Player(purple, [79, 430]),
+          new Card()
+        )
+        .add.background(board);
     })
     .on('end', () => {
       tokaido.reset().play();

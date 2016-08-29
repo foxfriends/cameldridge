@@ -2,9 +2,9 @@
 const webpack = require('webpack');
 
 module.exports = [{
-  entry: './public_html/script/src/index.cp.js',
+  entry: './public_html/scripts/src/index.cp.js',
   output: {
-    path: './public_html/script',
+    path: './public_html/scripts',
     filename: 'index.cp.min.js'
   },
   module: {
@@ -19,9 +19,9 @@ module.exports = [{
   },
   devtool: ['source-map']
 }, {
-  entry: './public_html/script/src/index.js',
+  entry: './public_html/scripts/src/index.js',
   output: {
-    path: './public_html/script',
+    path: './public_html/scripts',
     filename: 'index.min.js'
   },
   module: {

@@ -8,18 +8,18 @@
     <meta name="author" content="Cameron Eldridge">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="shortcut icon" href="image/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="image/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="image/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="image/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="image/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="image/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="image/favicon/apple-touch-icon-76x76.png">
-    <link rel="icon" type="image/png" href="image/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="image/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="image/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#917a73">
-    <meta name="msapplication-config" content="image/favicon/browserconfig.xml">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
 
     <meta property="og:site_name" content="Cameron Eldridge">
     <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png">
@@ -27,14 +27,14 @@
     <style>body { display: none; }</style>
   </head>
   <body class="loading">
-    <section class="loading">
+    <div class="loading">
       <header>
         <div class="commands">
           <div class="prompt"></div>
         </div>
       </header>
-    </section>
-    <section class="loaded">
+    </div>
+    <div class="loaded">
       <header>
         <svg id="header-border"></svg>
         <hgroup>
@@ -44,6 +44,7 @@
         </hgroup>
       </header>
       <section>
+        <svg class="burst" id="games-burst"></svg>
         <h2>Games</h2>
       </section>
       <section class="canvas-container" id="games">
@@ -76,7 +77,7 @@
       <footer>
         <h3>&copy; Cameron Eldridge 2016</h3>
       </footer>
-    </section>
+    </div>
     <script>
     (function() {
       // load compatibility script if the browser doesn't cut the mustard
@@ -86,7 +87,7 @@
       try {
         es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
       } finally {
-        script.src = es6 ? 'script/index.min.js' : 'script/index.cp.min.js';
+        script.src = es6 ? 'scripts/index.min.js' : 'scripts/index.cp.min.js';
         console.log(script.src); // DEBUG - remove later
         document.head.appendChild(script);
       }

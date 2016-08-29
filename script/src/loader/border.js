@@ -23,8 +23,14 @@ while(paths.length < 4) {
   paths.push(path);
 }
 
+const phone = window.matchMedia('(max-width: 640px)');
+
 function transform() {
-  const [x, y] = [50, window.innerHeight / 2];
+  let x = 50;
+  if(phone.matches) {
+    x = 0;
+  }
+  const y = window.innerHeight / 2;
   const {width: w, height: h} = paths[0].getBoundingClientRect();
 
   setAttributeSVG(paths[0], 'transform', `translate(${x} ${y - h + 1})`);

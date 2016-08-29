@@ -1,0 +1,40 @@
+{
+  "name": "cameldridge",
+  "version": "1.0.0",
+  "description": "My personal portfolio website",
+  "main": "none",
+  "scripts": {
+    "start": "http-server public_html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OinkIguana/cameldridge.git"
+  },
+  "author": "Cameron Eldridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OinkIguana/cameldridge/issues"
+  },
+  "homepage": "https://github.com/OinkIguana/cameldridge#readme",
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.11.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.9.0",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "img-loader": "^1.3.1",
+    "node-sass": "^3.8.0",
+    "reset-css": "^2.0.20160720",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "sweet.js": "^2.0.0",
+    "sweetjs-loader": "0.0.7",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {}
+}

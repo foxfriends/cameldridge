@@ -47,7 +47,6 @@
         <canvas id="forks" class="game"></canvas>
         <canvas id="abby-and-elliot" class="game"></canvas>
         <canvas id="tokaido" class="game"></canvas>
-        <!-- see more..? -->
       </section>
       <section id="about">
         <div id="bio">
@@ -74,6 +73,17 @@
         <h3>&copy; Cameron Eldridge 2016</h3>
       </footer>
     </section>
-    <script src="script/index.min.js"></script>
+    <script>
+    (function(es6) {
+      // loads the 'compatibility' version if the browser is weak
+      var url = 'script/index.cp.min.js';
+      if(es6) {
+        url = 'script/index.min.js';
+      }
+      var script = document.createElement('script');
+      script.src = url;
+      document.head.appendChild(script);
+    }(!!window.Proxy));
+    </script>
   </body>
 </html>

@@ -39,9 +39,13 @@
         <svg id="header-border"></svg>
         <hgroup>
           <h1>Cameron Eldridge</h1>
+          <hr></hr>
           <h2>Developer of games, websites, and software</h2>
         </hgroup>
       </header>
+      <section>
+        <h2>Games</h2>
+      </section>
       <section class="canvas-container" id="games">
         <canvas id="white" class="game"></canvas>
         <canvas id="forks" class="game"></canvas>
@@ -75,18 +79,15 @@
     </section>
     <script>
     (function() {
-      // loads the 'compatibility' version if the browser is weak
+      // load compatibility script if the browser doesn't cut the mustard
       'use strict';
       var script = document.createElement('script');
       var es6 = false;
       try {
-        if(eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)")) {
-          es6 = true;
-        }
-      } catch(e) {
-        es6 = false;
+        es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
       } finally {
         script.src = es6 ? 'script/index.min.js' : 'script/index.cp.min.js';
+        console.log(script.src); // DEBUG - remove later
         document.head.appendChild(script);
       }
     })();

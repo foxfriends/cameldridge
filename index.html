@@ -74,12 +74,22 @@
       </footer>
     </section>
     <script>
-    (function(es6) {
+    (function() {
       // loads the 'compatibility' version if the browser is weak
+      'use strict';
       var script = document.createElement('script');
-      script.src = es6 ? 'script/index.min.js' : 'script/index.cp.min.js';
-      document.head.appendChild(script);
-    }(!!window.Proxy));
+      var es6 = false;
+      try {
+        if(eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)")) {
+          es6 = true;
+        }
+      } catch(e) {
+        es6 = false;
+      } finally {
+        script.src = es6 ? 'script/index.min.js' : 'script/index.cp.min.js';
+        document.head.appendChild(script);
+      }
+    })();
     </script>
   </body>
 </html>

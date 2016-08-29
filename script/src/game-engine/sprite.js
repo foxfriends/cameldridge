@@ -52,6 +52,7 @@ class Sprite {
       for(let i = 0; i < this[IMAGE].width / this[DIMENSIONS][0]; ++i) {
         frames.push([this[DIMENSIONS][0] * (i % (this[IMAGE].width / this[DIMENSIONS][0])), 0, ...this[DIMENSIONS]]);
       }
+      return frames;
     }
   }
 

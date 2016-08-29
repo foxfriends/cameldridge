@@ -1,10 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Bungee+Hairline|Source+Code+Pro:200)
 @import mixins
 
+$background: url(../image/crossword.png)
+$header: 'Bungee Hairline', sans-serif
+$code: 'Source Code Pro', monospace
+
 body
   display: inline
   display: initial
   overflow-x: hidden
+
   &.loading .loaded
     height: 0
     overflow: hidden
@@ -15,13 +20,14 @@ body
     .loading
       display: none
     .loaded
+      background-image: $background
       opacity: 1
       transition: opacity 1.5s
 
 .commands
   padding: 30px
 .prompt
-  font-family: 'Source Code Pro', monospace
+  font-family: $code
   font-size: 14pt
 
 header
@@ -42,7 +48,7 @@ hgroup
     padding: 0 75px
   transition: line-height 1.5s
 h1, h2
-  font-family: 'Bungee Hairline', sans-serif
+  font-family: $header
   text-align: center
 +respond-to(phone)
   h1
@@ -75,9 +81,8 @@ hr
     position: absolute
     left: calc(50% - 1ex)
     top: -1ex
-    background-color: white
     color: black
-    font-family: 'Bungee Hairline', sans-serif
+    font-family: $header
     font-size: 20pt
 
 svg

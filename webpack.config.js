@@ -11,7 +11,7 @@ module.exports = [{
     loaders: [
       { test: /\.js$/, exclude: /(node_modules).*\.js/, loader: 'babel?presets[]=es2015' },
       { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style!css!sass' },
-      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'url!img' }
+      { test: /\.(png)$/, loader: 'url!img' }
     ]
   },
   resolve: {

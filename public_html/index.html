@@ -76,12 +76,8 @@
     <script>
     (function(es6) {
       // loads the 'compatibility' version if the browser is weak
-      var url = 'script/index.cp.min.js';
-      if(es6) {
-        url = 'script/index.min.js';
-      }
       var script = document.createElement('script');
-      script.src = url;
+      script.src = es6 ? 'script/index.min.js' : 'script/index.cp.min.js';
       document.head.appendChild(script);
     }(!!window.Proxy));
     </script>

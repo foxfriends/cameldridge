@@ -8,8 +8,14 @@ export function setAttribute(element, name, value) {
   return element.setAttributeNS(null, name, value);
 }
 
+export function getAttribute(element, name) {
+  return element.getAttributeNS(null, name);
+}
+
 export function animate(path, time) {
-  const len = path.getTotalLength();
+  // this is only approximate... for more complex designs use multiple paths
+  const segments = (getAttribute(path, 'd').match(/m/ig) || []).length;
+  const len = path.getTotalLength() / segments;
   let start;
   const animate = (now) => {
     if(start === undefined) {

@@ -28,7 +28,11 @@ export default class Game {
     this[PLAYING] = false;
     this[ON] = {};
     this[GLOBAL] = {};
-    window.addEventListener('resize', () => { this.trigger('resize'); })
+    window.setTimeout(() => {
+      if(!window.IS_MOBILE) {
+        window.addEventListener('resize', () => { this.trigger('resize'); })
+      }
+    }, 0);
   }
 
   play() {

@@ -6,7 +6,7 @@ import '../../style/index.sass';
 import platform from 'platform';
 window.IS_MOBILE = platform.os.family === 'Android' || platform.os.family === 'iOS' || platform.os.family === 'Windows Phone';
 if(window.IS_MOBILE) {
-  Array.prototype.forEach.call(document.querySelectorAll('header'), (header) => {
+  Array.prototype.forEach.call(document.querySelectorAll('.page-header'), (header) => {
     header.style.height = window.innerHeight + 'px';
   });
 }

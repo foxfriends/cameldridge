@@ -16,8 +16,13 @@ export function animate(path, time) {
   // this is only approximate... for more complex designs use multiple paths
   const segments = (getAttribute(path, 'd').match(/m/ig) || []).length;
   const len = path.getTotalLength() / segments;
+  let finish, cancel;
+  const finished = new Promise((resolve, reject) => {
+    finish = resolve;
+    cancel = reject;
+  });
   let start;
-  const animate = (now) => {
+  let animation = window.requestAnimationFrame(function animate(now) {
     if(start === undefined) {
       start = now;
     } else {
@@ -26,8 +31,11 @@ export function animate(path, time) {
       setAttribute(path, 'stroke-dashoffset', len - newlen);
     }
     if(now - start < time) {
-      window.requestAnimationFrame(animate);
+      animation = window.requestAnimationFrame(animate);
+    } else {
+      finish();
     }
-  };
-  window.requestAnimationFrame(animate);
+  });
+  finished.cancel = () => { window.cancelAnimationFrame(animation); cancel(); }
+  return finished;
 };

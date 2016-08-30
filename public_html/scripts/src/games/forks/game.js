@@ -2,7 +2,7 @@
 import Game from '../../game-engine';
 import keyframes from './keyframes';
 
-const canvas = document.querySelector('canvas.game#forks');
+const canvas = document.querySelector('#forks');
 canvas.width = 1800;
 canvas.height = 800;
 canvas.style.width = window.innerWidth + 'px';

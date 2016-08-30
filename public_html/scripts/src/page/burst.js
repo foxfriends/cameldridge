@@ -22,7 +22,6 @@ Array.prototype.forEach.call(svgs, (svg) => {
     paths.push(path);
   }
   function transform() {
-    const {width: w, height: h} = paths[0].getBoundingClientRect();
     let scale = 1;
     if(phone.matches) {
       scale = 0.4;
@@ -32,8 +31,12 @@ Array.prototype.forEach.call(svgs, (svg) => {
     SVG.setAttribute(paths[0], 'transform', `translate(${window.innerWidth / 2 - 200 * scale} 0) scale(-${scale} ${scale})`);
     SVG.setAttribute(paths[1], 'transform', `translate(${window.innerWidth / 2 + 200 * scale} 0) scale(${scale} ${scale})`);
   }
-  window.addEventListener('resize', transform);
-  transform();
+  window.setTimeout(() => {
+    transform();
+    if(!window.IS_MOBILE) {
+      window.addEventListener('resize', transform);
+    }
+  }, 0);
 
   window.addEventListener('scroll', function scrollListener() {
     if(document.body.scrollTop > svg.getBoundingClientRect().bottom + 100 - window.innerHeight) {

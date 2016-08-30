@@ -27,7 +27,7 @@ Array.prototype.forEach.call(svgs, (svg) => {
     if(phone.matches) {
       scale = 0.4;
     } else if(tablet.matches) {
-      scale = 0.6;
+      scale = 0.55;
     }
     SVG.setAttribute(paths[0], 'transform', `translate(${window.innerWidth / 2 - 200 * scale} 0) scale(-${scale} ${scale})`);
     SVG.setAttribute(paths[1], 'transform', `translate(${window.innerWidth / 2 + 200 * scale} 0) scale(${scale} ${scale})`);

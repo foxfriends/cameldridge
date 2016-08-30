@@ -1,33 +1,37 @@
 import Symbolic from 'symbolic';
 import {KEYFRAME_END} from './const';
-const [INDICES, FRAMES] = Symbolic;
+const [INDICES, FRAMES, PAIRS] = Symbolic;
 
-export default class Keyframes extends Map {
-  constructor(...args) { super(...args); }
+export default class Keyframes {
+  constructor() {
+    this[PAIRS] = [];
+  }
 
   frame(frame, values, next = values) {
     frame *= 60;
-    return this.set(Math.floor(frame), [values, next]);
+    this[PAIRS][Math.floor(frame)] = [values, next];
+    return this;
   }
 
   end(frame) {
     frame *= 60;
-    return this.set(Math.floor(frame), [[KEYFRAME_END], []]);
+    this[PAIRS][Math.floor(frame)] =  [[KEYFRAME_END], []];
+    return this;
   }
 
   get(frame) {
     frame = Math.floor(frame);
-    const keys = [...this.keys()].sort((a, b) => a - b);
+    const keys = Object.keys(this[PAIRS]).map(x => +x);
     let values = [];
     for(let key of keys) {
       if(key >= frame) {
         if(key === frame) {
-          values = super.get(key);
+          values = this[PAIRS][key];
           values = values[0].concat(values[1]);
         }
         break;
       }
-      values = super.get(key)[1];
+      values = this[PAIRS][key][1];
     }
     return new Set(values);
   }

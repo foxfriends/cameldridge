@@ -1,5 +1,4 @@
 'use strict';
-
 import * as  SVG from '../page/svg';
 
 const svg = document.querySelector('#header-border');
@@ -19,12 +18,15 @@ while(paths.length < 4) {
 
 const phone = window.matchMedia('(max-width: 640px)');
 
+const initialHeight = window.innerHeight;
 function transform() {
   let x = 50;
   if(phone.matches) {
     x = 0;
   }
-  const y = window.innerHeight / 2;
+  // mobile devices height changes when the page scrolls and the navbar expands
+  // but that makes this look stupid
+  const y = (window.IS_MOBILE ? initialHeight : window.innerHeight) / 2;
   const {width: w, height: h} = paths[0].getBoundingClientRect();
 
   SVG.setAttribute(paths[0], 'transform', `translate(${x} ${y - h})`);

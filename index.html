@@ -28,44 +28,150 @@
   </head>
   <body class="loading">
     <div class="loading">
-      <header>
+      <header class="page-header">
         <div class="commands">
           <div class="prompt"></div>
         </div>
       </header>
     </div>
     <div class="loaded">
-      <header>
+      <header class="container page-header">
         <svg id="header-border"></svg>
         <hgroup>
           <h1>Cameron Eldridge</h1>
-          <hr></hr>
+          <hr />
           <h2>Developer of games, websites, and software</h2>
         </hgroup>
       </header>
-      <section>
+      <section class="container">
         <svg class="burst"></svg>
         <h2>Games</h2>
       </section>
       <section class="canvas-container" id="games">
-        <canvas id="white" class="game"></canvas>
-        <canvas id="forks" class="game"></canvas>
-        <canvas id="abby-and-elliot" class="game"></canvas>
-        <canvas id="tokaido" class="game"></canvas>
+        <div class="game">
+          <canvas id="white"></canvas>
+          <div class="tab"><svg></svg></div>
+          <div class="info">
+            <article class="container">
+              <header>
+                <h3>White</h3> <div class="close">X</div>
+                <hr />
+              </header>
+              <p>
+                Raised in a world where everything is white, one small rectangle
+                sees something unusual &mdash; a little flash of something else.
+                As he moves closer, he realises there is more to this world and
+                soon finds himself on an amazing adventure.
+              </p>
+              <p>
+                Heading out from his house, he travels the world.
+                He meets many new people and sees things he could never have
+                imagined, but eventually he gets tangled in something much bigger
+                than his own adventure.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="game">
+          <canvas id="forks"></canvas>
+          <div class="tab"><svg></svg></div>
+          <div class="info">
+            <article class="container">
+              <header>
+                <h3>Forks</h3> <div class="close">X</div>
+                <hr />
+              </header>
+              <p>
+                After months of hard work, Dave has finally been awarded Employee
+                of the Month! As a reward, he is given a trip to Brockville!
+                Unfortunately for this ordinary man, his train ride there turns
+                out to be unusually perilous...
+              </p>
+              <p>
+                Short on weapons, Dave takes a fork and fights his way through
+                hordes of monsters, hoping to find out what is going on with this
+                train.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="game">
+          <canvas id="abby-and-elliot"></canvas>
+          <div class="tab"><svg></svg></div>
+          <div class="info">
+            <article class="container">
+              <header>
+                <h3>Abby and Elliot</h3> <div class="close">X</div>
+                <hr />
+              </header>
+              <p>
+                Today is the day of the class fieldtrip to the local forest to
+                learn about nature! Abby doesn't want to learn though, so she
+                takes her best friend Elliot and they split from the group.
+              </p>
+              <p>
+                After wandering for some time, the two get lost. Abby stays determined,
+                but Elliot is scared by every noise, worried that it might be a monster.
+                Abby tries to keep him calm, but once the monsters actually show
+                up, there's no chance. They have to make it back to the group!
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="game">
+          <canvas id="tokaido"></canvas>
+          <div class="tab"><svg></svg></div>
+          <div class="info">
+            <article class="container">
+              <header>
+                <h3>Tokaido</h3> <div class="close">X</div>
+                <h4>Original game by Antoine Bauza</h4>
+                <hr />
+              </header>
+              <p>
+                Join a group of travellers as they travel along the famous Tokaido
+                road from Tokyo to Kyoto. Visit temples, purchase souvenirs, bathe
+                in hot springs, eat great food, and see the sights, all while having
+                 a better time than the other travellers.
+              </p>
+              <p>
+                Play the original board game by Antoine Bauza online with your
+                friends!
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
-      <section>
+      <section class="container">
+        <svg class="burst"></svg>
+        <h2>Websites</h2>
+      </section>
+      <section id="sites">
+        <div id="knightwatch" class="site"></div>
+        <div id="tumblr" class="site"></div>
+        <div id="kittyalyst" class="site"></div>
+        <div id="cameldridge" class="site"></div>
+      </section>
+      <section class="container">
         <svg class="burst"></svg>
         <h2>About</h2>
       </section>
       <section id="about">
-        <div id="bio">
-          <!-- Major points -->
-          Waterloo CS
-          Software developer (web, game)
-          Ottawa, ON, Canada
-          cam.eldridge@gmail.com
+        <div class="card" id="card">
+          <img src="me.jpg" width="200" height="300" />
+          <dl>
+            <dt>Education</dt>
+            <dd>BCS, University of Waterloo</dd>
+            <dt>Location</dt>
+            <dd>Ottawa, Canada</dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a></dd>
+          </dl>
         </div>
-        <div id="technologies">
+        <div id="bio">
+
+        </div>
+        <div id="experience">
           <!-- Get all these logos ? -->
           HTML5, JS, CSS
           Ruby, Rails, SASS/SCSS, HAML

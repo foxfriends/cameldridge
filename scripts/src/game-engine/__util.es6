@@ -11,9 +11,7 @@ const [
 
 export default class Util extends Function {
   constructor(game) {
-    super('...args', `
-      return this.execute(...args);
-    `);
+    super('...args', `return this.execute(...args);`);
     this[GAME] = game;
     this[METHOD] = '';
     this[TARGET] = null;

@@ -34,8 +34,11 @@ function transform() {
   SVG.setAttribute(paths[2], 'transform', `translate(${window.innerWidth - x} ${y - h}) scale(-1, 1)`);
   SVG.setAttribute(paths[3], 'transform', `translate(${window.innerWidth - x} ${y + h}) scale(-1, -1)`);
 }
-
-window.addEventListener('resize', transform);
+window.setTimeout(() => {
+  if(!window.IS_MOBILE) {
+    window.addEventListener('resize', transform);
+  }
+}, 0);
 
 export default function border() {
   transform();

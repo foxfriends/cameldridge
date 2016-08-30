@@ -10,3 +10,6 @@ $tablet-width: 960px
   @else if $media == desktop
     @media only screen and (min-width: $tablet-width + 1)
       @content
+  @else if $media == not-desktop
+    @media only screen and (max-width: $tablet-width)
+      @content

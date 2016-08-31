@@ -9,7 +9,12 @@ body
     .loading
       display: none
     .loaded
-      background-image: $background
+      +respond-to(phone)
+        background-image: $background
+      +respond-to(desktop)
+        background-image: $deep-background
+        background-attachment: fixed
+        background-size: cover
       opacity: 1
       transition: opacity 1.5s
 .commands

@@ -2,29 +2,44 @@
 <html>
   <head>
     <title>Cameron Eldridge</title>
-    <meta charset="UTF-8" >
-    <meta name="description" content="Developer of games, websites, and software">
-    <meta name="keywords" content="programming,portfolio,profile,resume,cam,cameron,eldridge,game,website,software,developer,job,hire,work,oinkiguana">
-    <meta name="author" content="Cameron Eldridge">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Developer of games, websites, and software" />
+    <meta name="keywords" content="programming,portfolio,profile,resume,cam,cameron,eldridge,game,website,software,developer,job,hire,work,oinkiguana" />
+    <meta name="author" content="Cameron Eldridge" />
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="shortcut icon" href="images/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#917a73">
-    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <meta name="msapplication-TileColor" content="#917a73" />
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml" />
 
-    <meta property="og:site_name" content="Cameron Eldridge">
-    <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png">
-    <!-- hide all until the script loads the styles -->
+    <meta property="og:site_name" content="Cameron Eldridge" />
+    <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png" />
+    <!-- hide all until the script loads the styles to prevent the flicker of ugly -->
     <style>body { display: none; }</style>
+    <script>
+    (function() {
+      // load compatibility script if the browser doesn't cut the mustard
+      'use strict';
+      var script = document.createElement('script');
+      var es6 = false;
+      try {
+        es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
+      } finally {
+        script.src = es6 ? 'index.min.js' : 'index.cp.min.js';
+        console.log(script.src); // DEBUG - remove later
+        document.head.appendChild(script);
+      }
+    })();
+    </script>
   </head>
   <body class="loading">
     <div class="loading">
@@ -36,14 +51,16 @@
     </div>
     <div class="loaded">
       <header class="container page-header">
-        <svg id="header-border"></svg>
         <hgroup>
           <h1>Cameron Eldridge</h1>
           <hr />
           <h2>Developer of games, websites, and software</h2>
         </hgroup>
+        <svg id="header-border"></svg>
       </header>
-      <section class="container">
+      <section id="intro">
+      </section>
+      <section class="container title">
         <svg class="burst"></svg>
         <h3>Games</h3>
       </section>
@@ -138,7 +155,7 @@
           </div>
         </div>
       </section>
-      <section class="container">
+      <section class="container title">
         <svg class="burst"></svg>
         <h3>Websites</h3>
       </section>
@@ -148,84 +165,72 @@
         <div id="kittyalyst" class="site"></div>
         <div id="cameldridge" class="site"></div>
       </section>
-      <section class="container">
+      <section class="container title">
         <svg class="burst"></svg>
         <h3>About</h3>
       </section>
       <section id="about">
-        <div class="card" id="card">
-          <img src="me.jpg" width="200" height="300" />
-          <dl>
-            <dt>Education</dt>
-            <dd>BCS, University of Waterloo</dd>
-            <dt>Location</dt>
-            <dd>Ottawa, Canada</dd>
-            <dt>Email</dt>
-            <dd><a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a></dd>
-            <dd class="bottom">
-              <img src="github.gif" width="50" height="50" />
-              <img src="twitter.gif" width="50" height="50" />
-              <img src="linked-in.gif" width="50" height="50" />
-              <img src="facebook.gif" width="50" height="50" />
-              <img src="gplus.gif" width="50" height="50" />
-            </dd>
-          </dl>
-        </div>
-        <div id="bio">
-          <article>
-            <p>
-              More than ten years ago, I, as a little kid, wrote my first little bit
-              of code, and it led to one of the uglist websites to have ever graced
-              the Internet. Since then, I have come a long way, and I hope to go much
-              further yet.
-            </p>
-            <p>
-              Currently I am studying for my BCS from the University of Waterloo,
-              in hopes of someday finding a career in software development. Until
-              then I continue to work on my own personal projects, some of which
-              can be seen above. With each, I try to learn at least one new thing,
-              be it a new concept, technology or language.
-            </p>
-            <p>
-              Though my biggest hobby is working on projects like these, I also dabble
-              in wood carving and baked goods, and I'll never turn down a chance to
-              travel the world.
-            </p>
-          </article>
-        </div>
-        <div id="experience">
-          <!-- Get all these logos ? -->
-          HTML5, JS, CSS
-          Ruby, Rails, SASS/SCSS, HAML
-          Angular, jQuery, D3, TypeScript
-          Mocha, Jasmine
-          NodeJS, NPM, Webpack, Gulp
-          C, C++, Go, SDL
-          PHP, MySQL
-          MongoDB, PostgreSQL
-          GameMaker: Studio, Unity
-          Java, Racket
-          Git
+        <div class="container">
+          <div class="card" id="card">
+            <img src="me.jpg" width="200" height="300" />
+            <dl>
+              <dt>Education</dt>
+              <dd>BCS, University of Waterloo</dd>
+              <dt>Location</dt>
+              <dd>Ottawa, Canada</dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a></dd>
+              <dd class="bottom">
+                <img src="github.gif" width="50" height="50" />
+                <img src="twitter.gif" width="50" height="50" />
+                <img src="linked-in.gif" width="50" height="50" />
+                <img src="facebook.gif" width="50" height="50" />
+                <img src="gplus.gif" width="50" height="50" />
+              </dd>
+            </dl>
+          </div>
+          <div id="bio">
+            <article>
+              <p>
+                More than ten years ago, the small child that was me wrote his first line
+                of code, and it led to one of the uglist websites to have ever graced
+                the Internet. Since then I have come a long way, and I hope to go much
+                further yet.
+              </p>
+              <p>
+                Currently I am studying for my BCS from the University of Waterloo,
+                in hopes of someday finding a career in software development. Until
+                then I continue to work on my own personal projects, some of which
+                can be seen above. With each, I try to learn at least one new thing,
+                be it a new concept, technology or language.
+              </p>
+              <p>
+                Though my biggest hobby is working on projects like these, I also dabble
+                in wood carving and baked goods, and I'll never turn down a chance to
+                travel the world.
+              </p>
+            </article>
+          </div>
+          <div id="experience">
+            <!-- Get all these logos ? -->
+            HTML5, JS, CSS
+            Ruby, Rails, SASS/SCSS, HAML
+            Angular, jQuery, D3, TypeScript
+            Mocha, Jasmine
+            NodeJS, NPM, Webpack, Gulp
+            C, C++, Go, SDL
+            PHP, MySQL
+            MongoDB, PostgreSQL
+            GameMaker: Studio, Unity
+            Java, Racket
+            Git
+          </div>
         </div>
       </section>
       <footer>
+        <h4></h4>
         <h4>&copy; 2016 &mdash; Cameron Eldridge </h4>
       </footer>
-    </div>
-    <script>
-    (function() {
-      // load compatibility script if the browser doesn't cut the mustard
-      'use strict';
-      var script = document.createElement('script');
-      var es6 = false;
-      try {
-        es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
-      } finally {
-        script.src = es6 ? 'scripts/index.min.js' : 'scripts/index.cp.min.js';
-        console.log(script.src); // DEBUG - remove later
-        document.head.appendChild(script);
-      }
-    })();
-    </script>
+    </section>
   </body>
 </html>

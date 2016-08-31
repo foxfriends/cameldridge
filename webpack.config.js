@@ -2,16 +2,16 @@
 const webpack = require('webpack');
 
 module.exports = [{
-  entry: './public_html/scripts/src/index.cp.js',
+  entry: './public_html/script/index.cp.js',
   output: {
-    path: './public_html/scripts',
+    path: './public_html',
     filename: 'index.cp.min.js'
   },
   module: {
     loaders: [
       { test: /\.js$/, exclude: /(node_modules).*\.js/, loader: 'babel?presets[]=es2015' },
       { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style!css!sass' },
-      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'url!img' }
+      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file?name=images/[hash].[ext]!img' }
     ]
   },
   resolve: {
@@ -19,16 +19,16 @@ module.exports = [{
   },
   devtool: ['source-map']
 }, {
-  entry: './public_html/scripts/src/index.js',
+  entry: './public_html/script/index.js',
   output: {
-    path: './public_html/scripts',
+    path: './public_html',
     filename: 'index.min.js'
   },
   module: {
     loaders: [
       { test: /\.js$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'babel?plugins[]=transform-es2015-modules-commonjs' },
       { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style!css!sass' },
-      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'url!img' }
+      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file?name=images/[hash].[ext]!img' }
     ]
   },
   resolve: {

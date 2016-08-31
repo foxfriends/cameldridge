@@ -1,0 +1,51 @@
+div.game
+  +respond-to(desktop)
+    position: relative
+  canvas
+    pointer-events: none
+  div
+    box-sizing: border-box
+    position: absolute
+    top: 0
+    bottom: 0
+    &.close, &.tab
+      cursor: pointer
+    &.close
+      position: fixed
+      right: 30px
+      top: 30px
+      width: 20px
+      height: 20px
+    &.info
+      background-color: transparentize(white, 0.05)
+      padding: 30px 0
+      z-index: 100
+  +respond-to(not-desktop)
+    div
+      &.tab
+        display: none
+      &.info
+        position: fixed
+        left: 0
+        display: none
+    &.open
+      div.info
+        display: block
+        right: 0
+  +respond-to(desktop)
+    div
+      left: 100%
+      transition: left 0.5s
+      &.tab
+        right: 0
+        left: calc(100% - 40px)
+      &.info
+        width: 400px
+        .close
+          display: none
+    &.open
+      .tab
+        left: calc(100% - 440px)
+        cursor: default
+      .info
+        left: calc(100% - 400px)

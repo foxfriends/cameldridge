@@ -21,21 +21,27 @@ h1, h2, h3, h4
   h1
     font-size: 30pt
   h2
+    font-size: 20pt
+  .page-header h2
+    font-size: 15pt
+  h3
+    font-size: 20pt
+  h4
     font-size: 15pt
 +respond-to(tablet)
   h1
     font-size: 40pt
-  h2
+  h2, h3
+    font-size: 25pt
+  h4
     font-size: 20pt
 +respond-to(desktop)
   h1
     font-size: 65pt
-  h2
+  h2, h3
     font-size: 35pt
-h3
-  font-size: 30pt
-h4
-  font-size: 15pt
+  h4
+    font-size: 25pt
 hr
   position: relative
   border: none
@@ -47,7 +53,7 @@ hr
     content: '///'
     position: absolute
     left: calc(50% - 1ex)
-    top: -1ex
+    top: -10pt
     color: black
     font-family: $header
     font-size: 20pt

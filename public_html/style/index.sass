@@ -8,12 +8,15 @@ body
   display: initial
   overflow-x: hidden
   font-family: 'Raleway', sans-serif
-  font-size: 16pt
+  +respond-to(tablet)
+    font-size: 14pt
+  +respond-to(desktop)
+    font-size: 16pt
   font-weight: 200
 section
   margin-bottom: 15px
-.canvas-container
-  line-height: 0
+canvas
+  pointer-events: none
 svg
   position: absolute
   top: 0
@@ -27,6 +30,6 @@ svg
 
 @import loader
 @import header
-@import game
+@import info
 @import article
 @import about/index

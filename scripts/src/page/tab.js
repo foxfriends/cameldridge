@@ -10,7 +10,8 @@ const animationTime = 500;
 const desktop = window.matchMedia('(min-width: 961px)');
 
 Array.prototype.forEach.call(games, (game) => {
-  const svg = game.querySelector('.tab svg');
+  const tab = game.querySelector('.tab');
+  const svg = tab.querySelector('svg');
   const [paths, fills] = [[], []];
   while(paths.length < 2) {
     const path = SVG.createElement('path');
@@ -55,35 +56,46 @@ Array.prototype.forEach.call(games, (game) => {
       window.setTimeout(() => {
         if(left) {
           left = false;
+          const animations = [null, null];
+          const skip = () => {
+            for(let animation of animations) {
+              animation.skip();
+            }
+          };
+          tab.addEventListener('click', skip);
           paths.forEach((path, i) => {
-            const animation = SVG.animate(path, animationTime);
+            animations[i] = SVG.animate(path, animationTime);
             let filler;
-            animation.then(() => {
-              let start;
-              const end = 500;
-              filler = window.requestAnimationFrame(function fill(time) {
-                if(start === undefined) { start = time; }
-                const a = 0.95 * Math.min(1, (time - start) / end);
-                SVG.setAttribute(fills[i], 'fill', `rgba(255, 255, 255, ${a})`);
-                if(time - start < end) {
-                  filler = window.requestAnimationFrame(fill);
-                }
-              })
+            animations[i].then((natural) => {
+              console.log('done', natural);
+              if(natural) {
+                let start;
+                const end = 500;
+                filler = window.requestAnimationFrame(function fill(time) {
+                  if(start === undefined) { start = time; }
+                  const a = 0.95 * Math.min(1, (time - start) / end);
+                  SVG.setAttribute(fills[i], 'fill', `rgba(255, 255, 255, ${a})`);
+                  if(time - start < end) {
+                    filler = window.requestAnimationFrame(fill);
+                  }
+                });
+              } else {
+                SVG.setAttribute(fills[i], 'fill', `rgba(255, 255, 255, 0.95)`);
+              }
             });
             game.addEventListener('mouseout', function hide() {
               over = false;
               window.setTimeout(() => {
                 if(!over) {
                   left = true;
-                  paths.forEach((path, i) => {
-                    animation.cancel();
-                    window.cancelAnimationFrame(filler);
-                    const len = path.getTotalLength();
-                    SVG.setAttribute(path, 'stroke-dasharray', `${len}`);
-                    SVG.setAttribute(path, 'stroke-dashoffset', `${len}`);
-                    SVG.setAttribute(fills[i], 'fill', 'none');
-                  });
+                  animations[i].cancel();
+                  window.cancelAnimationFrame(filler);
+                  const len = path.getTotalLength();
+                  SVG.setAttribute(path, 'stroke-dasharray', `${len}`);
+                  SVG.setAttribute(path, 'stroke-dashoffset', `${len}`);
+                  SVG.setAttribute(fills[i], 'fill', 'none');
                   game.removeEventListener('mouseout', hide);
+                  tab.removeEventListener('click', skip);
                 }
               }, 0)
             });

@@ -1,98 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Bungee+Hairline|Source+Code+Pro:200|Raleway:200)
 @import mixins
 
-$background: url(../images/crossword.png)
-$header: 'Bungee Hairline', sans-serif
-$code: 'Source Code Pro', monospace
-
 .container
   position: relative
-
 body
   display: inline
   display: initial
   overflow-x: hidden
   font-family: 'Raleway', sans-serif
-
-  &.loading .loaded
-    height: 0
-    overflow: hidden
-    opacity: 0
-    hgroup
-      line-height: 0
-  &.loaded
-    .loading
-      display: none
-    .loaded
-      background-image: $background
-      opacity: 1
-      transition: opacity 1.5s
-
-.commands
-  padding: 30px
-.prompt
-  font-family: $code
-  font-size: 14pt
 section
   margin-bottom: 15px
-header
-  box-sizing: border-box
-  width: 100vw
-  height: 100vh
-  display: flex
-  justify-content: center
-  flex-direction: column
-hgroup
-  box-sizing: border-box
-  display: block
-  position: relative
-  width: 100%
-  padding: 0 125px
-  +respond-to(phone)
-    padding: 0 75px
-  transition: line-height 1.5s
-h1, h2, h3, h4
-  font-family: $header
-  text-align: center
-+respond-to(phone)
-  h1
-    font-size: 30pt
-  h2
-    font-size: 15pt
-+respond-to(tablet)
-  h1
-    font-size: 40pt
-  h2
-    font-size: 20pt
-+respond-to(desktop)
-  h1
-    font-size: 65pt
-  h2
-    font-size: 35pt
-h3
-  font-size: 30pt
-h4
-  font-size: 15pt
-
-.canvas-container
+.canvas-containe
   line-height: 0
-
-hr
-  position: relative
-  border: none
-  background-color: transparentize(black, 0.5)
-  width: 35%
-  height: 1px
-  margin: 10pt auto
-  &::after
-    content: '///'
-    position: absolute
-    left: calc(50% - 1ex)
-    top: -1ex
-    color: black
-    font-family: $header
-    font-size: 20pt
-
 svg
   position: absolute
   top: 0
@@ -104,67 +23,7 @@ svg
   stroke-width: 1
   pointer-events: none
 
-div.game
-  +respond-to(desktop)
-    position: relative
-  canvas
-    pointer-events: none
-  div
-    box-sizing: border-box
-    position: absolute
-    top: 0
-    bottom: 0
-    &.close, &.tab
-      cursor: pointer
-    &.close
-      position: fixed
-      right: 30px
-      top: 30px
-      width: 20px
-      height: 20px
-    &.info
-      background-color: transparentize(white, 0.05)
-      padding: 30px 0
-      z-index: 100
-  +respond-to(not-desktop)
-    div
-      &.tab
-        display: none
-      &.info
-        position: fixed
-        left: 0
-        display: none
-    &.open
-      div.info
-        display: block
-        right: 0
-  +respond-to(desktop)
-    div
-      left: 100%
-      transition: left 0.5s
-      &.tab
-        right: 0
-        left: calc(100% - 40px)
-      &.info
-        width: 400px
-        .close
-          display: none
-    &.open
-      .tab
-        left: calc(100% - 440px)
-        cursor: default
-      .info
-        left: calc(100% - 400px)
-article
-  display: flex
-  flex-direction: column
-  line-height: normal
-  header
-    width: 100%
-    height: auto
-    line-height: 1
-    hr
-      width: 70%
-  p
-    padding: 0 10px
-    margin-bottom: 5px
+@import loader
+@import header
+@import game
+@import article

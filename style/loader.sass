@@ -1,0 +1,20 @@
+body
+  &.loading .loaded
+    height: 0
+    overflow: hidden
+    opacity: 0
+    hgroup
+      line-height: 0
+  &.loaded
+    .loading
+      display: none
+    .loaded
+      background-image: $background
+      opacity: 1
+      transition: opacity 1.5s
+
+.commands
+  padding: 30px
+.prompt
+  font-family: $code
+  font-size: 14pt

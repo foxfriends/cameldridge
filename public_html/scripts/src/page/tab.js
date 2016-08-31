@@ -3,8 +3,8 @@ import * as SVG from './svg';
 
 const games = document.querySelectorAll('.game');
 
-const pathstr = 'M -0.107 101 L 11.836 91.181 C 12.279 66.044 16.897 34.072 6.103 14.85 C 3.032 9.38 7.468 4.944 20 1.542';
-const fillstr = 'M 20 101 L -0.107 101 L 11.836 91.181 C 12.279 66.044 16.897 34.072 6.103 14.85 C 3.032 9.38 7.468 4.944 20 1.542 Z';
+const pathstr = 'M -0.107 101 L 11.836 91.181 C 12.279 66.044 16.897 34.072 6.103 14.85 C 3.032 9.38 7.468 4.944 20 0';
+const fillstr = 'M 20 101 L -0.107 101 L 11.836 91.181 C 12.279 66.044 16.897 34.072 6.103 14.85 C 3.032 9.38 7.468 4.944 20 0 Z';
 const animationTime = 500;
 
 const desktop = window.matchMedia('(min-width: 961px)');

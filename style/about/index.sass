@@ -1,4 +1,4 @@
-section#about
+section#about .container
   display: flex
   max-width: 1200px
   flex-basis: 1200px
@@ -8,6 +8,8 @@ section#about
   flex-wrap: wrap
   div
     margin: 1pc
+    +respond-to(phone)
+      margin: 5px
   #bio
     flex-basis: 400px
     flex-grow: 1

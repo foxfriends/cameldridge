@@ -1,4 +1,4 @@
-header
+header, footer
   box-sizing: border-box
   width: 100vw
   height: 100vh
@@ -7,13 +7,18 @@ header
   flex-direction: column
 hgroup
   box-sizing: border-box
-  display: block
   position: relative
+  display: flex
+  justify-content: center
+  flex-direction: column
   width: 100%
+  height: 500px
+  transition: line-height 1.5s
   padding: 0 125px
+  +respond-to(desktop)
+    background: transparentize(white, 0.2)
   +respond-to(phone)
     padding: 0 75px
-  transition: line-height 1.5s
 h1, h2, h3, h4
   font-family: $header
   text-align: center
@@ -57,3 +62,7 @@ hr
     color: black
     font-family: $header
     font-size: 20pt
+section.title
+  padding: 60px 0
+  margin: 0
+  background: transparentize(white, 0.3)

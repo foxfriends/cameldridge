@@ -33,9 +33,18 @@ export function animate(path, time) {
     if(now - start < time) {
       animation = window.requestAnimationFrame(animate);
     } else {
-      finish();
+      finish(true);
     }
   });
-  finished.cancel = () => { window.cancelAnimationFrame(animation); cancel(); }
+  finished.cancel = () => {
+    window.cancelAnimationFrame(animation);
+    cancel();
+  };
+  finished.skip = () => {
+    window.cancelAnimationFrame(animation);
+    setAttribute(path, 'stroke-dasharray', `${len}`);
+    setAttribute(path, 'stroke-dashoffset', 0);
+    finish(false);
+  };
   return finished;
 };

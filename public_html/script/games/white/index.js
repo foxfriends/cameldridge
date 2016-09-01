@@ -61,7 +61,7 @@ generate(function*() {
       white.reset().play();
     })
     .on('resize', () => {
-      white.canvas.style.width = window.innerWidth + 'px';
+      white.canvas.style.width = window.innerWidth + 'px'
     })
     .play();
 });

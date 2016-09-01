@@ -16,8 +16,7 @@ module.exports = [{
   },
   resolve: {
     modulesDirectories: ['node_modules', 'js-modules']
-  },
-  devtool: ['source-map']
+  }
 }, {
   entry: './public_html/script/index.js',
   output: {
@@ -33,6 +32,5 @@ module.exports = [{
   },
   resolve: {
     modulesDirectories: ['node_modules', 'js-modules']
-  },
-  devtool: ['source-map']
+  }
 }];

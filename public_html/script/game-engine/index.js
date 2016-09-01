@@ -4,6 +4,7 @@ import generate from 'generate';
 
 import {KEYFRAME_END} from './const';
 import Util from './util';
+import onResize from '../page/on-resize';
 
 let playCount = 0;
 
@@ -26,11 +27,7 @@ export default class Game {
     this[PLAYING] = false;
     this[ON] = {};
     this[GLOBAL] = {};
-    window.setTimeout(() => {
-      if(!window.IS_MOBILE) {
-        window.addEventListener('resize', () => { this.trigger('resize'); })
-      }
-    }, 0);
+    onResize(() => this.trigger('resize'));
   }
 
   play() {

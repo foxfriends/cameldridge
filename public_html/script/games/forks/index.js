@@ -28,7 +28,7 @@ generate(function*() {
       forks.reset().play();
     })
     .on('resize', () => {
-      forks.canvas.style.width = window.innerWidth + 'px';
+      forks.canvas.style.width = window.innerWidth + 'px'
     })
     .play();
 });

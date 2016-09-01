@@ -1,6 +1,7 @@
 'use strict';
 import * as  SVG from '../page/svg';
 import onResize from '../page/on-resize';
+import {phone} from '../page/media';
 
 const svg = document.querySelector('#header-border');
 const pathstr = 'M 102.342 18.469 C 103.487 9.722 87.048 1.975 76.015 4.733 C 62.536 8.103 55.473 17.155 50.833 29.915 C 34.031 76.121 98.523 184.441 7.337 184.441 L 7.337 185.586';
@@ -16,8 +17,6 @@ while(paths.length < 4) {
   svg.appendChild(path);
   paths.push(path);
 }
-
-const phone = window.matchMedia('(max-width: 640px)');
 
 function transform() {
   let x = 50;

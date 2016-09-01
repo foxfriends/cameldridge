@@ -26,7 +26,7 @@ generate(function*() {
       tokaido.reset().play();
     })
     .on('resize', () => {
-      tokaido.canvas.style.width = window.innerWidth + 'px';
+      tokaido.canvas.style.width = window.innerWidth + 'px'
     })
     .play();
 });

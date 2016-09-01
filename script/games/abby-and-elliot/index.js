@@ -44,7 +44,7 @@ generate(function*() {
       abbyAndElliot.reset().play();
     })
     .on('resize', () => {
-      abbyAndElliot.canvas.style.width = window.innerWidth + 'px';
+      abbyAndElliot.canvas.style.width = window.innerWidth + 'px'
     })
     .play();
 });

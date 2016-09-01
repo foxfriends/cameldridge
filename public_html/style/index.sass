@@ -13,11 +13,13 @@ body
   +respond-to(desktop)
     font-size: 16pt
   font-weight: 200
-section
+section:not(.title)
   background-image: $background
-  padding-bottom: 60px
-  &:not(#games)
-    padding-top: 60px
+  padding: 60px 0
+  +respond-to(desktop)
+    &#games
+      padding-top: 0
+
 canvas
   pointer-events: none
 svg
@@ -31,8 +33,17 @@ svg
   stroke-width: 1
   pointer-events: none
 
+a
+  text-decoration: none
+  &:link, &:visited
+    color: rgb(46, 98, 176)
+  &:hover
+    text-decoration: underline
+    color: rgb(82, 143, 224)
+
 @import loader
 @import header
+@import about/index
 @import info
 @import article
-@import about/index
+@import websites

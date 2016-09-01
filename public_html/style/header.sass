@@ -5,6 +5,8 @@ header, footer
   display: flex
   justify-content: center
   flex-direction: column
+footer
+  background: $footer-background
 hgroup
   box-sizing: border-box
   position: relative
@@ -19,7 +21,7 @@ hgroup
     background: transparentize(white, 0.2)
   +respond-to(phone)
     padding: 0 75px
-h1, h2, h3, h4
+h1, h2, h3, h4, h6
   font-family: $header
   text-align: center
 +respond-to(phone)
@@ -47,6 +49,8 @@ h1, h2, h3, h4
     font-size: 35pt
   h4
     font-size: 25pt
+h6
+  margin-top: auto
 hr
   position: relative
   border: none
@@ -62,9 +66,9 @@ hr
     color: black
     font-family: $header
     font-size: 20pt
-section.title
-  padding-top: 60px
-  &:not(.image)
-    padding-bottom: 60px
-    +respond-to(desktop)
++respond-to(desktop)
+  section.title
+    padding-top: 60px
+    &:not(.image)
+      padding-bottom: 60px
       background: transparentize(white, 0.3)

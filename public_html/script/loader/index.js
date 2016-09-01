@@ -14,6 +14,10 @@ function end() {
   ended = true;
   document.body.classList.remove('loading');
   document.body.classList.add('loaded');
+  window.setTimeout(() => {
+    const loading = document.querySelector('.loading');
+    loading.parentNode.removeChild(loading);
+  }, 0);
   window.removeEventListener('click', skip);
   window.removeEventListener('wheel', skip);
   window.removeEventListener('keydown', skip);

@@ -62,10 +62,9 @@ hr
     color: black
     font-family: $header
     font-size: 20pt
-section
-  padding-bottom: 60px
 section.title
-  padding: 60px 0
-  +respond-to(desktop)
-    &:not(.image)
+  padding-top: 60px
+  &:not(.image)
+    padding-bottom: 60px
+    +respond-to(desktop)
       background: transparentize(white, 0.3)

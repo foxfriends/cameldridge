@@ -35,7 +35,6 @@
         es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
       } finally {
         script.src = es6 ? 'index.min.js' : 'index.cp.min.js';
-        console.log(script.src); // DEBUG - remove later
         document.head.appendChild(script);
       }
     })();
@@ -43,7 +42,7 @@
   </head>
   <body class="loading">
     <div class="loading">
-      <header class="page-header">
+      <header>
         <div class="commands">
           <div class="prompt"></div>
         </div>
@@ -65,7 +64,8 @@
       <section id="about">
         <div class="container">
           <div class="card" id="card">
-            <img src="me.jpg" width="200" height="300" />
+            <!-- TODO: Get a taller picture (200x300) -->
+            <img src="images/me.png" width="300" height="300" />
             <dl>
               <dt>Education</dt>
               <dd>BCS, University of Waterloo</dd>

@@ -7,6 +7,8 @@ header, footer
   flex-direction: column
   &.page-header
     background: $header-background
+    background-size: cover
+    background-position: top center
     +respond-to(desktop)
       background-attachment: fixed
 footer
@@ -21,8 +23,7 @@ hgroup
   height: 500px
   transition: line-height 1.5s
   padding: 0 125px
-  +respond-to(desktop)
-    background: transparentize(white, 0.2)
+  background: transparentize(white, 0.2)
   +respond-to(phone)
     padding: 0 75px
 h1, h2, h3, h4, h6

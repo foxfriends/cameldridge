@@ -8,11 +8,13 @@ import onResize from './page/on-resize';
 window.IS_MOBILE = platform.os.family === 'Android' || platform.os.family === 'iOS' || platform.os.family === 'Windows Phone';
 if(window.IS_MOBILE) {
   Array.prototype.forEach.call(document.querySelectorAll('.vh'), (vh) => {
-    onResize(() => {
+    function resize() {
       vh.style.height = (window.orientation === 0
         ? screen.height - 32
         : screen.width - 32) + 'px';
-    });
+    }
+    onResize(resize);
+    resize();
   });
 }
 

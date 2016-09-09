@@ -11,6 +11,12 @@
   box-shadow: 3px 3px 5px transparentize(black, 0.7)
   img
     flex-grow: 0
+  > img
+    width: 300px
+    height: 300px
+    +respond-to(phone)
+      width: 200px
+      height: 200px
 dl
   display: flex
   flex-direction: column
@@ -22,9 +28,16 @@ dt
   margin-top: 1pc
 dd
   font-weight: 200
-  margin-top: 0.5pc
+  margin-top: calc(0.5pc - 4px)
+  margin-bottom: -4px
   width: 100%
+  overflow-x: hidden
+  overflow-y: visible
+  padding: 4px 0
   word-wrap: nowrap
   text-overflow: ellipsis
   &.bottom
+    margin-bottom: 0
     margin-top: auto
+    padding: 0
+    overflow: hidden

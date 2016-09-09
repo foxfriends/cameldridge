@@ -5,6 +5,10 @@ header, footer
   display: flex
   justify-content: center
   flex-direction: column
+  &.page-header
+    background: $header-background
+    +respond-to(desktop)
+      background-attachment: fixed
 footer
   background: $footer-background
 hgroup

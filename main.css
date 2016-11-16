@@ -1,0 +1,447 @@
+@import url('http://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,400italic');
+
+/* Setup */
+* {
+    font-family: 'Open Sans',sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+.circle {
+    border-radius: 100%;
+}
+/* Makes vertical alignment easier */
+span.spacer {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+span.spaced {
+    display: inline-block;
+    vertical-align: middle;
+}
+.light { color: #FFF; }
+.dark { color: #000; }
+/* Prevent scrollbars created by the parallaxes */
+div#page-container { overflow: hidden; }
+
+/* Nav bar */
+nav div.nav-link {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    left: 100%;
+    z-index: 100;
+    width: 100%;
+    height: 24px;
+    padding-left: 20px;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    background: white;
+    cursor: pointer;
+    -webkit-transition-property: left;
+    -webkit-transition-duration: 0.0s;
+    transition-property: left;
+    transition-duration: 0.0s;
+}
+
+/* Page sections */
+section {
+    position: relative;
+    padding-bottom: 200px;
+    background-color: #FFF;
+    overflow: visible;
+}
+section header.title {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    border-top: 3px solid #555;
+    border-bottom: 3px solid #555;
+}
+section header.title h4 {
+    width: 100%;
+    text-align: center;
+}
+section div.content {
+    padding: 30px 100px;
+    text-align: right;
+}
+section#page-top div.content {
+    padding: 100px;
+}
+section div.content div.split-vertical {
+    display: inline-block;
+}
+section div.content div.split-vertical.left {
+    text-align: left;
+}
+section div.content div.split-vertical.right {
+    text-align: right;
+}
+section div.content div.split-vertical.center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+/* Content */
+hgroup {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: RGBA(255, 255, 255, 0.5);
+    border-radius: 100% 100% 50px 50px;
+    padding: 30px 100px;
+}
+h1, h2, h3, h4 {
+    font-family: "Merienda One", fantasy;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 35pt;
+    font-weight: bold;
+}
+h2 {
+    font-size: 20pt;
+}
+h3 {
+    font-size: 18pt;
+}
+h4 {
+    font-size: 20pt;
+}
+h4, p, header, footer, li {
+    text-align: justify;
+    margin: 10px 0 10px auto;
+    width: 500px;
+}
+/* The bottom section ones */
+p.center, footer.center {
+    text-align: center;
+    margin: 10px;
+    width: 100%;
+}
+/* Game and article lists */
+ul {
+    list-style: none;
+}
+li:before{
+    box-sizing: border-box;
+    width: 55px;
+    height: 52px;
+    content: "";
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: -55px;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-right: solid white;
+    border-right-width: 10px;
+    border-left: solid transparent;
+    -webkit-transition: border-right-width 0.3s;
+    transition: border-right-width 0.3s;
+}
+li:hover:before {
+    border-right-width: 20px;
+}
+li.selected:before {
+    border-right-width: 45px;
+}
+li {
+    position: relative;
+    width: 500px;
+    height: 52px;
+    overflow: visible;
+    background-color: #FFF;
+    background-position: right;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+}
+li.selected {
+    width: 532px;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+}
+/* Game and website articles */
+article {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    margin: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: -1;
+    -webkit-transition: opacity 0.3s,
+        z-index 0.3s;
+    transition: opacity 0.3s,
+        z-index 0.3s;
+}
+article div.screenshots {
+    position: absolute;
+    top: 80px;
+    right: -128px;
+    width: 96px;
+}
+article div.screenshots img {
+    width: 128px;
+    cursor: pointer;
+    padding: 1px;
+    border: 1px solid;
+    border-color: transparent;
+}
+article div.screenshots img:hover {
+    border-color: #AAA;
+}
+/* Popup windows */
+div.popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: transparent;
+    background-color: RGBA(0, 0, 0, 0.4);
+    text-align: center;
+    cursor: pointer;
+}
+div.popup-container {
+    display: inline-block;
+    z-index: 1001;
+    padding: 16px;
+    max-width: 1000px;
+    max-height: 600px;
+    background-color: #EEE;
+    cursor: default;
+}
+img.popup-image {
+    max-width: 1000px;
+    max-height: 600px;
+}
+/* Regular links */
+a {
+    color: #AAF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Special Links */
+footer a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-right: 8px;
+}
+footer a[href$=".html"] {
+    background-image: URL("image/icon/HTML5-icon_32x32.png");
+}
+footer a[href$=".exe"] {
+    background-image: URL("image/icon/windows7-icon_32x32.png");
+}
+footer a[href*="github"] {
+    background-image: URL("image/icon/github-icon_32x32.png");
+}
+footer a[href*="facebook"] {
+    background-image: URL("image/icon/facebook-icon_32x32.png");
+}
+footer a[href*="twitter"] {
+    background-image: URL("image/icon/twitter-icon_32x32.png");
+}
+footer a[href*="tumblr"] {
+    background-image: URL("image/icon/tumblr-icon_32x32.png");
+}
+footer a[href*="linkedin"] {
+    background-image: URL("image/icon/linkedin-icon_32x32.png");
+}
+footer a[href*="plus.google"] {
+    background-image: URL("image/icon/google+icon_32x32.png");
+}
+
+/* Specifics */
+section#page-top, div#nav-top, body {
+    background-image: URL("image/pattern/top.png");
+}
+section#page-desc, div#nav-desc {
+    background-image: URL("image/pattern/desc.png");
+}
+section#page-game, div#nav-game{
+    background-image: URL("image/pattern/game.png");
+}
+section#page-site, div#nav-site {
+    background-image: URL("image/pattern/site.png");
+}
+section#page-bot {
+    background-image: URL("image/pattern/bot.png");
+    min-height: 700px;
+}
+div#desc-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 100px;
+    width: 500px;
+    height: 700px;
+    background-image: URL("image/desc.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    border-radius: 250px;
+}
+img#header-image {
+    margin: 10px;
+}
+
+/* Smaller screen layout */
+@media screen and (max-width: 1450px) {
+    section div.content {
+        /* Reduce padding to make text and tabs look more centered */
+        padding: 100px 50px;
+    }
+    article {
+        /* Reduce margin to make it look more centered */
+        margin: 100px 50px;
+    }
+    article div.screenshots {
+        /* Put screenshots below the article if the width is too small */
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* Top headings are smaller so they don't break line */
+    h1 {
+        font-size: 30pt;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 15pt;
+    }
+    h3 {
+        font-size: 14pt;
+    }
+    /* Tags and right text is thinner */
+    div.split-vertical.right h4, div.split-vertical.right p, div.split-vertical.right header, div.split-vertical.right footer {
+        width: 400px;
+    }
+    li {
+        width: 400px;
+    }
+    li.selected {
+        width: 432px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    /* Top headings are smaller so they don't break line */
+    h1 {
+        font-size: 30pt;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 15pt;
+    }
+    h3 {
+        font-size: 14pt;
+    }
+    /* All text is thinner */
+    h4, p, header, footer {
+        width: 400px;
+        margin: 10px 0 10px 0;
+    }
+}
+@media screen and (max-height: 700px) {
+    article {
+        /* Don't scroll if the biggest article doesn't fit on the screen */
+        transform: translateY(0) !important;
+    }
+    /* Popup images must be smaller so there is decent border */
+    div.popup-container {
+        max-height: 400px;
+    }
+    img.popup-image {
+        max-height: 400px;
+    }
+}
+/* Mobile layout */
+@media screen and (max-width: 1000px) {
+    nav {
+        display: none;
+    }
+    hgroup {
+        margin: 10px;
+        background-color: RGBA(255, 255, 255, 0.5);
+        border-radius: 50px;
+        padding: 30px;
+    }
+    section div.content {
+        padding: 0;
+        margin: 0;
+    }
+    section {
+        transform: translateY(0px) !important;
+    }
+    section div.content div.split-vertical {
+        display: block;
+        width: 100%;
+    }
+    section div.content div.split-vertical.left {
+        display: none;
+    }
+    h4, p, header, footer, li {
+        width: 100% !important;
+        display: block;
+    }
+    h4 {
+        text-align: center;
+    }
+    h4, p {
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+    div.popup-container {
+        max-width: 500px;
+    }
+    img.popup-image {
+        max-width: 500px;
+    }
+
+    li:before{
+        display: none;
+    }
+    li:hover:before {
+        display: none;
+    }
+    li.selected:before {
+        display: none;
+    }
+    li {
+        box-sizing: border-box;
+        height: 52px;
+        padding-left: 16px;
+        -webkit-transition: none;
+        transition: none;
+    }
+    li.selected {
+        -webkit-transition: none;
+        transition: none;
+    }
+}
+/* Super tiny screens */
+@media screen and (max-width: 480px) {
+    li span.spaced{
+        /* Background so text can be read over the image */
+        background-color: white;
+        border-radius: 5px;
+        padding: 3px;
+        box-shadow: 0 0 5px 5px white;
+    }
+}

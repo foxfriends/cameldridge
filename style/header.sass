@@ -51,13 +51,17 @@ h1, h2, h3, h4, h6
   h1
     font-size: 65pt
   h2, h3
-    font-size: 35pt
+    font-size: 42pt
   h4
-    font-size: 25pt
+    font-size: 30pt
 h6
   margin-top: auto
   img
     margin: 0px 5px
+    filter: url(#link-color)
+    transition: filter 0.3s
+    &:hover
+      filter: url(#link-hover)
 hr
   position: relative
   border: none

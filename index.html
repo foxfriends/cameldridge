@@ -169,8 +169,8 @@
               <header>
                 <h3>White</h3>
                 <h6>
-                  <a href="game/White.exe" download><img src="images/logos/windows-black.svg" width="25" height="25" /></a>
-                  <a href="game/White/index.html"><img src="images/logos/html5-black.svg" width="25" height="25" /></a>
+                  <a href="game/White.exe" download><img src="images/logos/windows-white.svg" width="25" height="25" /></a>
+                  <a href="game/White/index.html"><img src="images/logos/html5-white.svg" width="25" height="25" /></a>
                 </h6>
                 <hr />
               </header>
@@ -196,8 +196,8 @@
               <header>
                 <h3>Forks</h3>
                 <h6>
-                  <a href="game/Forks.exe" download><img src="images/logos/windows-black.svg" width="25" height="25" /></a>
-                  <a href="https://github.com/OinkIguana/forks"><img src="images/logos/github.svg" width="25" height="25" /></a>
+                  <a href="game/Forks.exe" download><img src="images/logos/windows-white.svg" width="25" height="25" /></a>
+                  <a href="https://github.com/OinkIguana/forks"><img src="images/logos/github-white.svg" width="25" height="25" /></a>
                 </h6>
                 <hr />
               </header>
@@ -222,7 +222,7 @@
               <header>
                 <h3>Abby and Elliot</h3>
                 <h6>
-                  <a href="game/Abby_and_Elliot.exe" download="Abby and Elliot.exe"><img src="images/logos/windows-black.svg" width="25" height="25" /></a>
+                  <a href="game/Abby_and_Elliot.exe" download="Abby and Elliot.exe"><img src="images/logos/windows-white.svg" width="25" height="25" /></a>
                 </h6>
                 <hr />
               </header>
@@ -248,7 +248,7 @@
                 <h3>Tokaido</h3>
                 <h4>Original game by Antoine Bauza. Art by Naïade</h4>
                 <h6>
-                  <a href="https://github.com/OinkIguana/tokaido"><img src="images/logos/github.svg" width="25" height="25" /></a>
+                  <a href="https://github.com/OinkIguana/tokaido"><img src="images/logos/github-white.svg" width="25" height="25" /></a>
                 </h6>
                 <hr />
               </header>
@@ -339,5 +339,24 @@
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
     </script>
+    <!-- <template> -->
+      <svg>
+          rgb(82, 143, 224)
+        <filter id="link-color" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+          <feColorMatrix type="matrix"
+            values="0.18 0 0 0 0
+                    0.38 0 0 0 0
+                    0.69 0 0 0 0
+                    0    0 0 1 0" />
+        </filter>
+        <filter id="link-hover" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+          <feColorMatrix type="matrix"
+            values="0.32 0 0 0 0
+                    0.56 0 0 0 0
+                    0.88 0 0 0 0
+                    0    0 0 1 0" />
+        </filter>
+      </svg>
+    <!-- </template> -->
   </body>
 </html>

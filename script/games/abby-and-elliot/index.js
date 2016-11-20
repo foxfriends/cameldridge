@@ -35,7 +35,8 @@ generate(function*() {
   }
   const bushx = abbyAndElliot.util.random.integer.from(200).to(abbyAndElliot.width - 200);
   abbyAndElliot
-    .on('start', () => {abbyAndElliot
+    .on('start', () => {
+      abbyAndElliot
         .add.actor(new Abby(), new Monster())
         .add.background(...grasses, ...trees, ...flowers, bush.copy([bushx, 220, -1000]))
         .add.foreground(...front);
@@ -45,6 +46,12 @@ generate(function*() {
     })
     .on('resize', () => {
       abbyAndElliot.canvas.style.width = window.innerWidth + 'px'
+    })
+    .on('scrollout', () => {
+      abbyAndElliot.pause();
+    })
+    .on('scrollin', () => {
+      abbyAndElliot.unpause();
     })
     .play();
 });

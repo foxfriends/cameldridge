@@ -28,5 +28,11 @@ generate(function*() {
     .on('resize', () => {
       tokaido.canvas.style.width = window.innerWidth + 'px'
     })
+    .on('scrollout', () => {
+      tokaido.pause();
+    })
+    .on('scrollin', () => {
+      tokaido.unpause();
+    })
     .play();
 });

@@ -63,5 +63,11 @@ generate(function*() {
     .on('resize', () => {
       white.canvas.style.width = window.innerWidth + 'px'
     })
+    .on('scrollout', () => {
+      white.pause();
+    })
+    .on('scrollin', () => {
+      white.unpause();
+    })
     .play();
 });

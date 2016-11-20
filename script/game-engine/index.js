@@ -9,7 +9,7 @@ import onResize from '../page/on-resize';
 let playCount = 0;
 
 const [
-  CANVAS, CONTEXT, ON, END, PAUSE, UNPAUSE,
+  CANVAS, CONTEXT, ON, END, PAUSE, UNPAUSE, VISIBLE,
   KEYFRAMES, ACTORS, BACKGROUNDS, FOREGROUNDS, PLAYING, GLOBAL
 ] = Symbolic;
 
@@ -28,9 +28,32 @@ export default class Game {
     this[ON] = {};
     this[GLOBAL] = {};
     onResize(() => this.trigger('resize'));
+
+    // for scrollin/scrollout events
+    const inView = () => {
+      const rect = this[CANVAS].getBoundingClientRect();
+      return rect.bottom >= 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight);
+    }
+    let scrollTimeout;
+    this[VISIBLE] = inView();
+    window.addEventListener('scroll', () => {
+      if(scrollTimeout) { clearTimeout(scrollTimeout); }
+      scrollTimeout = setTimeout(() => {
+        scrollTimeout = undefined;
+        if(inView() != this[VISIBLE]) {
+          this[VISIBLE] = !this[VISIBLE];
+          if(this[VISIBLE]) {
+            this.trigger('scrollin');
+          } else {
+            this.trigger('scrollout');
+          }
+        }
+      }, 50);
+    });
   }
 
   play() {
+    this.trigger(this[VISIBLE] ? 'scrollin' : 'scrollout');
     playCount++;
     let frame = 0;
     this[PLAYING] = true;
@@ -83,7 +106,11 @@ export default class Game {
           resolve();
         }
       });
-    } else {
+    }
+  }
+
+  unpause() {
+    if(this[PAUSE]) {
       this[UNPAUSE]();
     }
   }

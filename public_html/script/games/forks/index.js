@@ -30,5 +30,11 @@ generate(function*() {
     .on('resize', () => {
       forks.canvas.style.width = window.innerWidth + 'px'
     })
+    .on('scrollout', () => {
+      forks.pause();
+    })
+    .on('scrollin', () => {
+      forks.unpause();
+    })
     .play();
 });

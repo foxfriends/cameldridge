@@ -1,23 +1,9 @@
-body
-  &.loading .loaded
-    height: 0
-    overflow: hidden
-    opacity: 0
-    hgroup
-      line-height: 0
-  &.loaded
-    .loading
-      display: none
-    .loaded
-      background-image: $background
-      +respond-to(desktop)
-        background-image: $deep-background
-        background-attachment: fixed
-        background-size: cover
-      opacity: 1
-      transition: opacity 1.5s
-.commands
-  padding: 30px
-.prompt
+.loading
+  position: absolute
+  top: 0
+  bottom: 0
+  margin-left: 1pc
+  display: flex
+  align-items: center
   font-family: $code
   font-size: 14pt

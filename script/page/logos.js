@@ -4,13 +4,28 @@ import onResize from './on-resize';
 import {phone, tablet} from './media';
 
 const images = [];
+let alerted = false;
 Array.prototype.forEach.call(document.querySelectorAll('.logo'), (logo) => {
+  if(typeof logo.classList[Symbol.iterator] !== 'function') {
+    logo.classList[Symbol.iterator] = function*() {
+      for(let key of Object.keys(logo.classList)) {
+        yield logo.classList[key];
+      }
+    }
+  }
   generate(function*() {
     const name = [...logo.classList].filter((c) => c !== 'logo')[0];
+    // alert(name);
     const src = `images/logos/${name}.svg`;
     const img = new Image();
     img.src = src;
-    img.height = 80;
+    window.setTimeout(() => {
+      if(window.IS_MOBILE) {
+        img.height = 40;
+      } else {
+        img.height = 80;
+      }
+    });
     logo.appendChild(img);
     images.push(img)
   });

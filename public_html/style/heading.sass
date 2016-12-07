@@ -1,32 +1,23 @@
 header, footer
-  box-sizing: border-box
-  width: 100vw
-  height: 100vh
-  display: flex
-  justify-content: center
-  flex-direction: column
-  &.page-header
-    background: $header-background
-    background-size: cover
-    background-position: top center
-    +respond-to(desktop)
-      background-attachment: fixed
-footer
-  background: $footer-background
+  &.page
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    flex-direction: column
 hgroup
-  box-sizing: border-box
-  position: relative
   display: flex
-  justify-content: center
   flex-direction: column
+  justify-content: center
+  align-items: center
+  box-sizing: border-box
   width: 100%
   height: 500px
+  padding: 0 90px
+  background: $whitebox
   transition: line-height 1.5s
-  padding: 0 125px
-  background: transparentize(white, 0.05)
-  +respond-to(phone)
-    padding: 0 75px
-h1, h2, h3, h4, h6
+
+h1, h2, h3, h4, h5, h6
   font-family: $header
   text-align: center
 +respond-to(phone)
@@ -65,22 +56,16 @@ h6
 hr
   position: relative
   border: none
-  background-color: transparentize(black, 0.5)
   width: 35%
   height: 1px
   margin: 10pt auto
+  background-color: transparentize(black, 0.5)
+  font-family: $header
+  font-size: 20pt
+  line-height: 1px
+  color: black
   pointer-events: none
   &::after
     content: '///'
     position: absolute
     left: calc(50% - 1ex)
-    top: -10pt
-    color: black
-    font-family: $header
-    font-size: 20pt
-+respond-to(desktop)
-  section.title
-    padding-top: 60px
-    &:not(.image)
-      padding-bottom: 60px
-      background: transparentize(white, 0.3)

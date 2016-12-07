@@ -1,50 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100|Source+Code+Pro:300|Lato:300,400)
 @import mixins
 
-.container
-  position: relative
+// display the right sections
 body
-  display: inline
-  display: initial
+  display: block
   overflow-x: hidden
   font-family: 'Lato', sans-serif
   +respond-to(tablet)
     font-size: 14pt
   +respond-to(desktop)
     font-size: 16pt
-  font-weight: 300
-section:not(.title)
-  background-image: $background
-  padding: 60px 0
-  +respond-to(desktop)
-    &#games
-      padding-top: 0
+    font-weight: 300
+  &.loading
+    overflow: hidden
+    .loaded
+      opacity: 0
+      line-height: 0
+  &.loaded .loaded
+    background-image: $deep-background
+    background-attachment: fixed
+    opacity: 1
+    transition: opacity 1.5s
+footer
+  background-image: $footer-background
 
-canvas
-  pointer-events: none
-svg
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  fill: none
-  stroke: #000000
-  stroke-width: 1
-  pointer-events: none
-
-a
-  text-decoration: none
-  margin: 4px 0
-  &:link, &:visited
-    color: rgb(46, 98, 176)
-  &:hover
-    text-decoration: underline
-    color: rgb(82, 143, 224)
-
+// basic styles
+@import basic
 @import loader
-@import header
-@import about/index
-@import info
-@import article
-@import websites
+@import heading
+@import card
+@import text
+@import site

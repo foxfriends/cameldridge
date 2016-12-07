@@ -32,7 +32,7 @@
       var script = document.createElement('script');
       var es6 = false;
       try {
-        es6 = eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
+        es6 = !!eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
       } finally {
         script.src = es6 ? 'index.min.js' : 'index.cp.min.js';
         document.head.appendChild(script);
@@ -42,14 +42,12 @@
   </head>
   <body class="loading">
     <div class="loading">
-      <header>
-        <div class="commands">
-          <div class="prompt"></div>
-        </div>
-      </header>
+      <div class="commands">
+        <div class="prompt"></div>
+      </div>
     </div>
     <div class="loaded">
-      <header class="container page-header vh">
+      <header class="container page vh">
         <hgroup>
           <h1>Cameron Eldridge</h1>
           <hr />
@@ -57,72 +55,75 @@
         </hgroup>
         <svg id="header-border"></svg>
       </header>
-      <section class="container">
-        <svg class="burst"></svg>
-        <div class="avatar"></div>
-      </section>
       <section id="about">
         <div class="container">
-          <div class="card" id="card">
-            <!-- TODO: Get a taller picture (200x300) -->
-            <img src="images/me.png" width="300" height="300" id="card-image" />
-            <dl>
-              <dt>Education</dt>
-              <dd>BCS, University of Waterloo</dd>
-              <dt>Location</dt>
-              <dd>Ottawa, Canada</dd>
-              <dt>Email</dt>
-              <dd><a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a></dd>
-              <dd class="bottom">
-                <a href="https://github.com/OinkIguana/"><img src="images/logos/github.svg" width="50" height="50" /></a>
-                <a href="https://twitter.com/OinkIguana"><img src="images/logos/twitter.svg" width="50" height="50" /></a>
-                <a href="https://linkedin.com/in/cameldridge"><img src="images/logos/linkedin.svg" width="50" height="50" /></a>
-              </dd>
-            </dl>
+          <div class="container">
+            <svg class="burst"></svg>
+            <div class="avatar"></div>
           </div>
-          <div id="bio">
-            <article>
-              <p>
-                More than ten years ago, the small child that was me wrote his first line
-                of code, and it led to one of the uglist websites to have ever graced
-                the Internet. Since then I have come a long way, and I hope to go much
-                further yet.
-              </p>
-              <p>
-                Currently I am studying for my BCS from the University of Waterloo,
-                in hopes of someday finding a career in software development. Until
-                then I continue to work on my own personal projects, some of which
-                can be seen below. With each, I try to learn at least one new thing,
-                be it a new concept, technology or language.
-              </p>
-              <p>
-                Though my biggest hobby is working on projects like these, I also dabble
-                in wood carving and baked goods, and I&rsquo;ll never turn down a chance to
-                travel the world.
-              </p>
-            </article>
+          <div class="flex horizontal close">
+            <div class="card" id="card">
+              <!-- TODO: Get a more recent picture -->
+              <img src="images/me.png" width="300" height="300" id="card-image" />
+              <dl>
+                <dt>Education</dt>
+                <dd>BCS, University of Waterloo</dd>
+                <dt>Location</dt>
+                <dd>Ottawa, Canada</dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:cam.eldridge@gmail.com">cam.eldridge@gmail.com</a></dd>
+                <dd class="bottom">
+                  <a href="https://github.com/OinkIguana/"><img src="images/logos/github.svg" width="50" height="50" /></a>
+                  <a href="https://twitter.com/OinkIguana"><img src="images/logos/twitter.svg" width="50" height="50" /></a>
+                  <a href="https://linkedin.com/in/cameldridge"><img src="images/logos/linkedin.svg" width="50" height="50" /></a>
+                </dd>
+              </dl>
+            </div>
+            <!-- <div id="bio"> -->
+              <article>
+                <p>
+                  More than ten years ago, the small child that was me wrote his first line
+                  of code, and it led to one of the uglist websites to have ever graced
+                  the Internet. Since then I have come a long way, and I hope to go much
+                  further yet.
+                </p>
+                <p>
+                  Currently I am studying for my BCS from the University of Waterloo,
+                  in hopes of someday finding a career in software development. Until
+                  then I continue to work on my own personal projects, some of which
+                  can be seen below. With each, I try to learn at least one new thing,
+                  be it a new concept, technology or language.
+                </p>
+                <p>
+                  Though my biggest hobby is working on projects like these, I also dabble
+                  in wood carving and baked goods, and I&rsquo;ll never turn down a chance to
+                  travel the world.
+                </p>
+              </article>
+            <!-- </div> -->
           </div>
+          <hr />
         </div>
-        <hr />
       </section>
       <section class="container title">
         <svg class="burst"></svg>
         <h3>Skills</h3>
       </section>
       <section id="skills">
-        <div class="container">
+        <!-- TODO: name each of these more obviously than title does -->
+        <div class="container flex">
           <div>
             <h3>Web</h3>
           </div>
           <hr />
-          <div>
+          <div class="flex horizontal close">
             <span class="logo html5" title="HTML5"></span>
             <span class="logo css3" title="CSS3"></span>
             <span class="logo javascript" title="JavaScript (ES2015)"></span>
             <span class="logo typescript" title="TypeScript"></span>
             <span class="logo nodejs" title="Node.js"></span>
           </div>
-          <div>
+          <div class="flex horizontal close">
             <span class="logo angular" title="Angular"></span>
             <span class="logo jquery" title="jQuery"></span>
             <span class="logo d3" title="D3"></span>
@@ -131,7 +132,7 @@
             <span class="logo gulp" title="Gulp"></span>
             <span class="logo webpack" title="Webpack"></span>
           </div>
-          <div>
+          <div class="flex horizontal close">
             <span class="logo rails" title="Ruby on Rails"></span>
             <span class="logo haml" title="HAML"></span>
             <span class="logo sass" title="Sass/SCSS"></span>
@@ -140,7 +141,7 @@
             <h3>Software</h3>
           </div>
           <hr />
-          <div>
+          <div class="flex horizontal close">
             <span class="logo ruby" title="Ruby"></span>
             <span class="logo c" title="C"></span>
             <span class="logo cpp" title="C++"></span>
@@ -151,7 +152,7 @@
             <h3>Games</h3>
           </div>
           <hr />
-          <div>
+          <div class="flex horizontal close">
             <span class="logo gm" title="GameMaker: Studio"></span>
             <span class="logo unity" title="Unity"></span>
           </div>
@@ -164,7 +165,7 @@
       <section id="games">
         <div class="game">
           <canvas id="white"></canvas>
-          <div class="info">
+          <div class="horizontal flex container">
             <article class="container">
               <header>
                 <h3>White</h3>
@@ -191,7 +192,7 @@
         </div>
         <div class="game">
           <canvas id="forks"></canvas>
-          <div class="info">
+          <div class="horizontal flex container">
             <article class="container">
               <header>
                 <h3>Forks</h3>
@@ -217,7 +218,7 @@
         </div>
         <div class="game">
           <canvas id="abby-and-elliot"></canvas>
-          <div class="info">
+          <div class="horizontal flex container">
             <article class="container">
               <header>
                 <h3>Abby and Elliot</h3>
@@ -242,7 +243,7 @@
         </div>
         <div class="game">
           <canvas id="tokaido"></canvas>
-          <div class="info">
+          <div class="horizontal flex container">
             <article class="container">
               <header>
                 <h3>Tokaido</h3>
@@ -270,53 +271,49 @@
         <svg class="burst"></svg>
         <h3>Websites</h3>
       </section>
-      <section id="sites">
-        <div id="knightwatch" class="site">
-          <img src="images/website/knightwatch.png" />
-          <article>
-            <a href="http://knightwatch.cameldridge.com">
-              <header>
+      <section id="sites" class="flex container">
+        <div class="horizontal flex container">
+          <div id="knightwatch" class="site">
+            <img src="images/website/knightwatch.png" />
+            <div class="flex close">
+              <a href="http://knightwatch.cameldridge.com">
                 <h4>Nepean High School</h4>
                 <h3>Knightwatch</h3>
                 <hr />
-              </header>
-            </a>
-          </article>
-        </div>
-        <div id="tumblr" class="site">
-          <img src="images/website/tumblr.png" />
-          <article>
-            <a href="http://oinkiguana.tumblr.com">
-              <header>
+              </a>
+            </div>
+          </div>
+          <div id="tumblr" class="site">
+            <img src="images/website/tumblr.png" />
+            <div class="flex close">
+              <a href="http://oinkiguana.tumblr.com">
                 <h4>Themes for</h4>
                 <h3>Tumblr</h3>
                 <hr />
-              </header>
-            </a>
-          </article>
+              </a>
+            </div>
+          </div>
         </div>
-        <div id="kittyalyst" class="site">
-          <img src="images/website/kittyalyst.png" />
-          <article>
-            <header>
+        <div class="horizontal flex container">
+          <div id="kittyalyst" class="site">
+            <img src="images/website/kittyalyst.png" />
+            <div class="flex close">
               <h4>Work in progress</h4>
               <h3>Kittyalyst</h3>
               <hr />
-            </header>
-          </article>
-        </div>
-        <div id="cameldridge" class="site">
-          <img src="images/website/cameldridge.png" />
-          <article>
-            <header>
+            </div>
+          </div>
+          <div id="cameldridge" class="site">
+            <img src="images/website/cameldridge.png" />
+            <div class="flex close">
               <h4>This page</h4>
               <h3>Cameron Eldridge</h3>
               <hr />
-            </header>
-          </article>
+            </div>
+          </div>
         </div>
       </section>
-      <footer class="vh">
+      <footer class="page vh">
         <div style="margin-bottom: auto"></div>
         <h4>Have work for me?</h4>
         <h4><a href="mailto:cam.eldridge@gmail.com">Please let me know</a></h4>

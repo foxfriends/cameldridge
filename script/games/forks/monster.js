@@ -1,5 +1,5 @@
 'use strict';
-import enumerate from 'enumerate';
+import enumerate from '../../util/enumerate';
 import Actor from './actor';
 import Dave from './dave';
 import {monster as sprite} from './sprites';

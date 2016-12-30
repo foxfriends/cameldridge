@@ -1,4 +1,4 @@
-import pad from 'pad';
+import pad from '../../util/pad';
 
 import Actor from './actor';
 import {spark} from './sprites';

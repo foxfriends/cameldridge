@@ -1,4 +1,4 @@
-import enumerate from 'enumerate';
+import enumerate from '../../util/enumerate';
 export const Color = {
   White: 0xFFFFFF,
   Red: 0xFF0000,

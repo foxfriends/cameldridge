@@ -1,5 +1,5 @@
 'use strict';
-import Symbolic from 'symbolic';
+import Symbolic from '../../util/symbolic';
 
 import Actor from './actor';
 import {butterfly} from './sprites';

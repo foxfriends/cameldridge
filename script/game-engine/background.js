@@ -1,5 +1,5 @@
 'use strict';
-import Symbolic from 'symbolic';
+import Symbolic from '../util/symbolic';
 
 const [IMAGE, POSITION, LOADED] = Symbolic;
 

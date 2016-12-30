@@ -1,5 +1,5 @@
 'use strict';
-import generate from 'generate';
+import generate from '../util/generate';
 import onResize from './on-resize';
 import {phone, tablet} from './media';
 

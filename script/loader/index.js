@@ -1,6 +1,6 @@
 'use strict';
-import generate from 'generate';
-import wait from 'wait';
+import generate from '../util/generate';
+import wait from '../util/wait';
 
 import Prompt from './prompt';
 import border from './border';

@@ -1,5 +1,5 @@
 'use strict';
-import generate from 'generate';
+import generate from '../../util/generate';
 
 import sprites from './sprites';
 import backgrounds, {bush, grass, tree1, tree2, flower} from './backgrounds';

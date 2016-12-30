@@ -1,4 +1,4 @@
-import Symbolic from 'symbolic';
+import Symbolic from '../util/symbolic';
 import {KEYFRAME_END} from './const';
 const [INDICES, FRAMES, PAIRS] = Symbolic;
 

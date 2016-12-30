@@ -9,13 +9,10 @@ module.exports = [{
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /(node_modules).*\.js/, loader: 'babel?presets[]=es2015' },
-      { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style!css!sass' },
-      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file?name=images/[hash].[ext]!img' }
+      { test: /\.js$/, exclude: /(node_modules).*\.js/, loader: 'babel-loader?presets[]=es2015' },
+      { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file-loader?name=images/[hash].[ext]!img-loader' }
     ]
-  },
-  resolve: {
-    modulesDirectories: ['node_modules', 'js-modules']
   }
 }, {
   entry: './public_html/script/index.js',
@@ -25,12 +22,9 @@ module.exports = [{
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'babel?plugins[]=transform-es2015-modules-commonjs' },
-      { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style!css!sass' },
-      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file?name=images/[hash].[ext]!img' }
+      // { test: /\.js$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'babel-loader?plugins[]=transform-es2015-modules-commonjs' },
+      { test: /\.s(a|c)ss$/, exclude: /(node_modules|js-modules).*\.js/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.(gif|svg|png|jpe?g)$/, loader: 'file-loader?name=images/[hash].[ext]!img-loader' }
     ]
-  },
-  resolve: {
-    modulesDirectories: ['node_modules', 'js-modules']
   }
 }];

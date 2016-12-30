@@ -1,4 +1,4 @@
-import enumerate from 'enumerate';
+import enumerate from '../../util/enumerate';
 
 import Actor from './actor';
 import {Input} from '../../game-engine/const';

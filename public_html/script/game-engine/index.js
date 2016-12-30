@@ -1,6 +1,6 @@
 'use strict';
-import Symbolic from 'symbolic';
-import generate from 'generate';
+import Symbolic from '../util/symbolic';
+import generate from '../util/generate';
 
 import {KEYFRAME_END} from './const';
 import Util from './util';

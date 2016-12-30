@@ -1,5 +1,5 @@
 'use strict';
-import Symbolic from 'symbolic';
+import Symbolic from '../util/symbolic';
 const [ELEMENT, PROMPT, COMMAND, UPDATER] = Symbolic;
 
 export default class Prompt {

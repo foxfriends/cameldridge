@@ -1,5 +1,5 @@
 'use strict';
-import Symbolic from 'symbolic';
+import Symbolic from '../util/symbolic';
 import Sprite from './sprite';
 
 const [SPRITE, POSITION, GAME, ORIGIN, BLEND, SUBIMAGE] = Symbolic;

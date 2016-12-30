@@ -1,5 +1,5 @@
 'use strict';
-import generate from 'generate';
+import generate from '../../util/generate';
 
 import sprites from './sprites';
 import {Color} from './const';

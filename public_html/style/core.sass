@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100|Source+Code+Pro:300|Lato:300,400)
+@import mixins
+
+body
+  display: block
+  overflow-x: hidden
+  font-family: 'Lato', sans-serif
+  +respond-to(tablet)
+    font-size: 14pt
+  +respond-to(desktop)
+    font-size: 16pt
+    font-weight: 300
+
+@import basic
+@import heading
+@import text
+@import nav

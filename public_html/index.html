@@ -34,7 +34,7 @@
       try {
         es6 = !!eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
       } finally {
-        script.src = es6 ? 'index.min.js' : 'index.cp.min.js';
+        script.src = es6 ? 'dist/index.min.js' : 'dist/index.cp.min.js';
         document.head.appendChild(script);
       }
     })();
@@ -160,6 +160,14 @@
         <h3>Games</h3>
       </section>
       <section id="games">
+        <div class="horizontal flex container">
+          <article class="container">
+            My love of games may have been my original inspiration to get into
+            programming. Though I did start with a website, I quickly moved on
+            to making games. Playing below are some of my more recent and better
+            projects.
+          </article>
+        </div>
         <div class="game">
           <canvas id="white"></canvas>
           <div class="horizontal flex container">
@@ -316,7 +324,7 @@
         <h4><a href="mailto:cam.eldridge@gmail.com">Please let me know</a></h4>
         <h6>&copy; 2014 &ndash; 2016 Cameron Eldridge</h6>
       </footer>
-    </section>
+    </div>
     <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;

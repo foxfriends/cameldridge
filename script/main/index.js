@@ -1,6 +1,6 @@
 'use strict';
 import 'reset-css/_reset.scss';
-import '../style/index.sass';
+import '../../style/full.sass';
 // for mobile devices, where the navigation bar moves in and out as you scroll,
 // the css vh unit makes it weird, so they must be overriden
 import platform from 'platform';

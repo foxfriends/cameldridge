@@ -1,5 +1,5 @@
 .card
-  flex-basis: 500px
+  flex-basis: 460px
   display: flex
   flex-direction: row
   flex-wrap: wrap
@@ -9,7 +9,10 @@
   border: solid 1px transparentize(black, 0.5)
   border-radius: 6px
   box-shadow: 3px 3px 5px transparentize(black, 0.7)
-  margin: 1pc 0
+  margin: 1pc
+  height: 400px
+  +respond-to(not-phone)
+    height: 200px
   text-overflow: ellipsis
   > img
     width: 200px
@@ -17,8 +20,9 @@
 dl
   display: flex
   flex-direction: column
-  flex-basis: 200px
+  flex-basis: 220px
   justify-content: space-around
+  font-size: 12.5pt
   dt
     font-weight: 400
   dd

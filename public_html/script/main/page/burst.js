@@ -33,10 +33,15 @@ Array.prototype.forEach.call(svgs, (svg ) => {
   }
   onResize(transform);
   window.setTimeout(transform, 0);
-  window.addEventListener('scroll', function scrollListener() {
-    if(svg.getBoundingClientRect().bottom + 100 - window.innerHeight < 0) {
-      paths.forEach(path => SVG.animate(path, animationTime));
-      window.removeEventListener('scroll', scrollListener);
+  window.addEventListener('scroll', (() => {
+    function scrollListener() {
+      if(svg.getBoundingClientRect().bottom + 100 - window.innerHeight < 0) {
+        paths.forEach(path => SVG.animate(path, animationTime));
+        window.removeEventListener('scroll', scrollListener);
+        return true;
+      }
     }
-  });
+    const triggered = scrollListener();
+    return triggered ? () => {} : scrollListener;
+  })());
 });

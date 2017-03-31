@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Cameron Eldridge - Diversions</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Developer of games, websites, and software" />
+    <meta name="keywords" content="programming,portfolio,profile,resume,cam,cameron,eldridge,game,website,software,developer,job,hire,work,oinkiguana" />
+    <meta name="author" content="Cameron Eldridge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <meta name="msapplication-TileColor" content="#917a73" />
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml" />
+
+    <meta property="og:site_name" content="Cameron Eldridge" />
+    <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png" />
+    <script src="dist/diversions.min.js" defer></script>
+    <script>
+    function validate(guess) {
+      if(guess === 'good luck')
+        return completeLevel();
+    }
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <section class="flex container page vh">
+      <div class="horizontal flex container">
+        <article>
+          <header>
+            <h1>Diversions</h1>
+            <h4>Games, a challenge, and more</h4>
+          </header>
+        </article>
+      </div>
+    </section>
+    <section class="container title">
+      <svg class="burst"></svg>
+      <h2>The Games</h2>
+    </section>
+    <section id="games">
+      <div class="column flex container">
+        <div class="horizontal flex container">
+          <div class="game" style="background-image: url(images/games/white.png)" data-name="white">
+            <div>
+              <h6>
+                <a href="game/White.exe"><img src="images/logos/windows-white.svg" width="50" height="50" /></a>
+                <a href="game/White/"><img src="images/logos/html5-white.svg" width="50" height="50" /></a>
+              </h6>
+              <p>White<br />2014</p>
+            </div>
+          </div>
+          <div class="game" style="background-image: url(images/games/forks.png)" data-name="forks">
+            <div>
+              <h6>
+                <a href="game/Forks.exe"><img src="images/logos/windows-white.svg" width="50" height="50" /></a>
+                <a href="https://github.com/OinkIguana/forks"><img src="images/logos/github-white.svg" width="50" height="50" /></a>
+              </h6>
+              <p>Forks<br />2013</p>
+            </div>
+          </div>
+          <div class="game" style="background-image: url(images/games/abby-and-elliot.png)" data-name="abby-and-elliot">
+            <div>
+              <h6>
+                <a href="game/Abby_and_Elliot.exe"><img src="images/logos/windows-white.svg" width="50" height="50" /></a>
+              </h6>
+              <p>Abby and Elliot<br />2013</p>
+            </div>
+          </div>
+          <div class="game" style="background-image: url(images/games/tokaido.png)" data-name="tokaido">
+            <div>
+              <h6><a href="https://github.com/OinkIguana/tokaido"><img src="images/logos/github-white.svg" width="50" height="50" /></a></h6>
+              <p>Tokaido<br />2015</p>
+            </div>
+          </div>
+          <!-- TODO: modify these images to bring the title closer to the good part -->
+          <div class="game" style="background-image: url(images/games/machi-koro.png)" data-name="machi-koro">
+            <div>
+              <h6><a href="https://github.com/OinkIguana/machi-koro"><img src="images/logos/github-white.svg" width="50" height="50" /></a></h6>
+              <p>Work in progress<br />Machi Koro<br />2017</p>
+            </div>
+          </div>
+          <div class="game" style="background-image: url(images/games/catan.png)" data-name="catan">
+            <div>
+              <h6><a href="https://github.com/OinkIguana/catan"><img src="images/logos/github-white.svg" width="50" height="50" /></a></h6>
+              <p>Catan<br />2015</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container title">
+      <svg class="burst"></svg>
+      <h2>A Challenge</h2>
+    </section>
+    <section id="challenge">
+      <div class="flex container">
+        <div class="horizontal flex container">
+          <article>
+            <input type="text" onkeypress="handler.call(this, event)" autocomplete="off" />
+            <hr class="padded" />
+            <p>
+              Long ago, back in my summer camp days, one of the leaders introduced
+              us to &ldquo;hacking&rdquo;. While he didn't really teach us how to
+              hack anything, he let us pretend that we were hacking his website.
+              In reality, all it was was a puzzle, hidden in the source code behind
+              a textbox, in which we were to find the password that would allow us
+              move on to the next level.
+            </p>
+            <p>
+              As a bunch of kids who had never learned much more about code than
+              HTML, the game was pretty difficult. After banding together to
+              eventually break through all seven levels, I was left with the
+              feeling that it could have been more.
+            </p>
+            <p>
+              Fast forward to now, and it is my turn to present this puzzle to
+              you. Maybe you'll learn something&hellip; Or maybe you'll have something
+              to teach me when you're done.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="container title">
+      <svg class="burst"></svg>
+      <h2>Some More</h2>
+    </section>
+    <section id="more">
+      <div class="horizontal flex container">
+        <div class="column flex container">
+          <article>
+            <header>
+              <h2>Game Engine</h2>
+              <h6>
+                <a href="https://github.com/OinkIguana/game-engine"><img src="images/logos/github-white.svg" width="25" height="25" /></a>
+              </h6>
+            </header>
+            <pre>
+              <code class="block language-javascript">
+                import { Engine, Dimension, override } from 'engine';
+                import cfg from '../resources/config.json';
+                import Level1 from './rooms/level-1';
+
+                @config('resources', cfg)
+                class MyGame extends Engine {
+                  constructor() {
+                    super('#game', new Dimension(1024, 768));
+                  }
+                  @override
+                  start() {
+                    this.util.room.goto(Level1);
+                  }
+                }
+                const myGame = new MyGame();
+                myGame.run();
+              </code>
+            </pre>
+            <div class="summary">
+              <p>
+                Currently available in two languages (JavaScript and C++), this game
+                engine contains a number of useful features for building your own
+                games with no additional software.
+              </p>
+              <div class="details">Read more</div>
+            </div>
+            <div class="content">
+              <p>
+                Every time I make a game, I end up reaching deeper into the inner
+                workings of whichever engine I happen to be using. After years of
+                using them, I took a shot at making an engine myself, based on
+                features I've seen in the others. This is my third (I think), and
+                most successful attempt and a reasonably easy to use and useful
+                engine.
+              </p>
+              <p>
+                As it stands, I'd say it is as much a proof of concept as it is a
+                fully-functioning library. Though it may never become a full game
+                engine, I've been able to make some pretty decent prototypes with it
+                with little difficulty. If you are interested, I encourage you to
+                try it out. If it's missing a good feature you need, I'll add it in,
+                or you can put it in yourself.
+              </p>
+              <p>
+                It is currently available in two languages (JavaScript and C++),
+                but I plan to add more in the near future (Ruby or Haskell?).
+                Detailed documentation is available in the repository.
+              </p>
+              <div class="details">See less</div>
+            </div>
+            <hr class="padded" />
+          </article>
+          <article>
+            <header>
+              <h2>Sandy Simulator</h2>
+              <h6>
+                <a href="https://repl.it/classroom/invite/Cf4GAJi"><img src="images/logos/replit-white.svg" width="25" height="25" /></a>
+              </h6>
+            </header>
+            <pre>
+              <code class="block language-ruby">
+                # sandy state
+                sandyIsHungry = true
+                sandyIsSleepy = true
+                sandyIsHappy  = false
+
+                # sandy brain
+                if sandyIsHungry then
+                    puts "Sandy is hungry!! Feed him!"
+                end
+
+                if sandyIsSleepy then
+                    if sandyIsHungry then
+                        puts "Then he can go to sleep!"
+                    else
+                        puts "Sandy wants to go outside to take a nap"
+                    end
+                end
+
+                if sandyIsHappy and not sandyIsHungry then
+                    puts "Purrrrrrr... (= ^ w ^ =)"
+                end
+              </code>
+            </pre>
+            <div class="summary">
+              <p>
+                Learn to code by creating a virtual cat, Sandy. No previous
+                knowledge of programming is required, and no extra software is
+                required! Write in Ruby, in your browser, and bring your
+                simulated Sandy to life.
+              </p>
+              <div class="details">Read more</div>
+            </div>
+            <div class="content">
+              <p>
+                Originally created to teach a few of my friends, Sandy Simulator
+                is a series of lessons in the basics of programming using
+                <a href="http://repl.it">repl.it</a>. Though Python is
+                often the language of choice for teaching, I have always liked the
+                friendly appearance of Ruby.
+              </p>
+              <p>
+                As of now, I have almost no &ldquo;students,&rdquo; so I haven't
+                really built it out too much. If it ever starts gaining popularity
+                I'm willing to add more content, and maybe more advanced tutorials
+                in the future.
+              </p>
+              <p>
+                I've never really tried directly teaching before, so feel free to
+                try out these lessons and leave feedback, even if you already know
+                how to code. I know I'm not great at it yet, so I'll try and take
+                your comments into consideration.
+              </p>
+              <div class="details">See less</div>
+            </div>
+            <hr class="padded" />
+          </article>
+        </div>
+        <div class="column flex container">
+          <article>
+            <header>
+              <h2>Dialog System</h2>
+              <h6>
+                <a href="http://gmc.yoyogames.com/index.php?showtopic=589971"><img src="images/logos/gm-white.svg" width="25" height="25" /></a>
+                <a href="https://github.com/OinkIguana/example-dialog"><img src="images/logos/github-white.svg" width="25" height="25" /></a>
+              </h6>
+            </header>
+            <pre>
+              <code class="block language-clike">
+                dialog_msg("Hello! Welcome to your new adventure.", "???", spr_oak);
+                dialog_msg("I'm "+COL+"rOak"+COL+"k. What's your name?", "Oak", spr_oak);
+                dialog_input("Enter a name", "Red");
+                // ...
+                dialog_msg("Good luck on your adventure, "+VAR+"player_name"+VAR+"!", "Oak", spr_oak);
+              </code>
+            </pre>
+            <div class="summary">
+              <p>
+                Being a common feature of games, this Dialog System has provided
+                an example of how to manage and display complex dialogues for over
+                2000 GameMaker developers. This (or some variation of it) is the
+                system I use for my own games today.
+              </p>
+              <div class="details">Read more</div>
+            </div>
+            <div class="content">
+              <p>
+                Since most games, RPGs in particular, have some sort of dialogue
+                between the player and the other characters, I found myself using
+                the same sort of system in each game. Eventually, I decided to
+                polish it and publish it on the original (now extinct)
+                <a href="http://gmc.yoyogames.com/index.php?showtopic=589971">GameMaker Community</a>.
+              </p>
+              <p>
+                My example includes a number of important dialog features, such as
+                displaying the text typewriter-style, font and colour changes,
+                splash images, string input and more. These problems often troubled
+                newer GameMaker developers, so in its time, this example was well
+                received by the community. In the end, it has reached over 2000
+                people, and was used to develop this game,
+                <a href="http://store.steampowered.com/app/412150/">Midsummer Night</a>.
+              </p>
+              <div class="details">See less</div>
+            </div>
+            <hr class="padded" />
+          </article>
+          <article>
+            <header>
+              <h2>Inventory &amp; Shop Example</h2>
+              <h6>
+                <a href="http://gmc.yoyogames.com/index.php?showtopic=535228"><img src="images/logos/gm-white.svg" width="25" height="25" /></a>
+                <a href="https://github.com/OinkIguana/example-inventory"><img src="images/logos/github-white.svg" width="25" height="25" /></a>
+              </h6>
+            </header>
+            <pre>
+              <code class="block language-clike">
+                inv_add("Apple", 3);
+                // ...
+                if(inv_has("Apple")) {
+                  inv_subtract("Apple", 1);
+                  hp += 10;
+                }
+              </code>
+            </pre>
+            <div class="summary">
+              <p>
+                Probably the most-asked question by new game developers is
+                &ldquo;How do I make an inventory?&rdquo; The disappointingly low
+                number of high-quality examples to follow inspired me to make this
+                system which has since reached over 3000 GameMaker developers.
+              </p>
+              <div class="details">Read more</div>
+            </div>
+            <div class="content">
+              <p>
+                Admittedly, I once wondered how to make an inventory myself, and
+                when I looked there were shockingly few good examples on the
+                forums (pretty much none). Rather than ask again, I ended up
+                hacking one together myself. Eventually, I had made what I thought
+                to be a pretty good system, and so I published it on the
+                <a href="http://gmc.yoyogames.com/index.php?showtopic=535228">GMC</a>
+                in hopes of reducing the number of inventory questions.
+              </p>
+              <p>
+                After being reviewed by the moderators, my example was immediately
+                published to the &ldquo;Staff Choice&rdquo; section. Since then, my
+                example has reached over 3000 people.
+              </p>
+              <div class="details">See less</div>
+            </div>
+            <hr class="padded" />
+          </article>
+          <article>
+            <template id="cats">
+              <pre>
+                <code class="block language-none">
+                  +------------------------------------------------------------------------------------+
+                  |                                                                                    |
+                  |            /\ /\                     /\ /\                     /\ /\               |
+                  |          (= n_n =)  /              (= o_o =)  /              (= -_- =)  /          |
+                  |         (_________)/              (_________)/              (_________)/           |
+                  +------------------------------------------------------------------------------------+
+                </code>
+              </pre>
+            </template>
+            <pre>
+              <code class="block language-none">
+                +------------------------------------------------------------------------------------+
+                |                                                                                    |
+                |            /\ /\                     /\ /\                     /\ /\               |
+                |          (= n_n =)  /              (= o_o =)  /              (= -_- =)  /          |
+                |         (_________)/              (_________)/              (_________)/           |
+                +------------------------------------------------------------------------------------+
+              </code>
+            </pre>
+            <div class="details down cats">Show more</div>
+            <hr class="padded" />
+          </article>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <h6>&copy; 2014 &ndash; 2017 Cameron Eldridge</h6>
+    </footer>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-54974204-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
+    <svg>
+      <filter id="link-color" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix"
+          values="0.18 0 0 0 0
+                  0.38 0 0 0 0
+                  0.69 0 0 0 0
+                  0    0 0 1 0" />
+      </filter>
+      <filter id="link-hover" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix"
+          values="0.32 0 0 0 0
+                  0.56 0 0 0 0
+                  0.88 0 0 0 0
+                  0    0 0 1 0" />
+      </filter>
+    </svg>
+  </body>
+</html>

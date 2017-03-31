@@ -3,3 +3,4 @@ node_modules/
 npm-debug.log*
 publish
 v1/Images/all.psd
+public_html/game

@@ -1,9 +1,22 @@
++respond-to(phone)
+  body
+    display: relative
 .container
   position: relative
 .flex
   display: flex
   flex-direction: column
   justify-content: space-around
+.v-center
+  align-items: center
+.column
+  flex-direction: column
+  flex-wrap: nowrap
+  flex-basis: 600px
+  flex-grow: 0.2
+  flex-shrink: 1
+  max-width: 100%
+  justify-content: flex-start
 .horizontal
   flex-direction: row
   flex-wrap: wrap
@@ -23,16 +36,18 @@ svg
 section:not(.title)
   padding: 1pc 0
   background: $background
+  &.page
+    height: 100vh
 section.title:not(.image)
   padding: 60px 0
-  background: transparentize(white, 0.3)
+  background: transparentize(white, 0.25)
 a
   text-decoration: none
   &:link, &:visited
-    color: rgb(46, 98, 176)
+    color: $link-color
   &:hover
     text-decoration: underline
-    color: rgb(82, 143, 224)
+    color: $link-hover
 .avatar
   width: 100px
   height: 100px

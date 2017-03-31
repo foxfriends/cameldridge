@@ -16,8 +16,9 @@ zip(document.querySelectorAll('.summary'), document.querySelectorAll('.content')
 
 const cats = document.querySelector('#cats');
 const show = document.querySelector('.details.cats');
-show.addEventListener('click', () => {
+function addCats() {
   show.parentNode.insertBefore(document.importNode(cats.content, true), show);
-  // kind of overkill, but highlightElement wasn't working
   Prism.highlightAll();
-});
+}
+show.addEventListener('click', addCats);
+addCats(); // add the initial cats

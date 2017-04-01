@@ -9,4 +9,5 @@ public_html/.htaccess
 
 # scripts for managing the server
 deploy.rb
+hack-test.rb
 publish

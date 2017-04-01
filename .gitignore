@@ -1,7 +1,12 @@
+# files that shouldn't be published
 *.js.map
 node_modules/
 npm-debug.log*
-publish
-v1/Images/all.psd
+
+# files assumed to be on the server
 public_html/game
-public_html/deploy.rb
+public_html/.htaccess
+
+# scripts for managing the server
+deploy.rb
+publish

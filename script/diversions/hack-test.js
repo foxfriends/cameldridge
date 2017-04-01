@@ -15,7 +15,7 @@ function shake() {
 }
 
 function completeLevel() {
-  window.location.href = 'https://oinkiguana.github.com/hack-test/';
+  window.location.href = 'https://cameldridge.com/hack-test/0/';
   return true;
 }
 

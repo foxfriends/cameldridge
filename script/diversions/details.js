@@ -16,8 +16,18 @@ zip(document.querySelectorAll('.summary'), document.querySelectorAll('.content')
 
 const cats = document.querySelector('#cats');
 const show = document.querySelector('.details.cats');
+function face() {
+  const opt = [
+    'n_n', 'o_o', '-_-', 'u_u', '^w^',
+    '^_^', '>.<', '>w<', '>o<', '^ᴥ^',
+    '>_o', '>v>'
+  ];
+  return opt[Math.floor(Math.random() * opt.length)]
+}
 function addCats() {
-  show.parentNode.insertBefore(document.importNode(cats.content, true), show);
+  const node = document.importNode(cats.content, true);
+  node.children[0].children[0].textContent = node.children[0].children[0].textContent.replace(/###/g, face);
+  show.parentNode.insertBefore(node, show);
   Prism.highlightAll();
 }
 show.addEventListener('click', addCats);

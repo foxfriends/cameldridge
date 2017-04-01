@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>401</title>
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300);
+    @keyframes blink {
+      from {  visibility: visible }
+        to {  visibility: hidden }
+    }
+    body {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      padding-left: 1pc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 14pt;
+    }
+    a { text-decoration: none }
+    a:link, a:visited { color: rgb(46, 98, 176) }
+    a:hover {
+      text-decoration: underline;
+      color: rgb(82, 143, 224);
+    }
+    #carat { animation: blink 1.5s steps(2, start) infinite }
+    </style>
+    <script>
+    window.addEventListener('keydown', event => event.key === 'Enter' && (window.location.href = '/'));
+    </script>
+  </head>
+  <body>
+    <div>
+      &gt; npm start
+      <br />
+      <br />
+      Error: EACCES, Unauthorized access<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;at '<script>document.write(window.location.href);</script>'
+      <br />
+      <br />
+      &gt; <a href="/">retry</a><span id="carat">_</span>
+    </div>
+  </body>
+</html>

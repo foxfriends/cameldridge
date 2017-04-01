@@ -52,11 +52,12 @@ h1, h2, h3, h4, h5, h6
     font-size: 30pt
 h6
   margin-top: auto
-  img
+  a img
     margin: 0px 5px
     filter: url(#link-color)
-    transition: filter 0.3s
+    transition: filter 0.2s
     &:hover
+      opacity: 1
       filter: url(#link-hover)
 hr
   position: relative
@@ -72,6 +73,8 @@ hr
   pointer-events: none
   &.padded
     margin: 1pc auto
+  &.small
+    font-size: 12pt
   &::after
     content: '///'
     position: absolute

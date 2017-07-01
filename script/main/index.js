@@ -21,3 +21,4 @@ if(window.IS_MOBILE) {
 import './loader';
 import './page';
 import './games';
+import '../nav';

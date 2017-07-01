@@ -5,6 +5,7 @@ import './hack-test';
 import './details';
 import './prism';
 import '../main/page/burst';
+import '../nav';
 
 import platform from 'platform';
 import onResize from '../main/page/on-resize';

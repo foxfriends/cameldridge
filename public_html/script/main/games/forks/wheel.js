@@ -1,9 +1,8 @@
 'use strict';
-import forks from './';
-import Actor from '../../game-engine/actor';
+import Actor from './actor';
 import {wheel as sprite} from './sprites';
 
-export default class Wheel extends Actor(forks) {
+export default class Wheel extends Actor {
   constructor(position) {
     super(sprite);
     this.position = [...position, 500];

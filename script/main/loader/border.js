@@ -13,12 +13,13 @@ while(paths.length < 4) {
   SVG.setAttribute(path, 'd', pathstr);
   const len = path.getTotalLength();
   SVG.setAttribute(path, 'stroke-dasharray', `${len} 0`);
-  SVG.setAttribute(path, 'transform-origin', '100% 100%');
+  SVG.setAttribute(path, 'transform-origin', '0 0');
   svg.appendChild(path);
   paths.push(path);
 }
 
 function transform() {
+  svg.setAttribute('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`);
   let x = 50;
   if(phone.matches) {
     x = 0;
@@ -32,8 +33,8 @@ function transform() {
 
   SVG.setAttribute(paths[0], 'transform', `translate(${x} ${y - h})`);
   SVG.setAttribute(paths[1], 'transform', `translate(${x} ${y + h}) scale(1 -1)`);
-  SVG.setAttribute(paths[2], 'transform', `translate(${window.innerWidth - x} ${y - h}) scale(-1, 1)`);
-  SVG.setAttribute(paths[3], 'transform', `translate(${window.innerWidth - x} ${y + h}) scale(-1, -1)`);
+  SVG.setAttribute(paths[2], 'transform', `translate(${window.innerWidth - x} ${y - h}) scale(-1 1)`);
+  SVG.setAttribute(paths[3], 'transform', `translate(${window.innerWidth - x} ${y + h}) scale(-1 -1)`);
 }
 onResize(transform);
 

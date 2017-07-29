@@ -11,7 +11,8 @@ if(window.IS_MOBILE) {
     function resize() {
       vh.style.height = (window.orientation === 0
         ? screen.height - 32
-        : screen.width - 32) + 'px';
+        : screen.width - 32
+      ) + 'px';
     }
     onResize(resize);
     resize();

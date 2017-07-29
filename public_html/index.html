@@ -25,20 +25,7 @@
     <meta property="og:image" content="http://cameldridge.com/image/icon/cameldridge-icon_128x128.png" />
     <!-- hide all until the script loads the styles to prevent the flicker of ugly -->
     <style>body { display: none; }</style>
-    <script>
-    (function() {
-      // load compatibility script if the browser doesn't cut the mustard
-      'use strict';
-      var script = document.createElement('script');
-      var es6 = false;
-      try {
-        es6 = !!eval("function test({Proxy: es6}, x = 5, ...a) { return !!es6; } (window, undefined, 1, 2, 3)");
-      } finally {
-        script.src = es6 ? 'dist/index.min.js' : 'dist/index.cp.min.js';
-        document.head.appendChild(script);
-      }
-    })();
-    </script>
+    <script src="dist/index.min.js" defer></script>
   </head>
   <body class="loading">
     <div class="loading">
@@ -336,22 +323,6 @@
         <h6>&copy; 2014 &ndash; 2017 Cameron Eldridge</h6>
       </footer>
     </div>
-    <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-54974204-1', 'auto');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-    </script>
     <svg>
       <filter id="link-color" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
         <feColorMatrix type="matrix"
@@ -368,5 +339,21 @@
                   0    0 0 1 0" />
       </filter>
     </svg>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-54974204-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
   </body>
 </html>

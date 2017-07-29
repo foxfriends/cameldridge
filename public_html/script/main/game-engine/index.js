@@ -164,6 +164,6 @@ export default class Game {
   }
 
   get util() {
-    return Util(this);
+    return new Util(this);
   }
 }

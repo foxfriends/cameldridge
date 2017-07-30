@@ -69,11 +69,11 @@ export default class Game {
       }
       this[ACTORS] = this[ACTORS].sort(({position: [,,a]}, {position: [,,b]}) => a - b);
       this[CONTEXT].clearRect(0, 0, this[CANVAS].width, this[CANVAS].height);
-      for(let actor of this[ACTORS]) { inputs.forEach(actor.react.bind(actor)); }
-      for(let actor of this[ACTORS]) { actor.update(); }
+      for(var actor of this[ACTORS]) { inputs.forEach(actor.react.bind(actor)); }
+      for(var actor of this[ACTORS]) { actor.update(); }
       this.trigger('step');
       const drawables = [].concat(this[BACKGROUNDS], this[FOREGROUNDS], this[ACTORS]).sort(({position: [,,a]}, {position: [,,b]}) => a - b);
-      for(let item of drawables) {
+      for(var item of drawables) {
         item.draw(this[CONTEXT]);
       }
       if(this[PAUSE]) {
@@ -160,7 +160,7 @@ export default class Game {
   }
 
   trigger(evt) {
-    for(let f of this[ON][evt] || []) { f.bind(this)(); }
+    for(var f of this[ON][evt] || []) { f.bind(this)(); }
   }
 
   get util() {

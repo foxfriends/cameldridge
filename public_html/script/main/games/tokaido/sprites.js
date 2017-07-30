@@ -12,4 +12,4 @@ export const purple = new Sprite(PURPLE_IMAGE);
 export const souvenir = new Sprite(SOUVENIR_IMAGE);
 export const spring = new Sprite(SPRING_IMAGE);
 
-export default Promise.all([].map(({loaded}) => loaded));
+export default Promise.all([blue, green, purple, souvenir, spring].map(({loaded}) => loaded));

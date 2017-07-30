@@ -8,7 +8,7 @@ let alerted = false;
 Array.prototype.forEach.call(document.querySelectorAll('.logo'), (logo) => {
   if(typeof logo.classList[Symbol.iterator] !== 'function') {
     logo.classList[Symbol.iterator] = function*() {
-      for(let key of Object.keys(logo.classList)) {
+      for(var key of Object.keys(logo.classList)) {
         yield logo.classList[key];
       }
     }

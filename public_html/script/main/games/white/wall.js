@@ -28,7 +28,7 @@ export default class Wall extends Solid {
     context.fillStyle = '#ffffff';
     context.fillRect(...this.position.slice(0, 2), ...this.dimensions);
     if(this.game.global.colors.has(Color.Green)) {
-      for(let i = 0; i < this.grass.length; ++i) {
+      for(var i = 0; i < this.grass.length; ++i) {
         grass.draw(
           context, this.grass[i],
           this.position[0] + i * grass.dimensions[0], this.position[1] - grass.dimensions[1]

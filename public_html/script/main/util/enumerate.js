@@ -11,7 +11,7 @@ export default (...keys) => {
   const e = keys.reduce((e, key) => (e[key] = n++, e), {});
   e.length = n;
   e[Symbol.iterator] = function*() {
-    for(let i of keys) {
+    for(var i of keys) {
       yield e[i];
     }
   };

@@ -35,9 +35,9 @@ generate(function*() {
   prompt = prompt.next();
   prompt.prompt = '';
   prompt.command = 'Starting server';
-  for(let i = 0; i < 3; ++i) {
+  for(var i = 0; i < 3; ++i) {
     yield wait(250);
-    prompt.command += '.'
+    prompt.command += '.';
   }
   yield wait(250);
   end();

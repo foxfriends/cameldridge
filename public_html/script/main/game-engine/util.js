@@ -108,8 +108,8 @@ export default class Util extends Function {
         targets[1].push(what);
         break;
     }
-    for(let a of targets[0]) {
-      for(let b of targets[1]) {
+    for(var a of targets[0]) {
+      for(var b of targets[1]) {
         let { position: pos_a, origin: ori_a, dimensions: dim_a } = a;
         let { position: pos_b, origin: ori_b, dimensions: dim_b } = b;
         if(this[FLAGS].has('at') && this[AT]) {

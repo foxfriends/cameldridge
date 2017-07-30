@@ -16,8 +16,8 @@ generate(function*() {
   const [grasses, trees, flowers] = [[], [], []];
   const front = [];
 
-  for(let i = 0; i < abbyAndElliot.width; i += grass.dimensions[0]) {
-    for(let j = -100; j < grass.dimensions[0]; j += abbyAndElliot.util.random.integer.from(60).to(80)) {
+  for(var i = 0; i < abbyAndElliot.width; i += grass.dimensions[0]) {
+    for(var j = -100; j < grass.dimensions[0]; j += abbyAndElliot.util.random.integer.from(60).to(80)) {
       const tree = [tree1, tree2][abbyAndElliot.util.random.integer.from(0).to(2)];
       const y = abbyAndElliot.util.random.integer.from(-220).to(20);
       trees.push(tree.copy([i + j, y, y - 10000]));
@@ -25,7 +25,7 @@ generate(function*() {
         front.push(tree.copy([i + j, y + 620, y + 10000]))
       }
     }
-    for(let j = 0; j < abbyAndElliot.height; j += grass.dimensions[1]) {
+    for(var j = 0; j < abbyAndElliot.height; j += grass.dimensions[1]) {
       grasses.push(grass.copy([i, j]));
       flowers.push(flower.copy([
         i + abbyAndElliot.util.random.integer.from(0).to(grass.dimensions[0]),

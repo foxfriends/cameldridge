@@ -5,6 +5,7 @@ import '../../style/main.sass';
 // the css vh unit makes it weird, so they must be overriden
 import platform from 'platform';
 import onResize from './page/on-resize';
+
 window.IS_MOBILE = platform.os.family === 'Android' || platform.os.family === 'iOS' || platform.os.family === 'Windows Phone';
 if(window.IS_MOBILE) {
   Array.prototype.forEach.call(document.querySelectorAll('.vh'), (vh) => {

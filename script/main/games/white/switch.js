@@ -68,7 +68,7 @@ export default class Switch extends Solid {
     context.arc(this.x + 32, this.y, 2, 0, Math.PI * 2);
     context.fill();
     context.fillStyle = '#FFFFFF';
-    for(let spark of this.sparks) {
+    for(var spark of this.sparks) {
       context.fillRect(...spark, 1, 1);
     }
   }

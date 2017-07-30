@@ -15,7 +15,7 @@ export default class Keyframes {
 
   end(frame) {
     frame *= 60;
-    this[PAIRS][Math.floor(frame)] =  [[KEYFRAME_END], []];
+    this[PAIRS][Math.floor(frame)] = [[KEYFRAME_END], []];
     return this;
   }
 
@@ -23,7 +23,7 @@ export default class Keyframes {
     frame = Math.floor(frame);
     const keys = Object.keys(this[PAIRS]).map(x => +x);
     let values = [];
-    for(let key of keys) {
+    for(var key of keys) {
       if(key >= frame) {
         if(key === frame) {
           values = this[PAIRS][key];

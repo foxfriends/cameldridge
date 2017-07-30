@@ -30,7 +30,7 @@ export default class Monster extends Actor {
         this.attacking = 60;
         break;
       case Special.Die:
-        for(let i = 0; i < 5; ++i) {
+        for(var i = 0; i < 5; ++i) {
           this.game.actors.push(new Coal([this.position[0], this.position[1] + 100]));
         }
         this.destroy();

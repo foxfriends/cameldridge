@@ -10,7 +10,7 @@ function blend(canvas, color) {
     (color >> 8 & 0xFF) / 0xFF,
     (color & 0xFF) / 0xFF
   ];
-  for(let i = 0; i < img.data.length; i += 4) {
+  for(var i = 0; i < img.data.length; i += 4) {
     img.data[i] *= r;
     img.data[i + 1] *= g;
     img.data[i + 2] *= b;
@@ -49,7 +49,7 @@ class Sprite {
       });
     } else {
       const frames = [];
-      for(let i = 0; i < this[IMAGE].width / this[DIMENSIONS][0]; ++i) {
+      for(var i = 0; i < this[IMAGE].width / this[DIMENSIONS][0]; ++i) {
         frames.push([this[DIMENSIONS][0] * (i % (this[IMAGE].width / this[DIMENSIONS][0])), 0, ...this[DIMENSIONS]]);
       }
       return frames;

@@ -20,10 +20,12 @@ Array.prototype.forEach.call(document.querySelectorAll('.logo'), (logo) => {
     const img = new Image();
     img.src = src;
     window.setTimeout(() => {
-      if(window.IS_MOBILE) {
+      if(phone.matches) {
         img.height = 40;
+      } else if(tablet.matches) {
+        img.height = 55;
       } else {
-        img.height = 80;
+        img.height = 70;
       }
     });
     logo.appendChild(img);
@@ -32,11 +34,11 @@ Array.prototype.forEach.call(document.querySelectorAll('.logo'), (logo) => {
 });
 
 onResize(() => {
-  let h = 80;
+  let h = 70;
   if(phone.matches) {
     h = 40;
   } else if(tablet.matches) {
-    h = 60;
+    h = 55;
   }
   images.forEach(img => img.height = h);
 });

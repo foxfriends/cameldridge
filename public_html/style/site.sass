@@ -1,8 +1,8 @@
-div.site
+.site
   position: relative
   flex-basis: 500px
   flex-grow: 1
-  img
+  &__background
     width: 100%
   div
     position: absolute
@@ -12,6 +12,7 @@ div.site
     background-color: transparentize(white, 0.05)
     opacity: 0
     transition: opacity 0.5s
+    justify-content: space-around
   &:hover
     div
       opacity: 1

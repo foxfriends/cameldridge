@@ -11,3 +11,7 @@ public_html/.htaccess
 deploy.rb
 hack-test.rb
 publish
+
+# Parcel outputs
+.cache/
+dist/

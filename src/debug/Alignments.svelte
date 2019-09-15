@@ -2,7 +2,7 @@
   import range from '../util/range';
 
   let width = 0, height = 0;
-  export let interval = 32;
+  export let interval = 32; // px
 </script>
 
 <div class='container'>

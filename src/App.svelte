@@ -1,99 +1,25 @@
 <script>
-  import Background from './Background.svelte';
   import NameCard from './NameCard.svelte';
-  import Storyboard from './component/Storyboard.svelte';
 
   let width = 0, height = 0, mouseX = null, mouseY = null, scroll;
-  const interval = 48;
-  const pulseDuration = 1000;
-  let showCards = false;
+  const h = 24, w = 24;
 
-  const props = { interval };
-
-  function transform(...transforms) {
-    return { transform: transforms.reduce((acc, transform) => Object.assign(acc, transform), {}) };
-  }
-
-  function translate(x, y) {
-    return { translate: { x: x * interval, y: y * interval } };
-  }
-
-  let h = 0, w = 0, keyframes;
-  $: w = Math.ceil(width / interval) + 1;
-  $: h = Math.ceil(height / interval);
-
-  $: keyframes = {
-    [-1]: {
-      namecard: { component: NameCard, props, ...transform(translate(2, h)) },
-    },
-    [0]: {
-      namecard: { component: NameCard, props, ...transform(translate(2, 2)) },
-    }
-  };
-  let step = -1;
-
-  function wait(duration) {
-    let lastTime = null;
-    let progress = 0;
-
-    const updater = time => {
-      const dtime = lastTime === null ? 0 : time - lastTime;
-      lastTime = time;
-      progress = Math.min(1, progress + dtime / duration);
-      if (progress === 1) {
-        window.requestAnimationFrame(start());
-      } else {
-        window.requestAnimationFrame(updater);
-      }
-    };
-
-    return updater;
-  }
-
-  function start() {
-    showCards = true;
-    let lastTime = null;
-    let progress = 0;
-    const duration = pulseDuration / 4 * 3;
-
-    const updater = time => {
-      const dtime = lastTime === null ? 0 : time - lastTime;
-      lastTime = time;
-      progress = Math.min(1, progress + dtime / duration);
-
-      step = progress - 1;
-
-      if (progress === 1) {
-        window.requestAnimationFrame(followScroll());
-      } else {
-        window.requestAnimationFrame(updater);
-      }
-    };
-
-    return updater;
-  }
-
-  function followScroll() {
-    const updater = time => {
-      step = scroll;
-      window.requestAnimationFrame(updater);
-    };
-    return updater;
-  }
-
-  window.requestAnimationFrame(wait(pulseDuration / 3 * 2));
+  $: interval = Math.floor(Math.min(width / w, height / h));
 </script>
 
-<Background {interval} {pulseDuration} spotlightX={mouseX} spotlightY={mouseY} />
-
-{#if showCards}
+{#if interval >= 40}
   <div class='noscroll'>
-    <div class='container' style='left: {(width - w * interval) / 2}px; width: {w * interval}px; height: {h * interval}px;'>
-      <Storyboard {keyframes} {step} />
+    <div class='container' style='top: {(height - h * interval) / 2}; left: {(width - w * interval) / 2}px; width: {w * interval}px; height: {h * interval}px;'>
+      <NameCard {interval} x={8} y={10} />
     </div>
   </div>
+  <div class='scroll' style='height: 0' />
+{:else}
+  <div class='paper-background'>
+    <h2>The mobile site is in progress.</h2>
+    <h3>Sorry for the inconvenience.</h3>
+  </div>
 {/if}
-<div class='scroll' style='height: {height + +Object.keys(keyframes).sort().slice(-1)[0]}px' />
 
 <svelte:body on:mousemove={e => { mouseX = e.clientX; mouseY = e.clientY; }} />
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} bind:scrollY={scroll} />
@@ -106,12 +32,15 @@
     --font-accent: 'Spectral SC', serif;
 
     --color-ink: rgba(0, 0, 0, 240);
+    --image-paper: url('./image/paper/paper@2.png');
   }
 
   :global(body) {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    /* TODO: not sure this wood is good... pretty sure it's not */
+    /*background-image: url('./image/wood/wood@2.png');*/
   }
 
   :global(#app) {
@@ -120,11 +49,12 @@
 
   .noscroll {
     overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
 
   .container {
     position: absolute;
-    top: 0;
   }
 
   .scroll {
@@ -132,5 +62,18 @@
     top: 0;
     left: 0;
     pointer-events: none;
+    min-height: 100vh;
+  }
+
+  .paper-background {
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--image-paper);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-accent);
   }
 </style>

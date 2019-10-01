@@ -5,6 +5,52 @@
     <script src="./index.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Cutive|Cutive+Mono|Spectral|Spectral+SC&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-display: 'Cutive', serif;
+        --font-code: 'Cutive Mono', serif;
+        --font-body: 'Spectral', serif;
+        --font-accent: 'Spectral SC', serif;
+
+        --color-ink: black;
+        --color-link: #444444;
+        --color-link-hover: black;
+        --image-paper: url('./image/paper/paper.png');
+        /* TODO: find a better background image */
+        /*--image-table: url('./image/wood/wood@2.png');*/
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-ink: white;
+          --image-paper: url('./image/dark/paper/paper.png');
+          /* TODO: find a better background image */
+          /*--image-table: url('./image/dark/wood/wood@2.png');*/
+        }
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: var(--image-table);
+        color: var(--color-ink);
+      }
+
+      #app {
+        overflow: auto;
+      }
+
+      a:link, a:visited {
+        color: var(--color-link);
+        text-decoration: none;
+      }
+
+      a:hover, a:focus {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>

@@ -2,10 +2,48 @@
   import Paper from './component/Paper.svelte';
   import Rule from './component/Rule.svelte';
   import Text from './component/Text.svelte';
-  export let interval = 32; // px
-  export let x = 8, y = 10;
+  import Image from './component/Image.svelte';
 </script>
 
-<Paper {interval} width={8} height={4} {x} {y}>
-  <Text {interval} x={1} y={1} text='Cameron Eldridge' size={interval / 4} heading />
-</Paper>
+<div class='name-card'>
+  <Paper>
+    <div class='name'>
+      <Text heading>Cameron Eldridge</Text>
+    </div>
+    <a href='https://github.com/OinkIguana' class='logo github'>
+      <Image name='github' alt='GitHub' /><span class='link-text'><Text>OinkIguana</Text></span>
+    </a>
+  </Paper>
+</div>
+
+<style>
+  .name-card {
+    width: 40rem;
+    height: 20rem;
+  }
+
+  .name {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    font-size: 20pt;
+  }
+
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .github {
+    left: 3rem;
+    bottom: 3rem;
+  }
+
+  .link-text {
+    margin-left: 1rem;
+    font-size: 16pt;
+  }
+</style>

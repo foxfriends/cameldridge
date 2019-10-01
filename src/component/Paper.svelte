@@ -1,18 +1,12 @@
-<script>
-  export let x, y;
-  export let width = 16, height = 10, interval = 32;
-</script>
-
-<div class='paper' style='
-  width: {width * interval}px; 
-  height: {height * interval}px;
-  transform: translate({x * interval}px, {y * interval}px);
-'>
+<div class='paper'>
   <slot></slot>
 </div>
 
 <style>
   .paper {
+    width: 100%;
+    height: 100%;
+
     position: relative;
     background-color: #FAFAFA;
     /* TODO: is there a nicer paper texture? */

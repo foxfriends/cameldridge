@@ -48,11 +48,11 @@
   }
 
   .name {
-    font-size: 20pt;
+    font-size: var(--font-size-heading);
   }
 
   .role {
-    font-size: 14pt;
+    font-size: var(--font-size-subheading);
   }
 
   .logo {
@@ -63,12 +63,15 @@
 
   .links {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     left: 2rem;
     bottom: 2rem;
   }
 
   .link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     margin-top: 0.5rem;
   }
@@ -78,7 +81,7 @@
   }
 
   .link-text {
-    font-size: 16pt;
+    font-size: var(--font-size-body);
   }
 
   .qr-code {

@@ -12,20 +12,23 @@
         --font-body: 'Spectral', serif;
         --font-accent: 'Spectral SC', serif;
 
-        --color-ink: black;
-        --color-link: #444444;
-        --color-link-hover: black;
+        --color-ink: rgba(0, 0, 0, 0.98);
+        --color-link: rgba(0, 0, 0, 0.70);
+        --color-link-hover: var(--color-ink);
+
         --image-paper: url('./image/paper/paper.png');
         /* TODO: find a better background image */
-        /*--image-table: url('./image/wood/wood@2.png');*/
+        --image-table: url('./image/paper/paper.png');
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
           --color-ink: white;
+          --color-link: rgba(255, 255, 255, 0.75);
+          --color-link-hover: white;
+
           --image-paper: url('./image/dark/paper/paper.png');
-          /* TODO: find a better background image */
-          /*--image-table: url('./image/dark/wood/wood@2.png');*/
+          --image-table: url('./image/dark/back/back.png');
         }
       }
 

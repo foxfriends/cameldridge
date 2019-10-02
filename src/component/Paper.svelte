@@ -11,6 +11,6 @@
     background-color: #FAFAFA;
     /* TODO: is there a nicer paper texture? */
     background-image: var(--image-paper);
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.6);
   }
 </style>

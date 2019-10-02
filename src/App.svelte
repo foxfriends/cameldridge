@@ -1,12 +1,12 @@
 <script>
   import DesktopSite from './DesktopSite.svelte';
   import MobileSite from './MobileSite.svelte';
-  let width = 0, height = 0, mouseX = null, mouseY = null, scroll;
+  let width = 0, height = 0, mouseX = null, mouseY = null, scroll = 0;
 </script>
 
 {#if width > 700}
   <div class='noscroll'>
-    <DesktopSite {width} {height} {mouseX} {mouseY} />
+    <DesktopSite {width} {height} {mouseX} {mouseY} {scroll} />
   </div>
   <div class='scroll' style='height: 0' />
 {:else}

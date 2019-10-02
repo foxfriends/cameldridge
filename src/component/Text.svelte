@@ -1,6 +1,8 @@
 <script>
   export let heading = false;
-  $: classes = Object.entries({ text: true, heading })
+  export let mono = false;
+  export let accent = false;
+  $: classes = Object.entries({ text: true, heading, mono, accent })
     .filter(([, include]) => include)
     .map(([name]) => name)
     .join(' ');

@@ -1,36 +1,50 @@
-<script>
-  export let interval = 32; // px
-  export let horizontal = false, vertical = false, fade = false;
+<!--
+  # Rule
+  
+  The `Rule` component renders a straight line, expanding to fill its parent container's width.
 
-  export let x, y, l; // cells
-  export let w; // px
-  $: classes = Object.entries({ rule: true, horizontal, vertical, fade })
+  ## Usage
+
+  ```html
+  <Rule />
+  ```
+
+  ## Props
+
+  *   `fade`: Flag to fade the ends of the line. Default: `false`
+-->
+
+<script>
+  export let fade = false;
+  $: classes = Object.entries({ rule: true, fade })
     .filter(([, include]) => include)
     .map(([name]) => name)
     .join(' ');
 </script>
 
-<div class={classes} style='
-  width: {l * interval}px;
-  height: {w}px;
-  left: {x * interval}px;
-  top: {y * interval}px;
-'></div>
+<div class={classes} />
+
+<!--
+  ## Styles
+
+  *   `--rule--height`: The thickness of the line. Default: `1px`
+  *   `--rule--color`: The color of the line.
+-->
 
 <style>
   .rule {
-    position: absolute;
+    height: var(--rule--height, 1px);
+    width: 100%;
+    background-color: var(--rule--color);
     pointer-events: none;
-    transform-origin: left center;
-    background-color: var(--color-ink);
-  }
-
-  .vertical {
-    transform: rotate(90deg);
   }
 
   .fade {
     background-color: unset;
-    background-image: linear-gradient(to right, transparent, var(--color-ink) 15%, var(--color-ink) 15%, transparent);
+    background-image: linear-gradient(to right, 
+      transparent, 
+      var(--rule--color) 50%, 
+      transparent
+    );
   }
 </style>

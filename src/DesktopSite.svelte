@@ -1,10 +1,14 @@
 <script>
   import NameCard from './NameCard.svelte';
+  import ProjectsOverview from './ProjectsOverview.svelte';
   export let width, height, mouseX, mouseY, scroll;
 </script>
 
 <div class='page name-card'>
   <NameCard />
+</div>
+<div class='page projects-overview'>
+  <ProjectsOverview />
 </div>
 
 <style>

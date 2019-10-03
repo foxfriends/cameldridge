@@ -1,6 +1,5 @@
 <script>
   import Paper from './component/Paper.svelte';
-  import Rule from './component/Rule.svelte';
   import Text from './component/Text.svelte';
   import Image from './component/Image.svelte';
 </script>
@@ -37,7 +36,7 @@
 
 <style>
   .name-card {
-    width: 40rem;
+    width: 35rem;
     height: 20rem;
   }
   

@@ -47,11 +47,11 @@
   }
 
   .name {
-    font-size: var(--font-size-heading);
+    font-size: var(--font-size-title);
   }
 
   .role {
-    font-size: var(--font-size-subheading);
+    font-size: var(--font-size-note);
   }
 
   .logo {

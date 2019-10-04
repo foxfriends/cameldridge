@@ -20,7 +20,9 @@
   ```
 -->
 
-<script></script>
+<script>
+  export let hmargin = '0', vmargin = '0';
+</script>
 
 <!--
   ## Slots
@@ -28,7 +30,7 @@
   *   `default`: The contents of the paper.
 -->
 
-<div class='paper'>
+<div class='paper' style='padding: {vmargin} {hmargin}'>
   <slot></slot>
 </div>
 
@@ -41,6 +43,7 @@
 
 <style>
   .paper {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
 

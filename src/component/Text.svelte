@@ -33,9 +33,16 @@
   *   `default`: The text to render.
 -->
 
-<span class={classes}>
-  <slot />
-</span>
+{#if heading}
+  <h1 class={classes}>
+    <slot />
+  </h1>
+{:else}
+  <span class={classes}>
+    <slot />
+  </span>
+{/if}
+
 
 <!--
   ## Styles

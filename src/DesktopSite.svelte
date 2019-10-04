@@ -8,20 +8,6 @@
   let maxScroll = 0;
   $: maxScroll = Math.max(0, contentHeight - height);
 
-  // prevent animation on initial load
-  let animated = '';
-  onMount(async () => {
-    await wait(0);
-    animated = 'animated';
-  });
-
-  function printStyles(styles) {
-    if (!styles) { return '' }
-    return Object.entries(styles)
-      .map(entry => entry.join(':'))
-      .join(';');
-  }
-
   const MAX_ROTATION = 30;
   const MIN_DELAY = 0.05, MAX_DELAY = 0.15;
   const MIN_FRICTION = 0.65, MAX_FRICTION = 0.85;
@@ -41,7 +27,7 @@
       slideY = slideY * this.friction;
 
       // rotate mostly before starting slide
-      rotation = rotation + this.angle * (scale / (this.delay + 0.45));
+      rotation = rotation + this.angle * Math.min(1, scale / (this.delay + 0.45));
 
       // then start sliding after the delay
       if (scale >= this.delay) {
@@ -56,41 +42,45 @@
   const transform = {};
   const collisions = {};
   let nameCard, projectsOverview;
+  // NOTE: there is a bug (Firefox only) where the offsetHeight is measured incorrectly during the initial loading
+  //       this may be due to a bug in Firefox, and not in this code...
   $: {
-    let rotation = 0, slideX = 0, slideY = 0;
-    PROJECTS_OVERVIEW: {
-      const scale = scroll / maxScroll;
-      transform.projectsOverview = `translateX(50vw) translateX(-50%) translateY(${100 - 50 * scale}vh) translateY(-${10 + (40 * scale)}%) rotate(${rotation}deg)`;
+    if (scroll === undefined || contentHeight === undefined) {} else {
+      let rotation = 0, slideX = 0, slideY = 0;
+      PROJECTS_OVERVIEW: {
+        const scale = scroll / maxScroll;
+        transform.projectsOverview = `translateX(50vw) translateX(-50%) translateY(${100 - 50 * scale}vh) translateY(-${10 + (40 * scale)}%) rotate(${rotation}deg)`;
 
-      if (nameCard && projectsOverview) {
-        const collisionBottom = (height + nameCard.clientHeight) / 2;
-        const collisionTop = (height - projectsOverview.clientHeight) / 2;
-        const expectedTop = (height * (100 - 50 * scale) / 100) - (projectsOverview.clientHeight * (10 + (40 * scale)) / 100);
-        const collisionPoint = Math.min(collisionBottom, Math.max(expectedTop, collisionTop));
-        const collisionDistance = collisionBottom - collisionPoint;
-        const collisionScale = collisionDistance / (collisionBottom - collisionTop);
+        if (nameCard && projectsOverview) {
+          const collisionBottom = (height + nameCard.offsetHeight) / 2;
+          const collisionTop = (height - projectsOverview.offsetHeight) / 2;
+          const expectedTop = (height * (100 - 50 * scale) / 100) - (projectsOverview.offsetHeight * (10 + (40 * scale)) / 100);
+          const collisionPoint = Math.min(collisionBottom, Math.max(expectedTop, collisionTop));
+          const collisionDistance = collisionBottom - collisionPoint;
+          const collisionScale = collisionDistance / (collisionBottom - collisionTop);
 
-        if (!collisions.nameCard && collisionScale) {
-          collisions.nameCard = new Collision();
-        } else if (!collisionScale) {
-          delete collisions.nameCard;
+          if (!collisions.nameCard && collisionScale) {
+            collisions.nameCard = new Collision();
+          } else if (!collisionScale) {
+            delete collisions.nameCard;
+          }
+
+          if (collisions.nameCard) {
+            [rotation, slideX, slideY] = collisions.nameCard.apply(rotation, slideX, slideY, collisionScale, collisionDistance);
+          }
         }
-
-        if (collisions.nameCard) {
-          [rotation, slideX, slideY] = collisions.nameCard.apply(rotation, slideX, slideY, collisionScale, collisionDistance);
-        }
-      }
-    };
-    NAME_CARD: {
-      transform.nameCard = `translateX(50vw) translateX(-50%) translateY(50vh) translateY(-50%) translateX(${slideX}px) translateY(-${slideY}px) rotate(${rotation}deg)`;
-    };
+      };
+      NAME_CARD: {
+        transform.nameCard = `translateX(50vw) translateX(-50%) translateY(50vh) translateY(-50%) translateX(${slideX}px) translateY(-${slideY}px) rotate(${rotation}deg)`;
+      };
+    }
   }
 </script>
 
-<div class='{animated} page name-card' style='transform: {transform.nameCard || 'none'}' bind:this={nameCard}>
+<div class='page name-card' style='transform: {transform.nameCard || 'none'}' bind:this={nameCard}>
   <NameCard />
 </div>
-<div class='{animated} page projects-overview' style='transform: {transform.projectsOverview || 'none'}' bind:this={projectsOverview}>
+<div class='page projects-overview' style='transform: {transform.projectsOverview || 'none'}' bind:this={projectsOverview}>
   <ProjectsOverview />
 </div>
 

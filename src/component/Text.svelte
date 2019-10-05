@@ -15,13 +15,15 @@
   *   `heading`: Flag to use the heading font. Default: `false`
   *   `mono`: Flag to enable the monospaced font. Default: `false`
   *   `accent`: Flag to enable an accent font. Default: `false`
+  *   `sc`: Flag to turn on all-small-caps, regardless of font used. Default: `false`
 -->
 
 <script>
   export let heading = false;
   export let mono = false;
   export let accent = false;
-  $: classes = Object.entries({ text: true, heading, mono, accent })
+  export let sc = false;
+  $: classes = Object.entries({ text: true, heading, mono, accent, sc })
     .filter(([, include]) => include)
     .map(([name]) => name)
     .join(' ');
@@ -68,5 +70,9 @@
 
   .accent {
     font-family: var(--text--font-accent);
+  }
+
+  .sc {
+    font-variant-caps: all-small-caps;
   }
 </style>

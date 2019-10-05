@@ -38,6 +38,7 @@
   ## Styles
 
   *   `--paper--image`: the image to use as the background for the paper.
+  *   `--paper--color`: the color of the paper in the case of no paper image. Default: `#FAFAFA`
   *   `--paper--shadow-size`: the size of the drop shadow. Default: `0.125rem`
 -->
 
@@ -48,7 +49,7 @@
     height: 100%;
 
     position: relative;
-    background-color: #FAFAFA;
+    background-color: var(--paper--color, #FAFAFA);
     background-image: var(--paper--image);
     box-shadow: 
       var(--paper--shadow-size, 0.125rem) 

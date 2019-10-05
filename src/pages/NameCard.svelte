@@ -1,7 +1,7 @@
 <script>
-  import Paper from './component/Paper.svelte';
-  import Text from './component/Text.svelte';
-  import Image from './component/Image.svelte';
+  import Paper from '../component/Paper.svelte';
+  import Text from '../component/Text.svelte';
+  import Image from '../component/Image.svelte';
 </script>
 
 <div class='name-card'>

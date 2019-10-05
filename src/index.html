@@ -14,7 +14,7 @@
         --font-accent: 'Spectral SC', serif;
 
         --color-ink: rgba(0, 0, 0, 0.98);
-        --color-link: rgba(0, 0, 0, 0.70);
+        --color-link: rgba(0, 0, 0, 0.65);
         --color-link-hover: var(--color-ink);
 
         /* TODO: find a better background image */
@@ -24,7 +24,7 @@
         --font-size-subtitle: 1.3rem;
         --font-size-heading: 1.2rem;
         --font-size-subheading: 1.1rem;
-        --font-size-body: 12pt;
+        --font-size-body: 10pt;
         --font-size-note: 5/6rem;
 
         /** Component settings */
@@ -59,6 +59,10 @@
           /* Paper */
           --paper--image: url('./image/dark/paper.png');
         }
+      }
+
+      @media (min-width: 2561px) {
+        :root { --font-size-body: 14pt; }
       }
 
       body {

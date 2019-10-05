@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import NameCard from './pages/NameCard.svelte';
   import ProjectsOverview from './pages/ProjectsOverview.svelte';
   import ConArtist from './pages/ConArtist.svelte';
@@ -10,8 +10,14 @@
   $: maxScroll = Math.max(0, contentHeight - height);
   $: pageStop = [0, maxScroll / 2, maxScroll];
 
-  function setScroll(stop) {
+  let autoscroll = '';
+  async function setScroll(stop) {
+    autoscroll = 'auto-scroll';
+    await tick();
     window.scrollTo(0, pageStop[stop]);
+    await wait(200);
+    await tick();
+    autoscroll = '';
   }
 
   class Collision {
@@ -52,6 +58,8 @@
       if (this.swap) {
         [this.slideX, this.slideY] = [this.slideY, this.slideX];
       }
+
+      return this;
     }
   }
 
@@ -84,10 +92,9 @@
           } else if (!collisionScale) {
             delete collisions.projectsOverview;
           }
-          
+
           if (collisions.projectsOverview) {
-            collisions.projectsOverview.apply(collisionScale, collisionDistance);
-            const { rotation, slideY, slideX } = collisions.projectsOverview;
+            const { rotation, slideY, slideX } = collisions.projectsOverview.apply(collisionScale, collisionDistance);
             collisionTransform.projectsOverview = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else {
             delete collisionTransform.projectsOverview;
@@ -115,8 +122,7 @@
           }
 
           if (collisions.nameCard) {
-            collisions.nameCard.apply(collisionScale, collisionDistance);
-            const { rotation, slideY, slideX } = collisions.nameCard;
+            const { rotation, slideY, slideX } = collisions.nameCard.apply(collisionScale, collisionDistance);
             collisionTransform.nameCard = `${collisionTransform.projectsOverview || ''} translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else {
             delete collisionTransform.nameCard;
@@ -130,29 +136,33 @@
   }
 </script>
 
-<div 
-  class='page name-card'
-  style='transform: {transform.nameCard || 'none'}' 
-  bind:this={nameCard} 
+<div
+  class='page name-card {autoscroll}'
+  style='transform: {transform.nameCard || 'none'}'
+  bind:this={nameCard}
   on:click={() => setScroll(0)}>
   <NameCard />
 </div>
-<div 
-  class='page horizontal-collision projects-overview' 
-  style='transform: {transform.projectsOverview || 'none'}' 
+<div
+  class='page horizontal-collision projects-overview {autoscroll}'
+  style='transform: {transform.projectsOverview || 'none'}'
   bind:this={projectsOverview}
   on:click={() => setScroll(1)}>
   <ProjectsOverview />
 </div>
-<div 
-  class='page conartist' 
-  style='transform: {transform.conartist || 'none'}' 
+<div
+  class='page conartist {autoscroll}'
+  style='transform: {transform.conartist || 'none'}'
   bind:this={conartist}
   on:click={() => setScroll(2)}>
   <ConArtist />
 </div>
 
 <style>
+  .auto-scroll {
+    transition: transform 0.2s;
+  }
+
   .page {
     position: absolute;
     transform-origin: bottom center;

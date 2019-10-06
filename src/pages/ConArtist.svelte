@@ -2,7 +2,6 @@
   import Paper from '../component/Paper.svelte';
   import Rule from '../component/Rule.svelte';
   import Text from '../component/Text.svelte';
-  import Project from '../component/Project.svelte';
   import Image from '../component/Image.svelte';
 </script>
 

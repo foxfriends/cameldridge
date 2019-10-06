@@ -20,7 +20,7 @@
         <span class='link-text'><Text>foxfriends</Text></span>
       </a>
       <a href='https://cameldridge.com' class='link'>
-        <span class='link-image logo'><Image name='globe' alt='Website' /></span>
+        <span class='link-image logo'><Image name='home' alt='Homepage' /></span>
         <span class='link-text'><Text>cameldridge.com</Text></span>
       </a>
       <a href='mailto:cam.eldridge@gmail.com' class='link'>

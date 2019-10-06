@@ -33,6 +33,14 @@
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   const darkMode = writable(media.matches);
   media.addListener(({ matches }) => darkMode.set(matches));
+
+  const cachedImages = {};
+  function retrieve(src) {
+    if (!cachedImages[src]) {
+      cachedImages[src] = fetch(src).then(image => image.text());
+    }
+    return cachedImages[src];
+  }
 </script>
 
 <!--
@@ -52,13 +60,12 @@
 
   $: themedImages = $darkMode ? images.dark : images;
   $: src = (themedImages[name] || images[name] || {})[type];
-  $: imageDownload = fetch(src).then(image => image.text());
+  $: imageDownload = retrieve(src);
 </script>
 
 {#if type === 'svg'}
   <div class='svg'>
     {#await imageDownload}
-      <img {src} alt={alt} class='image {type}' />
     {:then image}
       {@html image}
     {/await}

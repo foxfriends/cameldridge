@@ -22,9 +22,9 @@
         <a href='https://conartist.app' target='_blank' class='link' slot='links'><Image name='home' alt='Homepage' /></a>
         <a href='https://github.com/foxfriends/conartist' target='_blank' class='link' slot='links'><Image name='github' alt='Repository' /></a>
 
-        A sales and inventory tracking solution specialized for con(vention) artists. With over 200 users have
+        A sales and inventory tracking solution specialized for con(vention) artists. With over 200 users
         signed up and sales recorded at more than 20 conventions worldwide, this has been my biggest project
-        to-date. Right now there are web and iOS apps with Android hopefully soon to follow.
+        to-date. Right now there are web and iOS apps, with Android hopefully soon to follow.
       </Project>
 
     </section>
@@ -61,9 +61,9 @@
         <a href='https://github.com/foxfriends/white' target='_blank' class='link' slot='links'><Image name='github' alt='Repository' /></a>
         <a href='http://cameldridge.com/game/White/index.html' target='_blank' class='link' slot='links'><Image name='play' alt='Play' /></a>
         <a href='https://cameldridge.com/game/white.exe' target='_blank' class='link' slot='links'><Image name='download' alt='Download' /></a>
-        In a world where the only colour is white, you have discovered a spark of something new. Explore the
-        which reveals itself around you as you bring colours back and discover the truth about why they were
-        missing in the first place.
+        In a place where the only colour is white, you have discovered a spark of something new. Explore the
+        world which reveals itself around you as you bring colours back and discover the truth about why they 
+        were missing in the first place.
       </Project>
     </section>
 
@@ -79,7 +79,7 @@
   .header {
     font-size: var(--font-size-title);
     text-align: center;
-    padding: 3rem;
+    padding: 3rem 0;
   }
 
   .rule {

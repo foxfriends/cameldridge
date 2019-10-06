@@ -43,10 +43,10 @@
         </Text>
       </p>
       <pre class='code'><code><Text mono>{''
-     }<span class='comment'> 1 │</span> <span class='keyword'>fn</span> <span class='function'>main</span>() <span class='keyword'>-&gt;</span> <span class='entity'>Result</span><span class='keyword'>&lt;</span>(), <span class='entity'>Error</span><span class='keyword'>&gt;</span> {'{'}<span class='comment'>¬</span>
-{''  }<span class='comment'> 2 │</span>   <span class='support'>println!</span>(<span class='string'>"Hello world"</span>);<span class='comment'>¬</span>
-{''  }<span class='comment'> 3 │</span>   <span class='support'>Ok</span>(())<span class='comment'>¬</span>
-{''  }<span class='comment'> 4 │</span> {'}'}<span class='comment'>¬</span>
+     }<span class='entity'>~</span>   <span class='comment'>1 │</span> <span class='keyword'>fn</span> <span class='function'>main</span>() <span class='keyword'>-&gt;</span> <span class='entity'>Result</span><span class='keyword'>&lt;</span>(), <span class='entity'>Error</span><span class='keyword'>&gt;</span> {'{'}<span class='comment'>¬</span>
+{'    '}<span class='comment'>2 │</span>   <span class='support'>println!</span>(<span class='string'>"Hello world"</span>);<span class='comment'>¬</span>
+{''  }<span class='string'>+</span>   <span class='comment'>3 │</span>   <span class='support'>Ok</span>(())<span class='comment'>¬</span>
+{'    '}<span class='comment'>4 │</span> {'}'}<span class='comment'>¬</span>
       </Text></code></pre>
     </div>
   </Paper>

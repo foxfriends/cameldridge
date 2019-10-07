@@ -61,6 +61,7 @@
 
       </div>
     </div>
+
     <canvas id='white' class='game' />
   </Paper>
 </div>

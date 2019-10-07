@@ -33,8 +33,8 @@ export default class Game {
     let scrollTimeout;
     this[VISIBLE] = inView();
     window.addEventListener('scroll', () => {
-      if(scrollTimeout) { clearTimeout(scrollTimeout); }
-      scrollTimeout = setTimeout(() => {
+      if(scrollTimeout) { window.clearTimeout(scrollTimeout); }
+      scrollTimeout = window.setTimeout(() => {
         scrollTimeout = undefined;
         if(inView() != this[VISIBLE]) {
           this[VISIBLE] = !this[VISIBLE];
@@ -54,9 +54,22 @@ export default class Game {
     let frame = 0;
     this[PLAYING] = true;
     this.trigger('start');
-    const step = (now) => {
+
+    let drawRequest = null;
+    let stepTimeout = null;
+
+    const draw = () => {
+      drawRequest = null;
+      const drawables = [].concat(this[BACKGROUNDS], this[FOREGROUNDS], this[ACTORS]).sort(({position: [,,a]}, {position: [,,b]}) => a - b);
+      for(var item of drawables) {
+        item.draw(this[CONTEXT]);
+      }
+    };
+
+    const step = () => {
       if(!this[PLAYING]) { return; } // force quit
       const inputs = this[KEYFRAMES].get(frame++);
+
       if(this[END] || inputs.has(KEYFRAME_END)) {
         this[END] = false;
         this[PLAYING] = false;
@@ -68,20 +81,24 @@ export default class Game {
       for(var actor of this[ACTORS]) { inputs.forEach(actor.react.bind(actor)); }
       for(var actor of this[ACTORS]) { actor.update(); }
       this.trigger('step');
-      const drawables = [].concat(this[BACKGROUNDS], this[FOREGROUNDS], this[ACTORS]).sort(({position: [,,a]}, {position: [,,b]}) => a - b);
-      for(var item of drawables) {
-        item.draw(this[CONTEXT]);
+      if (drawRequest === null) {
+        drawRequest = window.requestAnimationFrame(draw);
       }
       if(this[PAUSE]) {
         (async () => {
           await this[PAUSE];
-          window.requestAnimationFrame(step);
+          stepTimeout = window.setTimeout(step, 1000.0/60.0);
         })();
       } else {
-        window.requestAnimationFrame(step);
+        stepTimeout = window.setTimeout(step, 1000.0/60.0);
       }
-    };
-    window.requestAnimationFrame(step);
+    }
+    stepTimeout = window.setTimeout(step, 1000.0/60.0);
+
+    window.addEventListener('scroll', () => {
+      if (stepTimeout) { window.clearTimeout(stepTimeout); }
+      stepTimeout = window.setTimeout(step, 100);
+    });
   }
 
   end() {

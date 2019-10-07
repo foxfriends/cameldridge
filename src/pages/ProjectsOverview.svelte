@@ -20,6 +20,10 @@
     </header>
 
     <section class='group'>
+      <div class='group-name'>
+        <Text accent>Apps</Text>
+      </div>
+
       <Project name='ConArtist' on:click={() => setScroll('conartist')}>
         <div class='link' slot='links'>
           <Link href='https://conartist.app' external><Image name='home' alt='Homepage' /></Link>

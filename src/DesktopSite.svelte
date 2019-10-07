@@ -7,6 +7,7 @@
   import Syncat from './pages/Syncat.svelte';
   import Paper from './pages/Paper.svelte';
   import White from './pages/White.svelte';
+  import End from './pages/End.svelte';
   import wait from './util/wait.js';
   import divide from './util/divide.js';
   export let width, height, mouseX, mouseY, scroll, contentHeight;
@@ -95,6 +96,7 @@
     { name: 'syncat', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }), },
     { name: 'paper', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }), },
     { name: 'white', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }), },
+    { name: 'end', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.05, maxFriction: 0.15 }), },
   ].reverse();
   $: pageStop = [...divide(maxScroll, pages.length)];
 
@@ -220,6 +222,14 @@
   bind:this={elements.white}
   on:click={() => setScroll('white')}>
   <White />
+</div>
+
+<div
+  class='page end {autoscroll}'
+  style='transform: {transform.end || 'none'}'
+  bind:this={elements.end}
+  on:click={() => setScroll('end')}>
+  <End />
 </div>
 
 <style>

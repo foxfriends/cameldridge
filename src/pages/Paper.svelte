@@ -12,7 +12,7 @@
   <Paper hmargin={mobile ? '3em' : '6em'} vmargin={'3em'}>
     <pre><Text mono>
 ─────────────────────────────────────────────────────────
-    <b>Paper</b>
+{'    '}<b>Paper</b>
 ─────────────────────────────────────────────────────────
 
 <b>Paper</b> is a command line application that takes Markdown
@@ -35,7 +35,7 @@ set up, you can install it now with just one command:
 
 <code>
 <span class='function'>cargo</span> install paper-terminal
-                                                   <span class='comment'>sh</span>
+{'                                                   '}<span class='comment'>sh</span>
 </code>
     </Text></pre>
   </Paper>

@@ -60,6 +60,7 @@
 <style>
   .text {
     font-family: var(--text--font);
+    font-variant-numeric: oldstyle-nums;
   }
 
   .heading {

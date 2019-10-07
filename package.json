@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.4",
     "svelte": "^3.12.1"
   }

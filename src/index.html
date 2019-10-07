@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Cutive|Spectral:400,700|Spectral+SC|Fira+Sans:400,500,700&display=swap" rel="stylesheet">
     <style>
+      /* TODO: host the fonts with the site instead of using Google fonts. */
+
       :root {
         /* variable declarations */
         --font-display: 'Cutive', serif;
@@ -18,8 +20,9 @@
         --color-link-hover: var(--color-ink);
 
         /** One Dark colours for syntax highlights */
-        --color__one-dark--background: #232c34;
-        --color__one-dark--text: #abb2bf;
+        --color__one-dark--black: #232c34;
+        --color__one-dark--lightblack: #3e4452;
+        --color__one-dark--white: #abb2bf;
         --color__one-dark--comment: #5c6370;
         --color__one-dark--function: #61afef;
         --color__one-dark--support: #56b6c2;
@@ -47,6 +50,9 @@
         --text--font-mono: var(--font-mono);
         --text--font-heading: var(--font-heading);
         --text--font-accent: var(--font-accent);
+        /* Link */
+        --link--color: var(--color-link);
+        --link--color-hover: var(--color-link-hover);
 
         /* Configure relative sizing */
         font-size: var(--font-size-body);
@@ -91,16 +97,6 @@
       h1, h2, h3, h4, h5, h6, p {
         all: unset;
         display: block;
-      }
-
-      a:link, a:visited {
-        color: var(--color-link);
-        text-decoration: none;
-      }
-
-      a:hover, a:focus {
-        color: var(--color-link-hover);
-        text-decoration: underline;
       }
 
       li {

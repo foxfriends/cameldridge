@@ -4,16 +4,27 @@
   import ProjectsOverview from './pages/ProjectsOverview.svelte';
   import ConArtist from './pages/ConArtist.svelte';
   import Syncat from './pages/Syncat.svelte';
+  import Paper from './pages/Paper.svelte';
   import wait from './util/wait.js';
   import divide from './util/divide.js';
   export let width, height, mouseX, mouseY, scroll, contentHeight;
 
   let maxScroll = 0;
   $: maxScroll = Math.max(0, contentHeight - height);
-  $: pageStop = [...divide(maxScroll, 4)];
+  $: pageStop = [...divide(maxScroll, 5)];
 
   let autoscroll = '';
   async function setScroll(stop) {
+    if (typeof stop === 'string') {
+      switch (stop) {
+        case 'namecard': stop = 0; break;
+        case 'projectsoverview': stop = 1; break;
+        case 'conartist': stop = 2; break;
+        case 'syncat': stop = 3; break;
+        case 'paper': stop = 4; break;
+        default: stop = 1; break;
+      }
+    }
     autoscroll = 'auto-scroll';
     await tick();
     window.scrollTo(0, pageStop[stop]);
@@ -98,19 +109,45 @@
   const transform = {};
   const collisions = {};
   const collisionTransform = {};
-  let nameCard, projectsOverview, conartist, syncat;
+  let nameCard, projectsOverview, conartist, syncat, paper;
   // NOTE: there is a bug (Firefox only) where the offsetHeight is measured incorrectly during the initial loading
   //       this may be due to a bug in Firefox, and not in this code...
   $: {
     if (scroll === undefined || contentHeight === undefined) {} else {
       let rotation = 0, slideX = 0, slideY = 0;
 
+      PAPER: {
+        const scrollStart = pageStop[3];
+        const scrollEnd = pageStop[4];
+        const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
+        const scale = currentScroll / (scrollEnd - scrollStart);
+        transform.paper = `translateX(50vw) translateY(100vh) translateX(-50%) translateY(-${50 * scale}vh) translateY(-${50 * scale}%)`;
+
+        if (syncat && paper) {
+          const collisionBottom = (height + syncat.offsetHeight) / 2;
+          const collisionTop = (height - paper.offsetHeight) / 2;
+          const expectedTop = (height * (100 - 50 * scale) / 100) - (paper.offsetHeight * (50 * scale) / 100);
+          const collisionPoint = Math.min(collisionBottom, Math.max(expectedTop, collisionTop));
+          const collisionDistance = collisionPoint - collisionBottom;
+          const collisionScale = Math.abs(collisionDistance / (collisionBottom - collisionTop));
+
+          if (collisionScale) {
+            collisions.syncat = collisions.syncat || Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 });
+            const { rotation, slideY, slideX } = collisions.syncat.apply(collisionScale, collisionDistance);
+            collisionTransform.syncat = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
+          } else if (!collisionScale) {
+            delete collisions.syncat;
+            delete collisionTransform.syncat;
+          }
+        }
+      };
+
       SYNCAT: {
         const scrollStart = pageStop[2];
         const scrollEnd = pageStop[3];
         const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
         const scale = currentScroll / (scrollEnd - scrollStart);
-        transform.syncat = `translateX(50vw) translateY(100vh) translateX(-50%) translateY(-${50 * scale}vh) translateY(-${50 * scale}%)`;
+        transform.syncat = `translateX(50vw) translateY(100vh) translateX(-50%) translateY(-${50 * scale}vh) translateY(-${50 * scale}%) ${collisionTransform.syncat || ''}`;
 
         if (conartist && syncat) {
           const collisionBottom = (height + conartist.offsetHeight) / 2;
@@ -121,8 +158,8 @@
           const collisionScale = Math.abs(collisionDistance / (collisionBottom - collisionTop));
 
           if (collisionScale) {
-            collisions.conartist = collisions.conartist || Collision.vertical({ minRotation: -10, maxRotation: -5, minFriction: 0.15, maxFriction: 0.25 });
-            const { rotation, slideY, slideX } = collisions.conartist.apply(collisionScale, collisionDistance);
+            collisions.conartist = collisions.conartist || Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 });
+            const { rotation, slideY, slideX } = collisions.conartist.apply(collisionScale, collisionDistance).merge(collisions.syncat);
             collisionTransform.conartist = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else if (!collisionScale) {
             delete collisions.conartist;
@@ -148,7 +185,7 @@
 
           if (collisionScale) {
             collisions.projectsOverview = collisions.projectsOverview || Collision.horizontal();
-            const { rotation, slideY, slideX } = collisions.projectsOverview.apply(collisionScale, collisionDistance).merge(collisions.conartist);
+            const { rotation, slideY, slideX } = collisions.projectsOverview.apply(collisionScale, collisionDistance).merge(collisions.conartist, collisions.syncat);
             collisionTransform.projectsOverview = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else if (!collisionScale) {
             delete collisions.projectsOverview;
@@ -174,7 +211,7 @@
 
           if (collisionScale) {
             collisions.nameCard = collisions.nameCard || Collision.vertical({ maxRotation: 30 });
-            const { rotation, slideY, slideX } = collisions.nameCard.apply(collisionScale, collisionDistance).merge(collisions.projectsOverview, collisions.conartist);
+            const { rotation, slideY, slideX } = collisions.nameCard.apply(collisionScale, collisionDistance).merge(collisions.projectsOverview, collisions.conartist, collisions.syncat);
             collisionTransform.nameCard = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else if (!collisionScale) {
             delete collisions.nameCard;
@@ -194,29 +231,36 @@
   class='page name-card {autoscroll}'
   style='transform: {transform.nameCard || 'none'}'
   bind:this={nameCard}
-  on:click={() => setScroll(0)}>
+  on:click={() => setScroll('namecard')}>
   <NameCard />
 </div>
 <div
   class='page horizontal-collision projects-overview {autoscroll}'
   style='transform: {transform.projectsOverview || 'none'}'
   bind:this={projectsOverview}
-  on:click={() => setScroll(1)}>
-  <ProjectsOverview />
+  on:click={() => setScroll('projectsoverview')}>
+  <ProjectsOverview on:scroll={({ detail }) => setScroll(detail)}/>
 </div>
 <div
   class='page conartist {autoscroll}'
   style='transform: {transform.conartist || 'none'}'
   bind:this={conartist}
-  on:click={() => setScroll(2)}>
+  on:click={() => setScroll('conartist')}>
   <ConArtist />
 </div>
 <div
   class='page syncat {autoscroll}'
   style='transform: {transform.syncat || 'none'}'
   bind:this={syncat}
-  on:click={() => setScroll(3)}>
+  on:click={() => setScroll('syncat')}>
   <Syncat />
+</div>
+<div
+  class='page paper {autoscroll}'
+  style='transform: {transform.paper || 'none'}'
+  bind:this={paper}
+  on:click={() => setScroll('paper')}>
+  <Paper />
 </div>
 
 <style>

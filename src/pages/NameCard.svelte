@@ -2,6 +2,7 @@
   import Paper from '../component/Paper.svelte';
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
+  import Link from '../component/Link.svelte';
 </script>
 
 <div class='name-card'>
@@ -15,18 +16,24 @@
       </div>
     </div>
     <div class='links'>
-      <a href='https://github.com/OinkIguana' class='link'>
-        <span class='link-image logo'><Image name='github' alt='GitHub' /></span>
-        <span class='link-text'><Text>foxfriends</Text></span>
-      </a>
-      <a href='https://cameldridge.com' class='link'>
-        <span class='link-image logo'><Image name='home' alt='Homepage' /></span>
-        <span class='link-text'><Text>cameldridge.com</Text></span>
-      </a>
-      <a href='mailto:cam.eldridge@gmail.com' class='link'>
-        <span class='link-image logo'><Image name='mail' alt='E-mail' /></span>
-        <span class='link-text'><Text>cameldridge@gmail.com</Text></span>
-      </a>
+      <Link href='https://github.com/OinkIguana' external discrete>
+        <div class='link'>
+          <span class='link-image logo'><Image name='github' alt='GitHub' /></span>
+          <span class='link-text'><Text>foxfriends</Text></span>
+        </div>
+      </Link>
+      <Link href='https://cameldridge.com' external discrete>
+        <div class='link'>
+          <span class='link-image logo'><Image name='home' alt='Homepage' /></span>
+          <span class='link-text'><Text>cameldridge.com</Text></span>
+        </div>
+      </Link>
+      <Link href='mailto:cam.eldridge@gmail.com' external discrete>
+        <div class='link'>
+          <span class='link-image logo'><Image name='mail' alt='E-mail' /></span>
+          <span class='link-text'><Text>cameldridge@gmail.com</Text></span>
+        </div>
+      </Link>
     </div>
     <div class='qr-code'>
       <Image name='qr-code' alt='' />

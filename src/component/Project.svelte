@@ -1,11 +1,12 @@
 <script>
   import Text from './Text.svelte';
+  import Link from './Link.svelte';
   export let name;
 </script>
 
 <div class='project'>
   <div class='project-name'>
-    <Text heading>{name}</Text>
+    <Link discrete on:click><Text heading>{name}</Text></Link>
     <div class='links'>
       <slot name='links' />
     </div>

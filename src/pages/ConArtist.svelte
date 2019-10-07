@@ -3,6 +3,7 @@
   import Rule from '../component/Rule.svelte';
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
+  import Link from '../component/Link.svelte';
 </script>
 
 <div class='container'>
@@ -56,13 +57,13 @@
         </div>
       </header>
       <div class='links'>
-        <Text>Get started at <Text sc><a class='link' href='https://conartist.app'>conartist.app</a></Text></Text>
+        <Text>Get started at <span class='link'><Text sc semibold><Link href='https://conartist.app' external>conartist.app</Link></Text></span></Text>
       </div>
       <div class='stores'>
         <div class='appstore'>
-          <a href='https://itunes.apple.com/us/app/conartist/id1448972207'>
+          <Link href='https://itunes.apple.com/us/app/conartist/id1448972207' external>
             <Image name='app-store' alt='Download on the App Store' />
-          </a>
+          </Link>
         </div>
       </div>
     </Paper>
@@ -121,8 +122,8 @@
     --text--font-accent: 'Fira Sans', sans-serif;
 
     --color-ink: white;
-    --color-link: #cf4516;
-    --color-link-hover: #d9991e;
+    --link--color: #cf4516;
+    --link--color-hover: #d9991e;
   }
 
   .conartist .header {
@@ -156,7 +157,6 @@
   }
 
   .conartist .link {
-    font-weight: 500;
     font-size: 1.1em;
   }
 

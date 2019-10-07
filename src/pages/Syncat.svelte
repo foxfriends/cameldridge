@@ -3,6 +3,7 @@
   import Rule from '../component/Rule.svelte';
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
+  import Link from '../component/Link.svelte';
 </script>
 
 <div class='syncat'>
@@ -16,8 +17,9 @@
         <Text>
           Syncat integrates with Tree-sitter to parse a number of languages into a labelled 
           parse tree. It then matches the parse tree to a
-          <a href='https://github.com/oinkiguana/syncat-themes'>Syncat stylesheet</a>, which is similar
-          in appearance and behaviour to CSS, allowing detailed and accurate syntax highlighting.
+          <Link href='https://github.com/oinkiguana/syncat-themes' external>Syncat stylesheet</Link>, 
+          which is similar in appearance and behaviour to CSS, allowing detailed and 
+          accurate syntax highlighting.
         </Text>
       </p>
       <p>
@@ -43,11 +45,19 @@
         </Text>
       </p>
       <pre class='code'><code><Text mono>{''
-     }<span class='entity'>~</span>   <span class='comment'>1 │</span> <span class='keyword'>fn</span> <span class='function'>main</span>() <span class='keyword'>-&gt;</span> <span class='entity'>Result</span><span class='keyword'>&lt;</span>(), <span class='entity'>Error</span><span class='keyword'>&gt;</span> {'{'}<span class='comment'>¬</span>
-{'    '}<span class='comment'>2 │</span>   <span class='support'>println!</span>(<span class='string'>"Hello world"</span>);<span class='comment'>¬</span>
-{''  }<span class='string'>+</span>   <span class='comment'>3 │</span>   <span class='support'>Ok</span>(())<span class='comment'>¬</span>
+       }<span class='entity'>~</span>   <span class='comment'>1 │</span> <span class='keyword'>fn</span> <span class='function'>main</span>() <span class='keyword'>-&gt;</span> <span class='entity'>Result</span><span class='keyword'>&lt;</span>(), <span class='entity'>Error</span><span class='keyword'>&gt;</span> {'{'}<span class='comment'>¬</span>
+{'    '}<span class='comment'>2 │</span>{'     '}<span class='support'>println!</span>(<span class='string'>"Hello world"</span>);<span class='comment'>¬</span>
+{''    }<span class='string'>+</span>   <span class='comment'>3 │</span>{'     '}<span class='support'>Ok</span>(())<span class='comment'>¬</span>
 {'    '}<span class='comment'>4 │</span> {'}'}<span class='comment'>¬</span>
       </Text></code></pre>
+      <p>
+        <Text>
+          Unfortunately, the way Syncat is currently compiled, the resulting binary is too 
+          large to be hosted on crates.io, so if you wish to try it out you will have to clone
+          the repository and compile it yourself. Dynamically linking to the Tree-sitter parsers
+          and handling installation of new parsers on the fly is a feature for the future.
+        </Text>
+      </p>
     </div>
   </Paper>
 </div>
@@ -79,8 +89,8 @@
 
   pre {
     padding: 1em;
-    background-color: var(--color__one-dark--background);
-    color: var(--color__one-dark--text);
+    background-color: var(--color__one-dark--black);
+    color: var(--color__one-dark--white);
   }
 
   .comment { color: var(--color__one-dark--comment); }

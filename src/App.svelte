@@ -8,7 +8,7 @@
   <div class='noscroll'>
     <DesktopSite {width} {height} {contentHeight} {mouseX} {mouseY} {scroll} />
   </div>
-  <div class='scroll' style='height: 400vh' bind:clientHeight={contentHeight} />
+  <div class='scroll' style='height: 500vh' bind:clientHeight={contentHeight} />
 {:else}
   <MobileSite />
 {/if}

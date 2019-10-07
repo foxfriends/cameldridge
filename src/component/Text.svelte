@@ -16,6 +16,7 @@
   *   `mono`: Flag to enable the monospaced font. Default: `false`
   *   `accent`: Flag to enable an accent font. Default: `false`
   *   `sc`: Flag to turn on all-small-caps, regardless of font used. Default: `false`
+  *   `semibold`: Flag to set weight to semi-bold (500). Default: `false`
 -->
 
 <script>
@@ -23,7 +24,8 @@
   export let mono = false;
   export let accent = false;
   export let sc = false;
-  $: classes = Object.entries({ text: true, heading, mono, accent, sc })
+  export let semibold = false;
+  $: classes = Object.entries({ text: true, heading, mono, accent, sc, semibold })
     .filter(([, include]) => include)
     .map(([name]) => name)
     .join(' ');
@@ -75,5 +77,9 @@
 
   .sc {
     font-variant-caps: all-small-caps;
+  }
+
+  .semibold {
+    font-weight: 500;
   }
 </style>

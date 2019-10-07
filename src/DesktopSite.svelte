@@ -1,6 +1,7 @@
 <script>
   import { onMount, tick } from 'svelte';
   import NameCard from './pages/NameCard.svelte';
+  import About from './pages/About.svelte';
   import ProjectsOverview from './pages/ProjectsOverview.svelte';
   import ConArtist from './pages/ConArtist.svelte';
   import Syncat from './pages/Syncat.svelte';
@@ -11,17 +12,18 @@
 
   let maxScroll = 0;
   $: maxScroll = Math.max(0, contentHeight - height);
-  $: pageStop = [...divide(maxScroll, 5)];
+  $: pageStop = [...divide(maxScroll, 6)];
 
   let autoscroll = '';
   async function setScroll(stop) {
     if (typeof stop === 'string') {
       switch (stop) {
         case 'namecard': stop = 0; break;
-        case 'projectsoverview': stop = 1; break;
-        case 'conartist': stop = 2; break;
-        case 'syncat': stop = 3; break;
-        case 'paper': stop = 4; break;
+        case 'about': stop = 1; break;
+        case 'projectsoverview': stop = 2; break;
+        case 'conartist': stop = 3; break;
+        case 'syncat': stop = 4; break;
+        case 'paper': stop = 5; break;
         default: stop = 1; break;
       }
     }
@@ -101,7 +103,7 @@
         slideX: this.slideX + other.slideX,
         slideY: this.slideY + other.slideY,
         rotation: this.rotation + other.rotation,
-      };
+      }
       return Collision.prototype.merge.apply(merged, rest);
     }
   }
@@ -109,7 +111,7 @@
   const transform = {};
   const collisions = {};
   const collisionTransform = {};
-  let nameCard, projectsOverview, conartist, syncat, paper;
+  let nameCard, about, projectsOverview, conartist, syncat, paper;
   // NOTE: there is a bug (Firefox only) where the offsetHeight is measured incorrectly during the initial loading
   //       this may be due to a bug in Firefox, and not in this code...
   $: {
@@ -117,8 +119,8 @@
       let rotation = 0, slideX = 0, slideY = 0;
 
       PAPER: {
-        const scrollStart = pageStop[3];
-        const scrollEnd = pageStop[4];
+        const scrollStart = pageStop[4];
+        const scrollEnd = pageStop[5];
         const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
         const scale = currentScroll / (scrollEnd - scrollStart);
         transform.paper = `translateX(50vw) translateY(100vh) translateX(-50%) translateY(-${50 * scale}vh) translateY(-${50 * scale}%)`;
@@ -143,8 +145,8 @@
       };
 
       SYNCAT: {
-        const scrollStart = pageStop[2];
-        const scrollEnd = pageStop[3];
+        const scrollStart = pageStop[3];
+        const scrollEnd = pageStop[4];
         const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
         const scale = currentScroll / (scrollEnd - scrollStart);
         transform.syncat = `translateX(50vw) translateY(100vh) translateX(-50%) translateY(-${50 * scale}vh) translateY(-${50 * scale}%) ${collisionTransform.syncat || ''}`;
@@ -169,8 +171,8 @@
       };
 
       CONARTIST: {
-        const scrollStart = pageStop[1];
-        const scrollEnd = pageStop[2];
+        const scrollStart = pageStop[2];
+        const scrollEnd = pageStop[3];
         const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
         const scale = currentScroll / (scrollEnd - scrollStart);
         transform.conartist = `translateX(100vw) translateY(50vh) translateY(-50%) translateX(-${50 * scale}vw) translateX(-${50 * scale}%) ${collisionTransform.conartist || ''}`;
@@ -195,23 +197,49 @@
       };
 
       PROJECTS_OVERVIEW: {
-        const scrollStart = pageStop[0];
-        const scrollEnd = pageStop[1];
+        const scrollStart = pageStop[1];
+        const scrollEnd = pageStop[2];
         const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
         const scale = currentScroll / (scrollEnd - scrollStart);
-        transform.projectsOverview = `translateX(50vw) translateX(-50%) translateY(${100 - 50 * scale}vh) translateY(-${10 + (40 * scale)}%) ${collisionTransform.projectsOverview || ''}`;
+        transform.projectsOverview = `translateX(50vw) translateX(-50%) translateY(${100 - 50 * scale}vh) translateY(-${50 * scale}%) ${collisionTransform.projectsOverview || ''}`;
 
-        if (nameCard && projectsOverview) {
-          const collisionBottom = (height + nameCard.offsetHeight) / 2;
+        if (about && projectsOverview) {
+          const collisionBottom = (height + about.offsetHeight) / 2;
           const collisionTop = (height - projectsOverview.offsetHeight) / 2;
-          const expectedTop = (height * (100 - 50 * scale) / 100) - (projectsOverview.offsetHeight * (10 + (40 * scale)) / 100);
+          const expectedTop = (height * (100 - 50 * scale) / 100) - (projectsOverview.offsetHeight * (50 * scale) / 100);
           const collisionPoint = Math.min(collisionBottom, Math.max(expectedTop, collisionTop));
           const collisionDistance = collisionPoint - collisionBottom;
           const collisionScale = Math.abs(collisionDistance / (collisionBottom - collisionTop));
 
           if (collisionScale) {
-            collisions.nameCard = collisions.nameCard || Collision.vertical({ maxRotation: 30 });
-            const { rotation, slideY, slideX } = collisions.nameCard.apply(collisionScale, collisionDistance).merge(collisions.projectsOverview, collisions.conartist, collisions.syncat);
+            collisions.about = collisions.about || Collision.vertical({ minFriction: 0.15, maxFriction: 0.25 });
+            const { rotation, slideY, slideX } = collisions.about.apply(collisionScale, collisionDistance).merge(collisions.projectsOverview, collisions.conartist, collisions.syncat);
+            collisionTransform.about = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
+          } else if (!collisionScale) {
+            delete collisions.about;
+            delete collisionTransform.about;
+          }
+        }
+      };
+
+      ABOUT: {
+        const scrollStart = pageStop[0];
+        const scrollEnd = pageStop[1];
+        const currentScroll = Math.min(scrollEnd, Math.max(scrollStart, scroll)) - scrollStart;
+        const scale = currentScroll / (scrollEnd - scrollStart);
+        transform.about = `translateX(50vw) translateX(-50%) translateY(${100 - 50 * scale}vh) translateY(-${10 + (40 * scale)}%) ${collisionTransform.about || ''}`;
+
+        if (nameCard && about) {
+          const collisionBottom = (height + nameCard.offsetHeight) / 2;
+          const collisionTop = (height - about.offsetHeight) / 2;
+          const expectedTop = (height * (100 - 50 * scale) / 100) - (about.offsetHeight * (10 + (40 * scale)) / 100);
+          const collisionPoint = Math.min(collisionBottom, Math.max(expectedTop, collisionTop));
+          const collisionDistance = collisionPoint - collisionBottom;
+          const collisionScale = Math.abs(collisionDistance / (collisionBottom - collisionTop));
+
+          if (collisionScale) {
+            collisions.nameCard = collisions.nameCard || Collision.vertical();
+            const { rotation, slideY, slideX } = collisions.nameCard.apply(collisionScale, collisionDistance).merge(collisions.about, collisions.projectsOverview, collisions.conartist, collisions.syncat);
             collisionTransform.nameCard = `translate(${slideX}px, ${slideY}px) rotate(${rotation}deg)`;
           } else if (!collisionScale) {
             delete collisions.nameCard;
@@ -234,6 +262,15 @@
   on:click={() => setScroll('namecard')}>
   <NameCard />
 </div>
+
+<div
+  class='page about {autoscroll}'
+  style='transform: {transform.about || 'none'}'
+  bind:this={about}
+  on:click={() => setScroll('about')}>
+  <About />
+</div>
+
 <div
   class='page horizontal-collision projects-overview {autoscroll}'
   style='transform: {transform.projectsOverview || 'none'}'
@@ -241,6 +278,7 @@
   on:click={() => setScroll('projectsoverview')}>
   <ProjectsOverview on:scroll={({ detail }) => setScroll(detail)}/>
 </div>
+
 <div
   class='page conartist {autoscroll}'
   style='transform: {transform.conartist || 'none'}'
@@ -248,6 +286,7 @@
   on:click={() => setScroll('conartist')}>
   <ConArtist />
 </div>
+
 <div
   class='page syncat {autoscroll}'
   style='transform: {transform.syncat || 'none'}'
@@ -255,6 +294,7 @@
   on:click={() => setScroll('syncat')}>
   <Syncat />
 </div>
+
 <div
   class='page paper {autoscroll}'
   style='transform: {transform.paper || 'none'}'

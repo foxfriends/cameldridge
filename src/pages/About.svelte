@@ -17,21 +17,21 @@
 
     <p>
       <Text>
-        I believe it is important to write code in ways that
-        are both <i><b>visually</b> and <b>logically</b> pleasing</i>.
+        I believe it is important to write code in ways that are both 
+        <i><b>logically</b> and <b>visually</b> pleasing</i>.
       </Text>
     </p>
 
     <p>
       <Text>
         I like using <i><b>strong</b> and <b>expressive</b> type systems</i>
-        to create safe and powerful systems.
+        to create safe but powerful systems.
       </Text>
     </p>
 
     <p>
       <Text>
-        I like using <b>functional programming</b> techniques to make the code
+        I like using <b>functional programming</b> techniques to make my code
         beautiful and concise.
       </Text>
     </p>

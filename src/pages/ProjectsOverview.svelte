@@ -77,7 +77,7 @@
           <Link href='http://cameldridge.com/game/White/index.html' external><Image name='play' alt='Play' /></Link>
         </div>
         <div class='link' slot='links'>
-          <Link href='https://cameldridge.com/game/white.exe' external><Image name='download' alt='Download' /></Link>
+          <Link href='https://cameldridge.com/game/White.exe' download><Image name='download' alt='Download' /></Link>
         </div>
         In a place where the only colour is white, you have discovered a spark of something new. Explore the
         world which reveals itself around you as you bring colours back and discover the truth about why they 

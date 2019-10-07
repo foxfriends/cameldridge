@@ -15,8 +15,7 @@
     <div class='content'>
       <p>
         <Text>
-          Syncat integrates with Tree-sitter to parse a number of languages into a labelled 
-          parse tree. It then matches the parse tree to a
+          Syncat uses Tree-sitter to build a parse tree of your source files. It then matches the parse tree to a
           <Link href='https://github.com/oinkiguana/syncat-themes' external>Syncat stylesheet</Link>, 
           which is similar in appearance and behaviour to CSS, allowing detailed and 
           accurate syntax highlighting.

@@ -216,9 +216,9 @@
 
 <div
   class='page white {autoscroll}'
-  style='transform: {transform.paper || 'none'}'
+  style='transform: {transform.white || 'none'}'
   bind:this={elements.white}
-  on:click={() => setScroll('paper')}>
+  on:click={() => setScroll('white')}>
   <White />
 </div>
 

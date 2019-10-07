@@ -13,6 +13,7 @@
 
   *   `href`: The URL this link points to. Default: `undefined`
   *   `external`: Flag to set `target='_blank'` on the link, to open in a new tab. Default: `false`
+  *   `download`: Flag to make this link a download link. Default: `false`
   *   `discrete`: Flag that enables a more discrete styling for the link. Default: `false`
 
   ## Events
@@ -22,6 +23,7 @@
 <script>
   export let href = undefined;
   export let external = false;
+  export let download = false;
   export let discrete = false;
 
   $: target = external ? '_blank' : undefined;
@@ -34,7 +36,7 @@
 -->
 
 {#if href}
-  <a on:click|stopPropagation {href} {target} class='link {discrete ? 'discrete' : ''}'>
+  <a on:click|stopPropagation {href} {target} {download} class='link {discrete ? 'discrete' : ''}'>
     <slot />
   </a>
 {:else}

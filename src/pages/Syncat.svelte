@@ -18,7 +18,7 @@
       <p>
         <Text>
           Syncat uses Tree-sitter to build a parse tree of your source files. It then matches the parse tree to a
-          <Link href='https://github.com/oinkiguana/syncat-themes' external>Syncat stylesheet</Link>, 
+          <Link href='https://github.com/foxfriends/syncat-themes' external>Syncat stylesheet</Link>, 
           which is similar in appearance and behaviour to CSS, allowing detailed and 
           accurate syntax highlighting.
         </Text>

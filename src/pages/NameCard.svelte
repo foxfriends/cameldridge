@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class='links'>
-      <Link href='https://github.com/OinkIguana' external discrete>
+      <Link href='https://github.com/foxfriends' external discrete>
         <div class='link'>
           <span class='link-image logo'><Image name='github' alt='GitHub' /></span>
           <span class='link-text'><Text>foxfriends</Text></span>

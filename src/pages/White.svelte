@@ -1,3 +1,8 @@
+<script context='module'>
+  const loadingEngine = import('../white');
+  loadingEngine.then(({ default: white }) => white());
+</script>
+
 <script>
   import { onMount, tick } from 'svelte';
   import Paper from '../component/Paper.svelte';
@@ -7,12 +12,6 @@
   import Link from '../component/Link.svelte';
 
   export let mobile = false;
-  const loadingEngine = import('../white');
-
-  onMount(async () => {
-    const { default: white } = await loadingEngine;
-    white();
-  });
 </script>
 
 <div class='white {mobile ? 'mobile' : ''}'>

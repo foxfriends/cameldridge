@@ -1,18 +1,19 @@
-<div class='paper-background'>
-  <h2>The mobile site is in progress.</h2>
-  <h3>Sorry for the inconvenience.</h3>
-</div>
+<script>
+  import NameCard from './pages/NameCard.svelte';
+  import About from './pages/About.svelte';
+  import ProjectsOverview from './pages/ProjectsOverview.svelte';
+  import ConArtist from './pages/ConArtist.svelte';
+  import Syncat from './pages/Syncat.svelte';
+  import Paper from './pages/Paper.svelte';
+  import White from './pages/White.svelte';
+  import End from './pages/End.svelte';
+</script>
 
-<style>
-  .paper-background {
-    width: 100vw;
-    height: 100vh;
-    background-image: var(--image-paper);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-accent);
-  }
-</style>
+<NameCard mobile />
+<About mobile />
+<ProjectsOverview mobile />
+<ConArtist mobile />
+<Syncat mobile />
+<Paper mobile />
+<White mobile />
+<End mobile />

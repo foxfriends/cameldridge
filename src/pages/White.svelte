@@ -6,6 +6,7 @@
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
 
+  export let mobile = false;
   const loadingEngine = import('../white');
 
   onMount(async () => {
@@ -14,7 +15,7 @@
   });
 </script>
 
-<div class='white'>
+<div class='white {mobile ? 'mobile' : ''}'>
   <Paper>
     <header class='header'>
       <Text heading>White</Text>
@@ -70,7 +71,13 @@
   .white {
     position: relative;
     width: 60rem;
+    max-width: 100%;
     height: 40rem;
+  }
+
+  .white.mobile {
+    height: unset;
+    margin: 2rem auto;
   }
 
   .header {
@@ -89,7 +96,12 @@
     padding: 0 6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem;
+    grid-gap: 0 3rem;
+  }
+
+  .mobile .content {
+    grid-template-columns: 1fr;
+    padding: 0 3rem 10rem 3rem;
   }
 
   p {
@@ -97,7 +109,8 @@
     text-align: justify;
   }
 
-  p + p {
+  p + p,
+  .mobile .column + .column > p {
     text-indent: 2rem;
   }
 

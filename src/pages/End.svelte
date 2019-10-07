@@ -4,9 +4,11 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='end'>
+<div class='end {mobile ? 'mobile' : ''}'>
   <Paper>
     <div class='thanks'>
       <div class='title'>
@@ -28,6 +30,11 @@
     position: relative;
     width: 35rem;
     height: 20rem;
+    max-width: 100%;
+  }
+
+  .end.mobile {
+    margin: 2rem auto;
   }
 
   .thanks {

@@ -49,22 +49,12 @@ export default class Game {
   }
 
   play() {
+    if (this[PLAYING]) { return }
     this.trigger(this[VISIBLE] ? 'scrollin' : 'scrollout');
     playCount++;
     let frame = 0;
     this[PLAYING] = true;
     this.trigger('start');
-
-    let drawRequest = null;
-    let stepTimeout = null;
-
-    const draw = () => {
-      drawRequest = null;
-      const drawables = [].concat(this[BACKGROUNDS], this[FOREGROUNDS], this[ACTORS]).sort(({position: [,,a]}, {position: [,,b]}) => a - b);
-      for(var item of drawables) {
-        item.draw(this[CONTEXT]);
-      }
-    };
 
     const step = async () => {
       if(!this[PLAYING]) { return; } // force quit
@@ -81,22 +71,16 @@ export default class Game {
       for(var actor of this[ACTORS]) { inputs.forEach(actor.react.bind(actor)); }
       for(var actor of this[ACTORS]) { actor.update(); }
       this.trigger('step');
-      if (drawRequest === null) {
-        drawRequest = window.requestAnimationFrame(draw);
+      const drawables = [].concat(this[BACKGROUNDS], this[FOREGROUNDS], this[ACTORS]).sort(({position: [,,a]}, {position: [,,b]}) => a - b);
+      for(var item of drawables) {
+        item.draw(this[CONTEXT]);
       }
       if(this[PAUSE]) {
         await this[PAUSE];
       }
-      stepTimeout = window.setTimeout(step, 1000.0/60.0);
+      window.requestAnimationFrame(step);
     }
-    stepTimeout = window.setTimeout(step, 1000.0/60.0);
-
-    window.addEventListener('scroll', () => {
-      if (stepTimeout) { window.clearTimeout(stepTimeout); }
-      if (!this[PAUSE]) {
-        stepTimeout = window.setTimeout(step, 100);
-      }
-    });
+    window.requestAnimationFrame(step);
   }
 
   end() {

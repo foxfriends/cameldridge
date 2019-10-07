@@ -4,10 +4,12 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='syncat'>
-  <Paper hmargin={'6rem'} vmargin={'3rem'}>
+<div class='syncat {mobile ? 'mobile' : ''}'>
+  <Paper hmargin={mobile ? '3rem' : '6rem'} vmargin={'3rem'}>
     <header class='header'>
       <Text heading>Syncat</Text>
       <div class='rule'><Rule /></div>
@@ -64,13 +66,23 @@
 <style>
   .syncat {
     width: 40rem;
+    max-width: 100%;
     height: 60rem;
+  }
+
+  .syncat.mobile {
+    height: unset;
+    margin: 2rem auto;
   }
 
   .header {
     font-size: var(--font-size-title);
     text-align: center;
     padding-top: 3rem;
+  }
+
+  .syncat.mobile .header {
+    padding-top: 0;
   }
 
   .rule {
@@ -90,6 +102,7 @@
     padding: 1em;
     background-color: var(--color__one-dark--black);
     color: var(--color__one-dark--white);
+    overflow-x: auto;
   }
 
   .comment { color: var(--color__one-dark--comment); }

@@ -4,12 +4,14 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='container'>
+<div class='container {mobile ? 'mobile' : ''}'>
 
-  <div class='description'>
-    <Paper hmargin={'6rem'} vmargin={'3rem'}>
+  <div class='description {mobile ? 'mobile' : ''}'>
+    <Paper hmargin={mobile ? '3rem' : '6rem'} vmargin={'3rem'}>
       <header class='header'>
         <Text heading>ConArtist</Text>
         <div class='rule'><Rule /></div>
@@ -45,7 +47,7 @@
     </Paper>
   </div>
 
-  <div class='conartist'>
+  <div class='conartist {mobile ? 'mobile' : ''}'>
     <Paper>
       <header class='header'>
         <div class='logo'>
@@ -72,14 +74,26 @@
 </div>
 
 <style>
-  .description {
+  .container {
     position: relative;
+    max-width: 100%;
+  }
+
+  .container.mobile {
+    overflow: hidden;
+    margin: 2rem 0;
   }
 
   /** Description page */
   .description {
     width: 40rem;
+    max-width: 100%;
     height: 60rem;
+  }
+
+  .description.mobile {
+    height: unset;
+    margin: 0 auto;
   }
 
   .description .header {
@@ -88,8 +102,17 @@
     padding-top: 3rem;
   }
 
+  .description.mobile .header {
+    padding-top: 0;
+  }
+
+  .description.mobile .content {
+    padding-bottom: 18rem;
+  }
+
   .description .rule {
     width: 25rem;
+    max-width: 100%;
     margin: 1rem auto;
   }
 
@@ -110,7 +133,8 @@
     width: 35rem;
     height: 20rem;
 
-    transform: translate(0.78rem, -1rem) rotate(-4deg);
+    transform-origin: top right;
+    transform: translateY(-1em) rotate(-4deg);
 
     color: var(--color-ink);
 
@@ -124,6 +148,10 @@
     --color-ink: white;
     --link--color: #cf4516;
     --link--color-hover: #d9991e;
+  }
+
+  .conartist.mobile {
+    transform: rotate(-4deg) scale(0.75);
   }
 
   .conartist .header {
@@ -167,6 +195,6 @@
   }
 
   .appstore {
-    height: 3rem;
+    width: 9rem;
   }
 </style>

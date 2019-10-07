@@ -4,10 +4,12 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='paper'>
-  <Paper hmargin={'6em'} vmargin={'3em'}>
+<div class='paper {mobile ? 'mobile' : ''}'>
+  <Paper hmargin={mobile ? '3em' : '6em'} vmargin={'3em'}>
     <pre><Text mono>
 ─────────────────────────────────────────────────────────
     <b>Paper</b>
@@ -52,10 +54,15 @@ set up, you can install it now with just one command:
     --color-ink: var(--color__one-dark--black);
   }
 
+  .paper.mobile {
+    margin: 2rem auto;
+    font-size: 2.7vw;
+  }
+
   code {
     box-sizing: border-box;
     display: block;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1em 1em 0 1em;
 
     background-color: var(--color__one-dark--black);
     color: var(--color__one-dark--white);

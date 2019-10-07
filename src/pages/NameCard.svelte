@@ -3,9 +3,11 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='name-card'>
+<div class='name-card {mobile ? 'mobile' : ''}'>
   <Paper>
     <div class='titles'>
       <div class='name'>
@@ -35,18 +37,26 @@
         </div>
       </Link>
     </div>
-    <div class='qr-code'>
-      <Image name='qr-code' alt='' />
-    </div>
+
+    {#if !mobile}
+      <div class='qr-code'>
+        <Image name='qr-code' alt='' />
+      </div>
+    {/if}
   </Paper>
 </div>
 
 <style>
   .name-card {
+    max-width: 100%;
     width: 35rem;
     height: 20rem;
   }
-  
+
+  .name-card.mobile {
+    margin: 2rem auto;
+  }
+
   .titles {
     position: absolute;
     left: 3rem;

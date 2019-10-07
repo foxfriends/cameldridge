@@ -3,10 +3,12 @@
   import Text from '../component/Text.svelte';
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
+
+  export let mobile = false;
 </script>
 
-<div class='about'>
-  <Paper hmargin='6rem' vmargin='6rem'>
+<div class='about {mobile ? 'mobile' : ''}'>
+  <Paper hmargin={mobile ? '3rem' : '6rem'} vmargin={mobile ? '3rem' : '6rem'}>
 
     <p>
       <Text>
@@ -59,7 +61,12 @@
 
 <style>
   .about {
+    max-width: 100%;
     width: 40rem;
+  }
+
+  .about.mobile {
+    margin: 2rem auto;
   }
 
   p + p {

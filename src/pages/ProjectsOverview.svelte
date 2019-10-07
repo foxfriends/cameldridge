@@ -7,13 +7,14 @@
   import Image from '../component/Image.svelte';
   import Link from '../component/Link.svelte';
 
+  export let mobile = false;
   const dispatch = createEventDispatcher();
 
   function setScroll(page) { dispatch('scroll', page) }
 </script>
 
-<div class='projects-overview'>
-  <Paper hmargin={'6rem'} vmargin={'3rem'}>
+<div class='projects-overview {mobile ? 'mobile' : ''}'>
+  <Paper hmargin={mobile ? '3rem' : '6rem'} vmargin='3rem'>
     <header class='header'>
       <Text heading>Projects</Text>
       <div class='rule'><Rule /></div>
@@ -94,8 +95,14 @@
 
 <style>
   .projects-overview {
+    max-width: 100%;
     width: 50rem;
     height: 70rem;
+  }
+
+  .projects-overview.mobile {
+    margin: 2rem auto;
+    height: unset;
   }
 
   .header {
@@ -104,7 +111,12 @@
     padding: 3rem 0;
   }
 
+  .mobile .header {
+    padding: 0 0 3rem 0;
+  }
+
   .rule {
+    max-width: 100%;
     width: 25rem;
     margin: 1rem auto 0 auto;
   }

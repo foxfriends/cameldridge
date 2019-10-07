@@ -36,7 +36,7 @@ export default class Game {
       if(scrollTimeout) { window.clearTimeout(scrollTimeout); }
       scrollTimeout = window.setTimeout(() => {
         scrollTimeout = undefined;
-        if(inView() != this[VISIBLE]) {
+        if(inView() !== this[VISIBLE]) {
           this[VISIBLE] = !this[VISIBLE];
           if(this[VISIBLE]) {
             this.trigger('scrollin');
@@ -66,7 +66,7 @@ export default class Game {
       }
     };
 
-    const step = () => {
+    const step = async () => {
       if(!this[PLAYING]) { return; } // force quit
       const inputs = this[KEYFRAMES].get(frame++);
 
@@ -85,19 +85,17 @@ export default class Game {
         drawRequest = window.requestAnimationFrame(draw);
       }
       if(this[PAUSE]) {
-        (async () => {
-          await this[PAUSE];
-          stepTimeout = window.setTimeout(step, 1000.0/60.0);
-        })();
-      } else {
-        stepTimeout = window.setTimeout(step, 1000.0/60.0);
+        await this[PAUSE];
       }
+      stepTimeout = window.setTimeout(step, 1000.0/60.0);
     }
     stepTimeout = window.setTimeout(step, 1000.0/60.0);
 
     window.addEventListener('scroll', () => {
       if (stepTimeout) { window.clearTimeout(stepTimeout); }
-      stepTimeout = window.setTimeout(step, 100);
+      if (!this[PAUSE]) {
+        stepTimeout = window.setTimeout(step, 100);
+      }
     });
   }
 

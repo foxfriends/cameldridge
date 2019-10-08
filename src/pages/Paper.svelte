@@ -51,7 +51,7 @@ set up, you can install it now with just one command:
     --text--font-heading: 'Fira Sans', sans-serif;
     --text--font-accent: 'Fira Sans', sans-serif;
 
-    --color-ink: var(--color__one-dark--black);
+    color: var(--color__one-dark--black);
   }
 
   .paper.mobile {

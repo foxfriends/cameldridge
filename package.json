@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OinkIguana/cameldridge.git"
+    "url": "git+https://github.com/foxfriends/cameldridge.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OinkIguana/cameldridge/issues"
+    "url": "https://github.com/foxfriends/cameldridge/issues"
   },
-  "homepage": "https://github.com/OinkIguana/cameldridge#readme",
+  "homepage": "https://github.com/foxfriends/cameldridge#readme",
   "dependencies": {},
   "browserslist": [
     "last 1 firefox version",

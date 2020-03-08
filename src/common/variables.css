@@ -21,7 +21,7 @@
   --color__one-dark--string: #98c379;
 
   /* TODO: find a better background image */
-  --image-table: url('./image/wood.jpg');
+  --image-table: url('../common/image/wood.jpg');
 
   --font-size-title: 1.5rem;
   --font-size-subtitle: 1.3rem;
@@ -32,7 +32,7 @@
 
   /** Component settings */
   /* Paper */
-  --paper--image: url('./image/paper.png');
+  --paper--image: url('../common/image/paper.png');
   /* Rule */
   --rule--color: var(--color-ink);
   /* Text */
@@ -59,11 +59,11 @@
     --color-link: rgba(255, 255, 255, 0.75);
     --color-link-hover: white;
 
-    --image-table: url('./image/dark/back/back@2.png');
+    --image-table: url('../common/image/dark/back/back@2.png');
 
     /** Component settings */
     /* Paper */
-    --paper--image: url('./image/dark/paper.png');
+    --paper--image: url('../common/image/dark/paper.png');
   }
 }
 

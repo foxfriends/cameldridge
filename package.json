@@ -4,8 +4,8 @@
   "description": "My personal profile.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "parcel src/profile/index.html src/blog/index.html",
+    "build": "parcel build src/profile/index.html src/blog/index.html"
   },
   "repository": {
     "type": "git",

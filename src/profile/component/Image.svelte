@@ -52,7 +52,7 @@
 -->
 
 <script>
-  import images from '../image/**/*.{png,svg}';
+  import images from '../../common/image/**/*.{png,svg}';
 
   export let name;
   export let type = 'svg';

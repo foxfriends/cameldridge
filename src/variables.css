@@ -1,0 +1,72 @@
+:root {
+  /* variable declarations */
+  --font-display: 'Vollkorn', serif;
+  --font-mono: 'Fira Code', monospace;
+  --font-body: 'Spectral', serif;
+  --font-accent: 'Spectral SC', serif;
+
+  --color-ink: rgba(0, 0, 0, 0.98);
+  --color-link: rgba(0, 0, 0, 0.65);
+  --color-link-hover: var(--color-ink);
+
+  /** One Dark colours for syntax highlights */
+  --color__one-dark--black: #232c34;
+  --color__one-dark--lightblack: #3e4452;
+  --color__one-dark--white: #abb2bf;
+  --color__one-dark--comment: #5c6370;
+  --color__one-dark--function: #61afef;
+  --color__one-dark--support: #56b6c2;
+  --color__one-dark--entity: #e5c07b;
+  --color__one-dark--keyword: #c678dd;
+  --color__one-dark--string: #98c379;
+
+  /* TODO: find a better background image */
+  --image-table: url('./image/wood.jpg');
+
+  --font-size-title: 1.5rem;
+  --font-size-subtitle: 1.3rem;
+  --font-size-heading: 1.2rem;
+  --font-size-subheading: 1.1rem;
+  --font-size-body: 10pt;
+  --font-size-note: 5/6rem;
+
+  /** Component settings */
+  /* Paper */
+  --paper--image: url('./image/paper.png');
+  /* Rule */
+  --rule--color: var(--color-ink);
+  /* Text */
+  --text--font: var(--font-body);
+  --text--font-mono: var(--font-mono);
+  --text--font-heading: var(--font-display);
+  --text--font-accent: var(--font-accent);
+  /* Link */
+  --link--color: var(--color-link);
+  --link--color-hover: var(--color-link-hover);
+
+  /* Configure relative sizing */
+  font-size: var(--font-size-body);
+}
+
+/* TODO:
+ *  is dark mode really worth it? good textures are hard to find in dark
+ *  might need to at least take a different approach to darkening the scene than just using dark images
+ *  -> turned the lights off type effect instead? reading light effect on the papers?
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink: white;
+    --color-link: rgba(255, 255, 255, 0.75);
+    --color-link-hover: white;
+
+    --image-table: url('./image/dark/back/back@2.png');
+
+    /** Component settings */
+    /* Paper */
+    --paper--image: url('./image/dark/paper.png');
+  }
+}
+
+@media (min-width: 2561px) {
+  :root { --font-size-body: 14pt; }
+}

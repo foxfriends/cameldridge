@@ -1,0 +1,33 @@
+@media (min-width: 701px) {
+  body { background-attachment: fixed; }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: var(--image-table);
+  color: var(--color-ink);
+}
+
+#app { overflow: auto; }
+
+h1, h2, h3, h4, h5, h6, p {
+  all: unset;
+  display: block;
+}
+
+li {
+  position: relative;
+  list-style: none;
+}
+
+ul li::before {
+  content: '·';
+  position: absolute;
+  left: -0.5em;
+  top: 50%;
+
+  font-size: 1.5em;
+  transform: translateY(-50%);
+}

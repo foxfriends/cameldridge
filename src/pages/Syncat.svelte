@@ -53,12 +53,13 @@
       </Text></code></pre>
       <p>
         <Text>
-          Unfortunately, the way Syncat is currently compiled, the resulting binary is too 
-          large to be hosted on crates.io, so if you wish to try it out you will have to clone
-          the repository and compile it yourself. Dynamically linking to the Tree-sitter parsers
-          and handling installation of new parsers on the fly is a feature for the future.
+          Syncat is available for download from crates.io, so if you have Cargo set up, you can install
+          it by running the following command:
         </Text>
       </p>
+      <pre class='code'><code><Text mono>{''
+         }<span class='function'>cargo</span> install paper-terminal
+      </Text></code></pre>
     </div>
   </Paper>
 </div>

@@ -70,6 +70,7 @@
   .mono {
     font-size: 0.85em;
     font-family: var(--text--font-mono);
+    font-variant-numeric: unset;
   }
 
   .accent {

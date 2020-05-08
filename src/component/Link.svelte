@@ -22,9 +22,9 @@
 -->
 <script>
   export let href = undefined;
-  export let external = false;
-  export let download = false;
-  export let discrete = false;
+  export let external = undefined;
+  export let download = undefined;
+  export let discrete = undefined;
 
   $: target = external ? '_blank' : undefined;
 </script>

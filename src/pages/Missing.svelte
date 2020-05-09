@@ -11,7 +11,7 @@
       <div class='title'>
         <Text heading>404&mdash;Not found</Text>
       </div>
-      <Link href='https://cameldridge.com'>
+      <Link href='/'>
         <span class='link-text'><Text sc>Return to homepage</Text></span>
       </Link>
     </div>

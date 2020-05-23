@@ -13,9 +13,9 @@
   font-weight: 500;
   font-display: swap;
   src:
-    url('../vendor/Spectral/fonts/web/spectral-regular.woff2') format('woff2'),
-    url('../vendor/Spectral/fonts/web/spectral-regular.woff') format('woff'),
-    url('../vendor/Spectral/fonts/web/spectral-regular.ttf') format('truetype');
+    url('../vendor/Spectral/fonts/web/spectral-medium.woff2') format('woff2'),
+    url('../vendor/Spectral/fonts/web/spectral-medium.woff') format('woff'),
+    url('../vendor/Spectral/fonts/web/spectral-medium.ttf') format('truetype');
 }
 
 @font-face {
@@ -45,9 +45,9 @@
   font-style: italic;
   font-display: swap;
   src:
-    url('../vendor/Spectral/fonts/web/spectral-italic.woff2') format('woff2'),
-    url('../vendor/Spectral/fonts/web/spectral-italic.woff') format('woff'),
-    url('../vendor/Spectral/fonts/web/spectral-italic.ttf') format('truetype');
+    url('../vendor/Spectral/fonts/web/spectral-mediumitalic.woff2') format('woff2'),
+    url('../vendor/Spectral/fonts/web/spectral-mediumitalic.woff') format('woff'),
+    url('../vendor/Spectral/fonts/web/spectral-mediumitalic.ttf') format('truetype');
 }
 
 @font-face {

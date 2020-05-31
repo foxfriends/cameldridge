@@ -6,6 +6,7 @@
   --font-accent: 'Spectral SC', serif;
 
   --color-ink: rgba(0, 0, 0, 0.98);
+  --color-ink-light: rgba(0, 0, 0, 0.70);
   --color-link: rgba(0, 0, 0, 0.65);
   --color-link-hover: var(--color-ink);
 
@@ -28,7 +29,7 @@
   --font-size-heading: 1.2rem;
   --font-size-subheading: 1.1rem;
   --font-size-body: 10pt;
-  --font-size-note: 5/6rem;
+  --font-size-note: 0.83rem;
 
   /** Component settings */
   /* Paper */

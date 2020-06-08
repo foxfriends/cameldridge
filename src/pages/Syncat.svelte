@@ -58,7 +58,7 @@
         </Text>
       </p>
       <pre class='code'><code><Text mono>{''
-         }<span class='function'>cargo</span> install paper-terminal
+         }<span class='function'>cargo</span> install syncat
       </Text></code></pre>
     </div>
   </Paper>

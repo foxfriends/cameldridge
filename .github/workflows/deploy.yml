@@ -1,0 +1,13 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    environment: cameldridge.com
+    steps:
+      - name: Trigger deploy
+        run: curl https://console.cameldridge.com/deploy2/cameldridge --header "X-Deploy-Secret: $DEPLOY_SECRET"
+        env:
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}

@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment: cameldridge.com
     steps:
       - name: Trigger deploy

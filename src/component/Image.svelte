@@ -52,21 +52,19 @@
 -->
 
 <script>
-  import images from '../image/**/*.{png,svg}';
+  const images = import.meta.globEager('../image/**/*.{png,svg}');
 
   export let name;
   export let type = 'svg';
   export let alt;
 
-  $: themedImages = $darkMode ? images.dark : images;
-  $: src = (themedImages[name] || images[name] || {})[type];
+  $: src = images[`../image/${$darkMode ? 'dark/' : ''}${name}.${type}`]?.default ?? images[`../image/${name}.${type}`]?.default;
   $: imageDownload = retrieve(src);
 </script>
 
 {#if type === 'svg'}
   <div class='svg'>
-    {#await imageDownload}
-    {:then image}
+    {#await imageDownload then image}
       {@html image}
     {/await}
   </div>

@@ -26,12 +26,14 @@
       </div>
 
       <Project name='ConArtist' on:click={() => setScroll('conartist')}>
-        <div class='link' slot='links'>
-          <Link href='https://conartist.app' external><Image name='home' alt='Homepage' /></Link>
-        </div>
-        <div class='link' slot='links'>
-          <Link href='https://github.com/foxfriends/conartist' external><Image name='github' alt='Repository' /></Link>
-        </div>
+        <svelte:fragment slot='links'>
+          <div class='link'>
+            <Link href='https://conartist.app' external><Image name='home' alt='Homepage' /></Link>
+          </div>
+          <div class='link'>
+            <Link href='https://github.com/foxfriends/conartist' external><Image name='github' alt='Repository' /></Link>
+          </div>
+        </svelte:fragment>
 
         A sales and inventory tracking solution specialized for con(vention) artists. With over 200 users
         signed up and sales recorded at more than 20 conventions worldwide, this has been my biggest project
@@ -56,12 +58,14 @@
       </Project>
 
       <Project name='Paper' on:click={() => setScroll('paper')}>
-        <div class='link' slot='links'>
-          <Link href='https://github.com/foxfriends/paper-terminal' external><Image name='github' alt='Repository' /></Link>
-        </div>
-        <div class='link' slot='links'>
-          <Link href='https://crates.io/crates/paper-terminal' external><Image name='download' alt='Download' /></Link>
-        </div>
+        <svelte:fragment slot='links'>
+          <div class='link'>
+            <Link href='https://github.com/foxfriends/paper-terminal' external><Image name='github' alt='Repository' /></Link>
+          </div>
+          <div class='link'>
+            <Link href='https://crates.io/crates/paper-terminal' external><Image name='download' alt='Download' /></Link>
+          </div>
+        </svelte:fragment>
         Paper typesets your text files directly in your terminal making quick reading of documents much easier.
         It works particularly well with Markdown and can even integrate with Syncat to highlight code blocks.
         Some of the rendering options for Markdown documents can be customized using the same Syncat stylesheets.
@@ -75,18 +79,39 @@
       </div>
 
       <Project name='White' on:click={() => setScroll('white')}>
-        <div class='link' slot='links'>
-          <Link href='https://github.com/foxfriends/white' external><Image name='github' alt='Repository' /></Link>
-        </div>
-        <div class='link' slot='links'>
-          <Link href='http://cameldridge.com/game/White/index.html' external><Image name='play' alt='Play' /></Link>
-        </div>
-        <div class='link' slot='links'>
-          <Link href='https://cameldridge.com/game/White.exe' download><Image name='download' alt='Download' /></Link>
-        </div>
+        <svelte:fragment slot='links'>
+          <div class='link'>
+            <Link href='https://github.com/foxfriends/white' external><Image name='github' alt='Repository' /></Link>
+          </div>
+          <div class='link'>
+            <Link href='http://cameldridge.com/game/White/index.html' external><Image name='play' alt='Play' /></Link>
+          </div>
+          <div class='link'>
+            <Link href='https://cameldridge.com/game/White.exe' download><Image name='download' alt='Download' /></Link>
+          </div>
+        </svelte:fragment>
         In a place where the only colour is white, you have discovered a spark of something new. Explore the
         world which reveals itself around you as you bring colours back and discover the truth about why they 
         were missing in the first place.
+      </Project>
+    </section>
+
+    <section class='group'>
+      <div class='group-name'>
+        <Text accent>Writing</Text>
+      </div>
+
+      <Project name='My Blog' on:click={() => { window.location.href = 'https://blog.cameldridge.com'; }}>
+        <svelte:fragment slot='links'>
+          <div class='link'>
+            <Link href='https://blog.cameldridge.com' external><Image name='home' alt='Homepage' /></Link>
+          </div>
+          <div class='link'>
+            <Link href='https://github.com/foxfriends/blog' external><Image name='github' alt='Repository' /></Link>
+          </div>
+        </svelte:fragment>
+        If reading blogs is something you're into, on rare occasions I will post a thought I have.
+        I guess you can look if you want to.
       </Project>
     </section>
 

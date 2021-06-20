@@ -4,8 +4,9 @@
   "description": "My personal profile.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html src/404.html",
-    "build": "parcel build src/index.html src/404.html"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,8 @@
     }
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-compress": "^2.0.2",
-    "parcel-plugin-svelte": "^4.0.6",
-    "svelte": "^3.21.0"
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "svelte": "^3.38.2",
+    "vite": "^2.3.8"
   }
 }

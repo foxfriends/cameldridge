@@ -1,8 +1,8 @@
 <script>
-  import Paper from '../component/Paper.svelte';
-  import Text from '../component/Text.svelte';
-  import Image from '../component/Image.svelte';
-  import Link from '../component/Link.svelte';
+  import Paper from 'scattered-papers/Paper.svelte';
+  import Text from 'scattered-papers/Text.svelte';
+  import Image from 'scattered-papers/Image.svelte';
+  import Link from 'scattered-papers/Link.svelte';
 
   export let mobile = false;
 </script>
@@ -18,19 +18,19 @@
       </div>
     </div>
     <div class='links'>
-      <Link href='https://github.com/foxfriends' external discrete>
+      <Link href='https://github.com/foxfriends' external discreet>
         <div class='link'>
           <span class='link-image logo'><Image name='github' alt='GitHub' /></span>
           <span class='link-text'><Text>foxfriends</Text></span>
         </div>
       </Link>
-      <Link href='https://cameldridge.com' external discrete>
+      <Link href='https://cameldridge.com' external discreet>
         <div class='link'>
           <span class='link-image logo'><Image name='home' alt='Homepage' /></span>
           <span class='link-text'><Text>cameldridge.com</Text></span>
         </div>
       </Link>
-      <Link href='mailto:cam.eldridge@gmail.com' external discrete>
+      <Link href='mailto:cam.eldridge@gmail.com' external discreet>
         <div class='link'>
           <span class='link-image logo'><Image name='mail' alt='E-mail' /></span>
           <span class='link-text'><Text>cameldridge@gmail.com</Text></span>

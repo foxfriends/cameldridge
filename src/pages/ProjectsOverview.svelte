@@ -1,11 +1,11 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import Paper from '../component/Paper.svelte';
-  import Rule from '../component/Rule.svelte';
-  import Text from '../component/Text.svelte';
+  import Paper from 'scattered-papers/Paper.svelte';
+  import Rule from 'scattered-papers/Rule.svelte';
+  import Text from 'scattered-papers/Text.svelte';
+  import Image from 'scattered-papers/Image.svelte';
+  import Link from 'scattered-papers/Link.svelte';
   import Project from '../component/Project.svelte';
-  import Image from '../component/Image.svelte';
-  import Link from '../component/Link.svelte';
 
   export let mobile = false;
   const dispatch = createEventDispatcher();

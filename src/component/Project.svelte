@@ -1,12 +1,12 @@
 <script>
-  import Text from './Text.svelte';
-  import Link from './Link.svelte';
+  import Text from 'scattered-papers/Text.svelte';
+  import Link from 'scattered-papers/Link.svelte';
   export let name;
 </script>
 
 <div class='project'>
   <div class='project-name'>
-    <Link discrete on:click><Text heading>{name}</Text></Link>
+    <Link discreet on:click><Text heading>{name}</Text></Link>
     <div class='links'>
       <slot name='links' />
     </div>

@@ -1,8 +1,8 @@
 <script>
-  import Paper from '../component/Paper.svelte';
-  import Text from '../component/Text.svelte';
-  import Image from '../component/Image.svelte';
-  import Link from '../component/Link.svelte';
+  import Paper from 'scattered-papers/Paper.svelte';
+  import Text from 'scattered-papers/Text.svelte';
+  import Image from 'scattered-papers/Image.svelte';
+  import Link from 'scattered-papers/Link.svelte';
 
   export let mobile = false;
 </script>

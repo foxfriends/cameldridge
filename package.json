@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/foxfriends/cameldridge/issues"
   },
-  "homepage": "https://github.com/foxfriends/cameldridge#readme",
+  "homepage": "https://cameldridge.com",
   "dependencies": {},
   "browserslist": [
     "last 1 firefox version",

@@ -18,7 +18,6 @@
     "url": "https://github.com/foxfriends/cameldridge/issues"
   },
   "homepage": "https://cameldridge.com",
-  "dependencies": {},
   "browserslist": [
     "last 1 firefox version",
     "last 1 chrome version"
@@ -29,9 +28,9 @@
     }
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.12",
-    "scattered-papers": "git+https://github.com/foxfriends/scattered-papers.git#0fedaa2",
-    "svelte": "^3.38.3",
-    "vite": "^2.4.2"
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.24",
+    "scattered-papers": "git+https://github.com/foxfriends/scattered-papers.git#881eb52",
+    "svelte": "^3.43.0",
+    "vite": "^2.5.10"
   }
 }

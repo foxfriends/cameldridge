@@ -33,8 +33,7 @@ stylesheets.
 <b>Paper</b> is hosted on crates.io, so if you have <b>Cargo</b> 
 set up, you can install it now with just one command:
 
-<code>
-<span class='function'>cargo</span> install paper-terminal
+<code><span class='function'>cargo</span> install paper-terminal
 {'                                                   '}<span class='comment'>sh</span>
 </code>
     </Text></pre>

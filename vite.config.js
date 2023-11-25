@@ -1,18 +1,18 @@
-const { defineConfig } = require('vite');
-const { resolve } = require('path');
-const { svelte } = require('@sveltejs/vite-plugin-svelte');
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [svelte()],
-  rollupDedupe: ['svelte'],
-  root: 'src/',
+  rollupDedupe: ["svelte"],
+  root: "src/",
   build: {
-    outDir: '../dist',
+    outDir: "../dist",
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
-        404: resolve(__dirname, 'src/404.html'),
+        main: resolve(__dirname, "src/index.html"),
+        404: resolve(__dirname, "src/404.html"),
       },
     },
   },

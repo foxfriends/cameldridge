@@ -1,6 +1,6 @@
 FROM node:20-alpine AS builder
 
-WORKDIR app
+WORKDIR /app
 COPY vendor                         ./vendor/
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -11,5 +11,5 @@ RUN npm run build
 
 FROM node:20-alpine
 
-WORKDIR app
+WORKDIR /app
 COPY --from=builder /app/dist         ./

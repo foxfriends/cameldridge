@@ -1,0 +1,7 @@
+.git
+.github
+.gitignore
+.gitmodules
+dist
+node_modules
+README.md

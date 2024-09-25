@@ -96,7 +96,7 @@
     { name: 'syncat', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }) },
     { name: 'paper', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }) },
     { name: 'white', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.15, maxFriction: 0.25 }) },
-    { name: 'end', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.05, maxFriction: 0.15 }) },
+    { name: 'end', collision: () => Collision.vertical({ minRotation: -5, maxRotation: 5, minFriction: 0.05, maxFriction: 0.10 }) },
   ].reverse();
   $: pageStop = [...divide(maxScroll, pages.length)];
 

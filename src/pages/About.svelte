@@ -13,41 +13,41 @@
     <p>
       <Text>
         As a programmer, I try not to forget that <b>I am a consumer of code</b>
-        as much as we are all consumers of apps.
+        as much as we are all consumers of programs.
       </Text>
     </p>
 
     <p>
       <Text>
-        I believe it is important to write code in ways that are both 
+        I believe it is important to write code in ways that are both
         <i><b>logically</b> and <b>visually</b> pleasing</i>.
       </Text>
     </p>
 
     <p>
       <Text>
-        I like using <i><b>strong</b> and <b>expressive</b> type systems</i>
-        to create safe but powerful systems.
+        I like using <i><b>strong</b> and <b>expressive</b> logical systems</i>
+        to create safe but powerful applications.
       </Text>
     </p>
 
     <p>
       <Text>
-        I like using <b>functional programming</b> techniques to make my code
-        beautiful and concise.
+        I apply a range of techniques from across <b>multiple disciplines</b>, to
+        solve each problem as accurately as I can.
       </Text>
     </p>
 
     <p>
       <Text>
-        I use <b>Rust</b> whenever possible. I know <b>JavaScript</b> about as 
-        well as anyone can. I use <b>Swift</b> because I have to.
+        I use <b>Rust</b> whenever possible. I know <b>JavaScript</b> about as
+        well as anyone can expect to. I am always ready for another language.
       </Text>
     </p>
 
     <p>
       <Text>
-        I make <b>websites, apps, games</b>&hellip; and pretty much anything else I feel 
+        I make <b>websites, apps, games</b>&hellip; and pretty much anything else I feel
         like building.
       </Text>
     </p>

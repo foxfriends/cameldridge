@@ -20,7 +20,7 @@
     </div>
 
     <div class='copyright'>
-      <Text>&copy; 2021 &ndash; Cameron Eldridge</Text>
+      <Text>&copy; 2024 &ndash; Cameron Eldridge</Text>
     </div>
   </Paper>
 </div>

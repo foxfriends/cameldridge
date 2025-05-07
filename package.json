@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "scattered-papers": "git+https://github.com/foxfriends/scattered-papers.git#e3c2e6f",
-    "svelte": "^4.2.19",
+    "scattered-papers": "git+https://github.com/foxfriends/scattered-papers.git#7e52509",
+    "svelte": "^5.28.2",
     "vite": "^6.3.5"
   }
 }

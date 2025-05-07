@@ -54,8 +54,8 @@
 
         <p>
           <Text>
-            You can <Link href='https://cameldridge.com/game/White.exe' download>download</Link> White for Windows (it works best that way), or play in browser
-            <Link href='https://cameldridge.com/game/White/'>here</Link>.
+            You can <Link href='/game/White.exe' download>download</Link> White for Windows (it works best that way), or play in browser
+            <Link href='/game/White/'>here</Link>.
           </Text>
         </p>
 

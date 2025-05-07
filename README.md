@@ -1,3 +1,3 @@
-# [cameldridge.com](http://cameldridge.com)
+# [cameldridge.com](https://cameldridge.com)
 
 My personal profile.
